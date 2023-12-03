@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+container {@apply h-[100svh] w-full;}
+window {@apply absolute min-w-[200px] min-h-[72px] w-fit h-fit bg-black shadow-md shadow-black/50 border border-white/20}
+window .minbtn {@apply hover:bg-[#1A1A1A] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default;}
+window .maxbtn {@apply hover:bg-[#1A1A1A] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default }
+window name {@apply text-sm cursor-default;}
+window actions {@apply ml-auto h-[29px] flex;}
+window .closebtn {@apply hover:bg-[#E81123] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default;}
+window .maxico {@apply w-[10px] h-[10px] border;}
+window button {@apply text-[13px] px-[18px] py-[2px] bg-[#E1E1E1] text-black  border border-[#ADADAD] hover:border-[#0078D7] hover:bg-[#E5F1FB] active:border-[#005499] active:bg-[#CCE4F7];}
+window checkbox {@apply hover:border-[#0078D7] w-[12px] h-[12px] border inline-block border-[#333] bg-white;}
+window radio {@apply hover:border-[#0078D7] w-[12px] h-[12px] border border-[#333] bg-white rounded-full inline-flex p-[2px];}
+window progressbar {@apply inline-block bg-[#E6E6E6] border border-[#BCBCBC];}
+progressbar fill {@apply h-full bg-[#06B025] block;}
+.marquee {@apply overflow-hidden;}
+window input, window textarea {@apply resize-none border border-[#7A7A7A] bg-white rounded-none text-black focus:outline-none text-[14px] hover:border-black duration-500 focus:border-[#005499];}
+window content {@apply w-full h-[94%] block relative py-1;}
+window nav {@apply border-b border-white/20 h-[29px] flex items-center m-0;}
+window icon {@apply w-[28px] h-[28px] flex p-[6px] py-[7px];}
+/* Custom CSS */
+
+* {color-scheme:dark; font-family:"Segoe UI", sans-serif;}
+.checked {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAMAAACecocUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExUReLi4khISLi4uGtra/b29gAAALQ13yIAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXbcw5EgAwCAJAUPn/l+ORTBqplgKgn9WgPYMe10XBmLUphBPD3GYZ1k/4cP+XdACBmQH2GM7PVAAAAABJRU5ErkJggg==);background-size:10px; }
+.dot {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAMAAACecocUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAeUExURbq6ulVVVTg4OLy8vDMzM7u7u7m5uVRUVDc3NwAAACteRvUAAAAKdFJOU////////////wCyzCzPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAANUlEQVQYV2XIAQoAIAhDUWdl7f4XzgYh1GfgQ2P12uDQJVs/JXKQIbvs33/IITPmmkn5ViY31SoDTdFQWT8AAAAASUVORK5CYII=);background-size:10px; }
+.marquee fill {animation:marquee 3s linear infinite;}
+@keyframes marquee {
+0% {position:relative; width:33%; left:-50%;}
+100% {position:relative; width:33%; left:100%;}
+}
+.closing {animation:closing 0.36s;}
+@keyframes closing {
+    0% {transform:scale(1);opacity:1;}
+    100% {transform: scale(0.976);opacity:0.0;}
+}
+@keyframes opening {
+    0% {transform: scale(0.976);opacity:0.0;}
+    100% {transform:scale(1);opacity:1;}
+    
+}
+window {animation:opening 0.36s;}

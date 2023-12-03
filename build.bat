@@ -1,0 +1,1 @@
+npx tailwindcss -i tw.css -o app.css --watch --minify

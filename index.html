@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <link rel="stylesheet" href="app.css">
+</head>
+<body class="bg-slate-950 mx-2 my-1">
+  <container >
+<a href="javascript:" onclick="window_elements()">Elements</a>
+<a href="javascript:" onclick="closeWindows()">Close All</a>
+    </container>
+  <script src="winman.js"></script>
+<script>
+  function window_elements() {
+    createWindow({"title":"Elements","content":`
+<ul>
+<li class=" mx-3 my-1">
+ <button>Button</button>
+</li>
+<li class=" mx-3 my-1">Checkboxes: 
+ <checkbox onclick="this.classList.toggle('checked');"></checkbox>
+ <checkbox class="checked" onclick="this.classList.toggle('checked');"></checkbox>
+</li>
+<li class=" mx-3 my-1">Radio: 
+ <radio onclick="this.classList.toggle('dot');"></radio>
+ <radio class="dot" onclick="this.classList.toggle('dot');"></radio>
+</li>
+<li class=" mx-3 my-1">Progress: <br>
+ <progressbar class="w-[128px] h-[16px] ">
+   <fill class="w-[50%]"></fill>
+ </progressbar><br>
+ <progressbar class="marquee w-[128px] h-[16px]">
+   <fill class="h-full"></fill>
+ </progressbar>
+</li>
+<li class="mx-3 my-1">
+ Inline textbox:
+ <input></input>
+ </li>
+ <li class="mx-3 my-1">
+ Multiline textbox:<br>
+ <textarea></textarea>
+ </li>
+ </ul>`})
+  }
+ window_elements();
+ createWindow({"title":"Window 1","content":"Hello World!"})
+ createWindow({"title":"Window 2","content":"Hello World!"})
+ createWindow({"title":"Window 3","content":"Hello World!"})
+ createWindow({"title":"Window 4","content":"Hello World!"})
+ createWindow({"title":"Window 5","content":"Hello World!"})
+</script>
+</body>
+</html>
