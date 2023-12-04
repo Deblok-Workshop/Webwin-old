@@ -1,3 +1,11 @@
+/*
+ WinMan:
+ A Windows 10 window manager made in JavaScript, pair with app.css
+*/
+
+
+const globInnerHeight = window.innerHeight;
+const globInnerWidth = window.innerWidth;
 let max = false;
 let poscache = ["0px","0px"];
 let windowoffset=16;
@@ -53,6 +61,9 @@ if (!max) {
     pos2 = pos4 - e.clientY;
     pos3 = e.clientX;
     pos4 = e.clientY;
+    console.log((elmnt.offsetTop - pos2),(elmnt.offsetLeft - pos1))
+    if ((elmnt.offsetTop - pos2) > (globInnerHeight * 0.9)) {return}
+    if ((elmnt.offsetLeft - pos1) > (globInnerWidth * 2)) {max = true; elmnt.classList.add('dvd')}
     elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
     elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
 }
@@ -119,7 +130,9 @@ return classname;
       console.error("'title' must be a non-empty string.");return 1;
     }
   } else {
-    console.error('Invalid metadata format. Expected an JSON object.');return 1;
+    console.error('Invalid metadata format. Expected [object Object].');return 1; // :trolling:
+
+    // console.error('Invalid metadata format. Expected an JSON object.');return 1;
   }
 
 }
@@ -148,3 +161,33 @@ function closeWindowsPart() {
   }
  }
 }
+let speed = 10;
+let off = 0.1
+let velocity = 0.0001
+setInterval(() => {
+  if (document.querySelector('.dvd') == null) {return}
+  const dvdElements = document.querySelectorAll('.dvd');
+  
+  dvdElements.forEach(dvdElement => {
+    if (speed < 100) {
+      const radius = window.innerHeight / 2;
+      speed = speed + off
+      const angle = performance.now() * speed / 1000;
+      const x = radius * Math.cos(angle) + window.innerWidth / 2;
+      const y = radius * Math.sin(angle) + (window.innerHeight - 200) / 2;
+
+      dvdElement.style.left = `${x}px`;
+      dvdElement.style.top = `${y}px`;
+      off = off + 0.1;
+    } else {
+      velocity = velocity + 0.0005
+      let y = Number(dvdElement.style.top.slice(0,-2))
+      y = y + y * velocity
+      
+      dvdElement.style.top = `${y}px`;
+      setTimeout(() => {dvdElement.remove();speed = 2; off = 0.1; velocity = 0.005;max = false;},2000)
+      
+    }
+
+  });
+}, 16); // 60 FPS

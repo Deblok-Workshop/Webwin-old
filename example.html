@@ -7,12 +7,23 @@
   
   <link rel="stylesheet" href="app.css">
 </head>
-<body class="bg-slate-950 mx-2 my-1">
+<body class="bg-slate-700 mx-2 my-1">
   <container >
 <a href="javascript:" onclick="window_elements()">Elements</a>
 <a href="javascript:" onclick="closeWindows()">Close All</a>
     </container>
+  <taskbar class="fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 backdrop-blur-2xl z-[999999999] flex-row flex">
+    <button class="meta " onclick="toggleStartMenu()">
+      <start-menu class="w-fit hidden slideOut bg-gray-950/70 backdrop-blur-2xl h-[10svh] px-4 py-2 pb-5" >Not implemented.</start-menu>
+    </button>
+    <search class="search-bar" contenteditable="true">Type here to search</search>
+    <actions class="flex flex-row">
+      <clock><time class="time"></time><br><time class="date"></time></clock>
+      <action-center></action-center>
+    </actions>
+  </taskbar>
   <script src="winman.js"></script>
+  <script src="os.js"></script>
 <script>
   function window_elements() {
     createWindow({"title":"Elements","content":`

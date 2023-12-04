@@ -1,14 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-container {@apply h-[100svh] w-full;}
-window {@apply absolute min-w-[200px] min-h-[72px] w-fit h-fit bg-black shadow-md shadow-black/50 border border-white/20}
+html, body {@apply overflow-y-clip;}
+container {@apply h-[100svh] w-full overflow-y-clip;}
+window {@apply absolute min-w-[200px] min-h-[72px] w-fit h-fit bg-black shadow-md shadow-black/50 border border-white/20 overflow-y-clip}
 window .minbtn {@apply hover:bg-[#1A1A1A] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default;}
 window .maxbtn {@apply hover:bg-[#1A1A1A] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default }
 window name {@apply text-sm cursor-default;}
 window actions {@apply ml-auto h-[29px] flex;}
 window .closebtn {@apply hover:bg-[#E81123] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default;}
-window .maxico {@apply w-[10px] h-[10px] border;}
+window .maxico, .mexico {@apply w-[10px] h-[10px] border;} /* mexico */
 window button {@apply text-[13px] px-[18px] py-[2px] bg-[#E1E1E1] text-black  border border-[#ADADAD] hover:border-[#0078D7] hover:bg-[#E5F1FB] active:border-[#005499] active:bg-[#CCE4F7];}
 window checkbox {@apply hover:border-[#0078D7] w-[12px] h-[12px] border inline-block border-[#333] bg-white;}
 window radio {@apply hover:border-[#0078D7] w-[12px] h-[12px] border border-[#333] bg-white rounded-full inline-flex p-[2px];}
@@ -19,8 +20,6 @@ window input, window textarea {@apply resize-none border border-[#7A7A7A] bg-whi
 window content {@apply w-full h-[94%] block relative py-1;}
 window nav {@apply border-b border-white/20 h-[29px] flex items-center m-0;}
 window icon {@apply w-[28px] h-[28px] flex p-[6px] py-[7px];}
-/* Custom CSS */
-
 * {color-scheme:dark; font-family:"Segoe UI", sans-serif;}
 .checked {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAMAAACecocUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExUReLi4khISLi4uGtra/b29gAAALQ13yIAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXbcw5EgAwCAJAUPn/l+ORTBqplgKgn9WgPYMe10XBmLUphBPD3GYZ1k/4cP+XdACBmQH2GM7PVAAAAABJRU5ErkJggg==);background-size:10px; }
 .dot {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAMAAACecocUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAeUExURbq6ulVVVTg4OLy8vDMzM7u7u7m5uVRUVDc3NwAAACteRvUAAAAKdFJOU////////////wCyzCzPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAANUlEQVQYV2XIAQoAIAhDUWdl7f4XzgYh1GfgQ2P12uDQJVs/JXKQIbvs33/IITPmmkn5ViY31SoDTdFQWT8AAAAASUVORK5CYII=);background-size:10px; }
@@ -40,3 +39,30 @@ window icon {@apply w-[28px] h-[28px] flex p-[6px] py-[7px];}
     
 }
 window {animation:opening 0.36s;}
+.meta {
+    @apply w-[48px] bg-[#293357]/30 hover:bg-[#293357]/80 duration-200;
+    background-image:url("webwin-logo-s.png");background-size:cover;background-repeat:none; background-position: center; padding:6px;}
+search, .search-bar {@apply w-[344px] border hover:border-2 hover:border-[#777]  bg-[#333] hover:bg-[#3f3f3f] text-[#DCDCDC] border-[#5C5C5C] flex text-center text-[15px] align-middle items-center overflow-clip pl-[38px] font-[400];
+background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAmCAMAAABwIXKiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/UExURUxMTKmpqeTk5Pn5+WlpafDw8KGhoV1dXT09PWdnZ/j4+Nzc3Kenp0RERGZmZu7u7qioqGVlZe3t7djY2AAAAFQELxsAAAAVdFJOU///////////////////////////ACvZfeoAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACKSURBVDhP7ZE5EoUgEAUBZXFDUe5/Vi18gTDy/2Qa2AlN0UWxiMjj6+55USekapQsFmjXamOdNbrF/IR0Qndp7HS2RDppIEZCEqRTFmIVJEG63kFcA0mQbmDuNzLPNzHv62fW+/nZT8vQ//uPI4MV5F2oZXkX1gAjXLsfWdZt9ay8R5Wvu+eZLsYd4y1v5g7fUAYAAAAASUVORK5CYII=);background-repeat:no-repeat !important;
+}
+taskbar action-center {
+    background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAYUExURf////Ly8khJS0ZHSaqqrKqqq6urrAAAAAfn9wkAAAAIdFJOU/////////8A3oO9WQAAAAlwSFlzAAAOwwAADsMBx2+oZAAAADFJREFUKFNjwATsKGBICYAAIxM7OzMjhA0WZ2FkZmZkBTOhOlgYoXyYADsrG5hiZwcAyaEFbxn9NMoAAAAASUVORK5CYII=);background-repeat:no-repeat !important;
+    width:40px;height:40px;max-width:40px;max-height:40px; min-width:40px;min-height:40px;
+    background-position:center;
+} 
+taskbar action-center:active {background-color:rgba(255,255,255,0.2)}
+taskbar actions {@apply ml-auto float-right mr-1 border-r border-r-[#78797A];}
+taskbar action-center {@apply mr-2 block hover:bg-white/10;}
+taskbar clock {line-height:18px;font-size:12px; @apply hover:bg-white/10 text-[#E6E6E6] text-center;}
+.slideIn {animation:0.22s slideIn forwards;}
+.slideOut {animation:0.22s slideOut forwards;}
+.reset {animation: none none none none none none !important; animation-play-state:paused !important;}
+@keyframes slideIn {
+    from {min-height:10svh;opacity:0;position:relative; bottom:10.5svh;left:0;}
+    to {min-height:20svh;opacity:1;position:relative; bottom:20.5svh;left:0;}
+}
+@keyframes slideOut {
+    from {min-height:20svh;opacity:1; position:relative; bottom:20.5svh; left:0;}
+    66% {min-height:9svh;opacity:0; position:relative; bottom:9svh;left:0;}
+    to {min-height:9svh;opacity:0; position:relative; bottom:9.5svh;left:0;}
+}
