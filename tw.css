@@ -81,7 +81,7 @@ notification icon {@apply mr-2 w-[16px] h-[16px] inline-flex bg-[#5F6368];backgr
     from {position:relative;right:-360px;opacity:0;}
     to {position:relative;right:0px;opacity:1;}
 }
-notification {animation:0.5s notifSlideIn; transition:opacity 0.25s; @apply z-[999] bg-[#292929]/80 backdrop-blur-md w-[364px] min-h-[132px] block py-5 px-4;}
+notification {animation:0.67s notifSlideIn; transition:opacity 0.33s; @apply z-[999] bg-[#292929]/80 backdrop-blur-md w-[364px] min-h-[132px] block py-5 px-4;}
 notification .notifrow {@apply inline-flex flex-row items-center align-middle pb-4 w-full;}
 notification author {@apply text-xs inline-flex;}
 notification .notifclosebtn {@apply text-xs text-[#9F9F9F] inline-block justify-end ml-auto float-right font-bold;}

@@ -132,7 +132,7 @@ function createWindow(meta) {
             
           });
           },300)
-          
+          setTimeout(() => {windowoffset = 0;},5000)
         }, windowoffset * 5);
 
         return classname;
