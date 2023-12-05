@@ -24,3 +24,15 @@ function toggleStartMenu() {
         startmenu.classList.toggle('slideIn');
     },200)
 }
+function MessageBox(title = "Message",message) {
+    createWindow({"title":title,"content":`
+    <div style="background:#EEE;height:fit-content;position:relative;top:-7px;">
+    <p style="color:black;font-size:14px;margin-left:4px;margin-top:4px;">${message}</p><br>
+    <br>
+    <div style="background:#DDD;height:20%;position:absolute;bottom:-10px;width:100%;padding-bottom: 40px;">
+    <button style="position:absolute;left:12px;bottom:6px;float:right;margin-right:auto;" onclick="closewindow(this.parentElement.parentElement.parentElement.parentElement)">OK</button>
+    </div>
+    </div>
+    
+    `,"maxVisible":false,"minVisible":false})
+}

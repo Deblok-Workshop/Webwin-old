@@ -82,60 +82,74 @@ function createWindow(meta) {
       if (typeof meta.content === 'string' && meta.content.trim() !== '') {
         const icon = typeof meta.icon === 'string' ? meta.icon : '';
         const contentClass = typeof meta.contentClass === 'string' ? meta.contentClass : '';
-          // create the window
-        
-  const windowHTML = `
-  <window>
-    <nav>
-      ${icon ? `<icon><img src="${icon}"></icon>` : '<icon></icon>'}
-      <name>${meta.title}</name>
-      <actions>
-        <div class="minbtn">⎯</div>
-        <div class="maxbtn" onclick="togmax(this.parentElement.parentElement.parentElement)">
-          <span class="maxico"></span>
-        </div>
-        <div class="closebtn" onclick="closewindow(this.parentElement.parentElement.parentElement); ">✕</div>
-      </actions>
-    </nav>
-    <content class="${contentClass}">
-      ${meta.content}
-    </content>
-  </window>
-`;
+        const maxVisible = meta.maxVisible ?? true;
+        const minVisible = meta.minVisible ?? true;
 
-// temp container
-const tempDiv = document.createElement('div');
-tempDiv.innerHTML = windowHTML;
+        // create the window
+        const windowHTML = `
+          <window>
+            <nav>
+              ${icon ? `<icon><img src="${icon}"></icon>` : '<icon></icon>'}
+              <name>${meta.title}</name>
+              <actions>
+                ${minVisible ? `<div class="minbtn">⎯</div>` : ''}
+                ${maxVisible ? `<div class="maxbtn" onclick="togmax(this.parentElement.parentElement.parentElement)"><span class="maxico"></span></div>` : ''}
+                <div class="closebtn" onclick="closewindow(this.parentElement.parentElement.parentElement); ">✕</div>
+              </actions>
+            </nav>
+            <content class="${contentClass}">
+              ${meta.content}
+            </content>
+          </window>
+        `;
 
-// window
-const windowElement = tempDiv.querySelector('window');
-windowElement.style.top = `${windowoffset}px`
-windowElement.style.left = `${windowoffset}px`
-windowoffset = (windowoffset + 24) % (6 * 24)
+        // temp container
+        const tempDiv = document.createElement('div');
+        tempDiv.innerHTML = windowHTML;
 
-// management
-let classname = `window_${randomString(8)}_${Math.floor(Math.random() * 1000)}`
-windowElement.classList.add(classname)
-windows.push(classname)
+        // window
+        const windowElement = tempDiv.querySelector('window');
+        windowElement.style.top = `${windowoffset}px`;
+        windowElement.style.left = `${windowoffset}px`;
+        windowoffset = (windowoffset + 24) % (6 * 24);
 
-setTimeout(() => {document.querySelector('container').appendChild(windowElement);
+        // management
+        let classname = `window_${randomString(8)}_${Math.floor(Math.random() * 1000)}`;
+        windowElement.classList.add(classname);
+        windows.push(classname);
 
-dragElement(windowElement);
-indexing(windowElement);},windowoffset * 5)
-return classname;
+        setTimeout(() => {
+          document.querySelector('container').appendChild(windowElement);
+          dragElement(windowElement);
+          indexing(windowElement);
+          setTimeout(() => {
+            const jsEle = windowElement.querySelectorAll('javascript');
+          jsEle.forEach(scrEle => {
+            scrEle.style.display = 'none';
+            const scrCtx = scrEle.innerText;
+            const scr = new Function(scrCtx);
+            scr.call(windowElement); // Setting "this" to the spawned window
+            
+          });
+          },300)
+          
+        }, windowoffset * 5);
+
+        return classname;
       } else {
-        console.error("'content' must be a non-empty string.");return 1;
+        console.error("'content' must be a non-empty string.");
+        return 1;
       }
     } else {
-      console.error("'title' must be a non-empty string.");return 1;
+      console.error("'title' must be a non-empty string.");
+      return 1;
     }
   } else {
-    console.error('Invalid metadata format. Expected [object Object].');return 1; // :trolling:
-
-    // console.error('Invalid metadata format. Expected an JSON object.');return 1;
+    console.error('Invalid metadata format. Expected [object Object].');
+    return 1; // :trolling:
   }
-
 }
+
 
 function closeWindows() {
   let times = Math.floor(windows.length/10) + 3 // formula
