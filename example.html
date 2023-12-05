@@ -16,12 +16,17 @@
     <button class="meta " onclick="toggleStartMenu()">
       <start-menu class="slideOut">Not implemented.</start-menu>
     </button>
+    
     <search class="search-bar" contenteditable="true">Type here to search</search>
+    <item><img src="https://google.com/favicon.ico"></img></item>
     <actions class="flex flex-row">
       <clock><time class="time"></time><br><time class="date"></time></clock>
       <action-center></action-center>
     </actions>
   </taskbar>
+  <div class="overflow-x-clip notificationContainer absolute bottom-11 right-1 float-right ml-auto h-[80svh] min-h-[80svh] min-w-[120px] flex flex-col-reverse">
+
+  </div>
   <script src="winman.js"></script>
   <script src="os.js"></script>
 <script>
@@ -59,9 +64,8 @@
   }
  window_elements();
  createWindow({"title":"Window 1","content":"Hello World!"})
- createWindow({"title":"Window 2","content":"Hello World!"})
- createWindow({"title":"Window 3","content":"Hello World!"})
  MessageBox("Message","Hello <b>World</b>!")
+ setTimeout(() => {sendNotification("Example","You got mail!")},2000)
 </script>
 
 </body>

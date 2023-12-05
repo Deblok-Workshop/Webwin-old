@@ -3,7 +3,9 @@
 @tailwind utilities;
 html, body {@apply overflow-y-clip;}
 container {@apply h-[100svh] w-full overflow-y-clip;}
-window {@apply absolute min-w-[200px] min-h-[72px] w-fit h-fit bg-black shadow-md shadow-black/50 border border-white/20 overflow-y-clip}
+window {@apply absolute min-w-[200px] min-h-[72px] w-fit h-fit  bg-black shadow-md shadow-black/50 border border-white/20 overflow-y-clip;
+
+}
 window .minbtn {@apply hover:bg-[#1A1A1A] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default;}
 window .maxbtn {@apply hover:bg-[#1A1A1A] duration-[250ms] h-[28px] relative top-[1px] w-[45px] flex items-center justify-center cursor-default }
 window name {@apply text-sm cursor-default;}
@@ -54,7 +56,7 @@ taskbar action-center:active {background-color:rgba(255,255,255,0.2)}
 taskbar actions {@apply ml-auto float-right mr-1 border-r border-r-[#78797A];}
 taskbar action-center {@apply mr-2 block hover:bg-white/10;}
 taskbar clock {line-height:18px;font-size:12px; @apply hover:bg-white/10 text-[#E6E6E6] text-center;}
-taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 backdrop-blur-2xl z-[999999999] flex-row flex}
+taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 backdrop-blur-xl z-[999999999] flex-row flex}
 .slideIn {animation:0.22s slideIn forwards;}
 .slideOut {animation:0.22s slideOut forwards;}
 .reset {animation: none none none none none none !important; animation-play-state:paused !important;}
@@ -71,4 +73,18 @@ taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 backdrop-
     to {min-height:0svh;opacity:0; position:relative; bottom:9.5svh;left:0;}
 }
 javascript {display:none !important;}
-start-menu {@apply w-fit hidden bg-gray-950/70 backdrop-blur-2xl h-[10svh] px-4 py-2 pb-5;}
+start-menu {@apply w-fit hidden bg-gray-950/70 backdrop-blur-xl h-[10svh] px-4 py-2 pb-5;}
+taskbar item {@apply hover:bg-white/10 active:bg-white/5 active:duration-75 duration-200 w-[48px] h-[40px] inline-flex justify-center items-center align-middle p-[11px] aspect-square}
+taskbar item img {@apply aspect-square}
+notification icon {@apply mr-2 w-[16px] h-[16px] inline-flex bg-[#5F6368];background-image:url(webwin-logo-xs.png);background-size:cover;}
+@keyframes notifSlideIn {
+    from {position:relative;right:-360px;opacity:0;}
+    to {position:relative;right:0px;opacity:1;}
+}
+notification {animation:0.5s notifSlideIn; transition:opacity 0.25s; @apply z-[999] bg-[#292929]/80 backdrop-blur-md w-[364px] min-h-[132px] block py-5 px-4;}
+notification .notifrow {@apply inline-flex flex-row items-center align-middle pb-4 w-full;}
+notification author {@apply text-xs inline-flex;}
+notification .notifclosebtn {@apply text-xs text-[#9F9F9F] inline-block justify-end ml-auto float-right font-bold;}
+notification h1 {@apply font-semibold text-[16px] leading-5;}
+notification p {@apply text-[#A7A7A7] text-[16px] leading-5 mb-3;}
+notification footer {@apply text-[#A7A7A7] text-xs;}

@@ -36,3 +36,26 @@ function MessageBox(title = "Message",message) {
     
     `,"maxVisible":false,"minVisible":false})
 }
+function sendNotification(title, description) {
+    const n = document.createElement("notification");
+    n.innerHTML = `
+        <span class="notifrow">
+            <icon></icon>
+            <author >Webwin System</author>
+            <span class="notifclosebtn" onclick="dismissNotification(this.parentElement.parentElement)">✕</span>
+        </span>
+        <h1>${title}</h1>
+        <p>${description}</p>
+        <footer>${window.location.host}</footer>
+        <!-- please dont abuse this -->
+        <audio autoplay controls src="audio/notify.mp3" class="hidden"></audio>
+    `;
+    document.querySelector('.notificationContainer').appendChild(n);
+    setTimeout(() => {
+        dismissNotification(n);
+    }, 6000);
+}
+function dismissNotification(notification) {
+    notification.style.opacity = '0';
+    setTimeout(() => {notification.remove()},1000)
+}
