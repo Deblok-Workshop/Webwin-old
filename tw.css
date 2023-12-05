@@ -20,7 +20,7 @@ window input, window textarea {@apply resize-none border border-[#7A7A7A] bg-whi
 window content {@apply w-full h-[94%] block relative py-1;}
 window nav {@apply border-b border-white/20 h-[29px] flex items-center m-0;}
 window icon {@apply w-[28px] h-[28px] flex p-[6px] py-[7px];}
-* {color-scheme:dark; font-family:"Segoe UI", sans-serif;}
+* {color-scheme:dark; font-family:"Segoe UI","SegoeUI","Roboto", sans-serif;} /* If webfont.css is imported, the fallback Segoe UI font can be used. */
 .checked {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAMAAACecocUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAASUExUReLi4khISLi4uGtra/b29gAAALQ13yIAAAAGdFJOU///////ALO/pL8AAAAJcEhZcwAADsMAAA7DAcdvqGQAAAA1SURBVBhXbcw5EgAwCAJAUPn/l+ORTBqplgKgn9WgPYMe10XBmLUphBPD3GYZ1k/4cP+XdACBmQH2GM7PVAAAAABJRU5ErkJggg==);background-size:10px; }
 .dot {background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAALCAMAAACecocUAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAeUExURbq6ulVVVTg4OLy8vDMzM7u7u7m5uVRUVDc3NwAAACteRvUAAAAKdFJOU////////////wCyzCzPAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAANUlEQVQYV2XIAQoAIAhDUWdl7f4XzgYh1GfgQ2P12uDQJVs/JXKQIbvs33/IITPmmkn5ViY31SoDTdFQWT8AAAAASUVORK5CYII=);background-size:10px; }
 .marquee fill {animation:marquee 3s linear infinite;}
