@@ -21,6 +21,7 @@
     
     <search class="search-bar" contenteditable="true">Type here to search</search>
     <item onclick="edge()"><img src="icons/edge.png"></img></item>
+    <item onclick="ec()"><img src="icons/grass.png"></img></item>
     <actions class="flex flex-row">
       <clock><time class="time"></time><br><time class="date"></time></clock>
       <action-center></action-center>
@@ -66,17 +67,7 @@
  window_elements();
  createWindow({"title":"Window 1","content":"Hello World!"})
  MessageBox("Message","Hello <b>World</b>!")
- function edge() {
-
-  const isWindows = navigator.userAgent.includes('Windows');
-      if (isWindows) {
-        MessageBox("Microsoft Edge","A prompt has been shown on screen to open Microsoft Edge.&nbsp;")
-        document.location = 'microsoft-edge:';
-    } else {
-        sendNotification('Error','You don\'t seem to be running Windows.')
-    }
- }
 </script>
-
+<script src="programs.js"></script>
 </body>
 </html>

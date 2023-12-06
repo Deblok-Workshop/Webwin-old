@@ -34,7 +34,7 @@ function MessageBox(title = "Message",message) {
     </div>
     </div>
     
-    `,"maxVisible":false,"minVisible":false})
+    `,"maxVisible":false,"minVisible":false,"disableResize":true})
 }
 function sendNotification(title, description) {
     const n = document.createElement("notification");

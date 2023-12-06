@@ -84,7 +84,7 @@ function createWindow(meta) {
         const contentClass = typeof meta.contentClass === 'string' ? meta.contentClass : '';
         const maxVisible = meta.maxVisible ?? true;
         const minVisible = meta.minVisible ?? true;
-
+        const disableResize = meta.disableResize ?? false;
         // create the window
         const windowHTML = `
           <window>
@@ -122,6 +122,53 @@ function createWindow(meta) {
           document.querySelector('container').appendChild(windowElement);
           dragElement(windowElement);
           indexing(windowElement);
+if (!disableResize) {
+  let isResizing = false;
+
+  windowElement.addEventListener('mousedown', (event) => {
+    const rect = windowElement.getBoundingClientRect();
+  const isNearRight = event.clientX > rect.right - 8 && event.clientX < rect.right + 8;
+  const isNearBottom = event.clientY > rect.bottom - 8 && event.clientY < rect.bottom + 8;
+
+  if (isNearRight || isNearBottom) {
+    event.preventDefault(); // Disable text selection during resizing
+    isResizing = true;
+
+    const startX = event.clientX;
+    const startY = event.clientY;
+    const startWidth = parseInt(document.defaultView.getComputedStyle(windowElement).width, 10);
+    const startHeight = parseInt(document.defaultView.getComputedStyle(windowElement).height, 10);
+
+    function handleMouseMove(e) {
+      if (isResizing) {
+
+        const dx = e.clientX - startX;
+        const dy = e.clientY - startY;
+if (startWidth + dx >= window.innerWidth || startHeight + dy >= window.innerHeight) {
+         return
+        }
+        windowElement.style.width = startWidth + dx + 'px';
+        windowElement.style.height = startHeight + dy + 'px';
+        
+      }
+    }
+
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseup', () => {isResizing = false;});
+  }
+  });
+  windowElement.addEventListener('mousemove', (event) => {
+    const rect = windowElement.getBoundingClientRect();
+    const isNearBottomRight = event.clientX > rect.right - 32 && event.clientY > rect.bottom - 32;
+
+    if (isNearBottomRight) {
+      windowElement.style.cursor = 'se-resize';
+    } else {
+      windowElement.style.cursor = 'default';
+    }
+  });
+}
+
           setTimeout(() => {
             const jsEle = windowElement.querySelectorAll('javascript');
           jsEle.forEach(scrEle => {
@@ -132,7 +179,7 @@ function createWindow(meta) {
             
           });
           },300)
-          setTimeout(() => {windowoffset = 0;},5000)
+          setTimeout(() => {windowoffset = 32;},5000)
         }, windowoffset * 5);
 
         return classname;
@@ -145,8 +192,8 @@ function createWindow(meta) {
       return 1;
     }
   } else {
-    console.error('Invalid metadata format. Expected [object Object].');
-    return 1; // :trolling:
+    console.error('Invalid metadata format. Expected [object Object].');// :trolling:
+    return 1; 
   }
 }
 
