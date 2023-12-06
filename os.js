@@ -57,5 +57,9 @@ function sendNotification(title, description) {
 }
 function dismissNotification(notification) {
     notification.style.opacity = '0';
-    setTimeout(() => {notification.remove()},1000)
+    setTimeout(() => {notification.remove()},500)
+}
+function addToTaskbar(onclick, icon) {
+    const taskbarItemsWrapper = document.querySelector('.taskbarItemsWrapper');
+    taskbarItemsWrapper.innerHTML += `<item onclick="${onclick}"><img src="${icon}"></img></item>`;
 }
