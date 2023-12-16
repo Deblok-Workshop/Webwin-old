@@ -16,7 +16,35 @@
     </container>
   <taskbar>
     <button class="meta " onclick="toggleStartMenu()">
-      <start-menu class="slideOut">Not implemented.</start-menu>
+      <start-menu class="slideOut justify-start flex-row flex pt-3">
+        <sidebar class="h-[100%] w-[53px]">
+          <icon class="icon_menu w-full block h-[32px]"></icon>
+        </sidebar>
+        <div class="flex-col w-full">
+        <itemcat class="text-xs w-full h-[36px] flex flex-row align-middle ml-0 pl-1 justify-start items-center float-left mr-auto">
+          LAUNCHERS
+          </itemcat>
+        <item onclick="edge()" class="text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+          <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/edge.png')"></icon>
+          Microsoft Edge
+        </item>
+        <item onclick="rh()" class=" text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+          <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/wwdll_rh.png')"></icon>
+          Google Chrome (RH)
+        </item>
+        <item onclick="db()" class=" text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+          <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/wwdll_db.png')"></icon>
+          Google Chrome (Deblok)
+        </item>
+        <itemcat class="text-xs w-full h-[36px] flex flex-row align-middle ml-0 pl-1 justify-start  items-center float-left mr-auto">
+          ACTIVITIES
+        </itemcat>
+        <item onclick="ec()" class="text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+          <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/grass.png')"></icon>
+          Eagler
+        </item>
+      </div>
+      </start-menu>
     </button>
     
     <search class="search-bar" contenteditable="true">Type here to search</search>

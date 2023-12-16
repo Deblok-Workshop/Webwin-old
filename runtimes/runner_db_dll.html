@@ -31,12 +31,12 @@ const dfl = [
          useDefaultList = true
      } else {
          try {
-             let dynamicLink = checkUrlAlive("https://r." + window.location.hostname);
+             let dynamicLink = checkUrlAlive("https://sd." + window.location.hostname);
              if (!dynamicLink) {
                  console.warn("This link does not use a dynamic config. Using default list.");
                  useDefaultList = true
              } else {
-                 chosen = "https://r." + window.location.hostname
+                 chosen = "https://sd." + window.location.hostname
              }
          } catch {
              console.warn("This link does not use a dynamic config. Using default list.");
@@ -49,7 +49,7 @@ const dfl = [
          console.log(cua);
          if (cua) {
              chosen = link;
-             window.open(chosen,"_blank","Chrome will open a window no matter what is here.")
+             window.open(chosen,"_blank","width=540,height=320")
              document.body.innerHTML = `<h1 style="font-family:sans-serif;">Check for a popup, and disable your popup blocker.</h1>
 <style>* {color-scheme:dark;}</style>`;
              return;

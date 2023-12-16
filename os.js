@@ -17,7 +17,7 @@ function toggleStartMenu() {
     startmenu = document.querySelector('start-menu');
     startmenu.classList.add('reset');
     startmenu.classList.remove('hidden'); // just incase if it exists
-    startmenu.style.display = 'block'; 
+    startmenu.style.display = 'flex'; 
     setTimeout(() => {startmenu.classList.remove('reset');},100)
     setTimeout(() => {
         startmenu.classList.toggle('slideOut');

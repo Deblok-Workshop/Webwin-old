@@ -73,7 +73,8 @@ taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 backdrop-
     to {min-height:0svh;opacity:0; position:relative; bottom:9.5svh;left:0;}
 }
 javascript {display:none !important;}
-start-menu {@apply hidden bg-gray-950/70  h-[10svh] w-[320px] px-4 py-2 pb-5;backdrop-filter: blur(25px) brightness(0.6) !important;--tw-background-blur: ;}
+.icon_menu {background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAMAAADeWG8gAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURf///wAAAFXC034AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABlJREFUKFNjYMQAxAoxoAGiNWKAwWkWIyMAfLAA3x94/RYAAAAASUVORK5CYII=);background-repeat:no-repeat;background-position:center;background-size:20px;} 
+start-menu {cursor:default !important; @apply hidden bg-gray-950/70  h-[10svh] w-[320px] px-4 pl-0;backdrop-filter: blur(8px) brightness(0.6) !important;--tw-background-blur: 0 !important;}
 taskbar item {@apply hover:bg-white/10 active:bg-white/5 active:duration-75 duration-200 w-[48px] h-[40px] inline-flex justify-center items-center align-middle p-[11px] aspect-square}
 taskbar item img {@apply aspect-square}
 notification icon {@apply mr-2 w-[16px] h-[16px] inline-flex bg-[#5F6368];background-image:url(webwin-logo-xs.png);background-size:cover;}
@@ -88,3 +89,5 @@ notification .notifclosebtn {@apply text-xs text-[#9F9F9F] inline-block justify-
 notification h1 {@apply font-semibold text-[16px] leading-5;}
 notification p {@apply text-[#A7A7A7] text-[16px] leading-5 mb-3;}
 notification footer {@apply text-[#A7A7A7] text-xs;}
+start-menu item {padding-left:3px !important;}
+.startmenuico {background-size:24px;background-repeat:none;background-position:center;width:24px;height:24px;;}
