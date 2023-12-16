@@ -13,3 +13,6 @@ function ec() {
 function rh() {
     createWindow({"title":"Google Chrome","content":"<iframe src='runtimes/runner_rh_dll.html' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/chrome.png"})
 }
+function db() {
+    createWindow({"title":"Google Chrome","content":"<iframe src='runtimes/runner_db_dll.html' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/chrome.png"})
+}
