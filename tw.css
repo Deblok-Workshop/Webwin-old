@@ -64,16 +64,16 @@ taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 backdrop-
     0% {min-height:0svh;opacity:0;position:relative; bottom:10.5svh;left:0;}
     0.999% {min-height:0svh;opacity:0;position:relative; bottom:10.5svh;left:0;}
     1% {min-height:14svh;opacity:0;position:relative; bottom:10.5svh;left:0;}
-    to {min-height:20svh;opacity:1;position:relative; bottom:20.5svh;left:0;}
+    to {min-height:50svh;opacity:1;position:relative; bottom:50.5svh;left:0;}
 }
 @keyframes slideOut {
-    from {min-height:20svh;opacity:1; position:relative; bottom:20.5svh; left:0;}
+    from {min-height:50svh;opacity:1; position:relative; bottom:50.5svh; left:0;}
     66% {min-height:9svh;opacity:0; position:relative; bottom:9svh;left:0;}
     99% {min-height:9svh;opacity:0; position:relative; bottom:9svh;left:0;}
     to {min-height:0svh;opacity:0; position:relative; bottom:9.5svh;left:0;}
 }
 javascript {display:none !important;}
-start-menu {@apply w-fit hidden bg-gray-950/70 backdrop-blur-xl h-[10svh] px-4 py-2 pb-5;}
+start-menu {@apply hidden bg-gray-950/70  h-[10svh] w-[320px] px-4 py-2 pb-5;backdrop-filter: blur(25px) brightness(0.6) !important;--tw-background-blur: ;}
 taskbar item {@apply hover:bg-white/10 active:bg-white/5 active:duration-75 duration-200 w-[48px] h-[40px] inline-flex justify-center items-center align-middle p-[11px] aspect-square}
 taskbar item img {@apply aspect-square}
 notification icon {@apply mr-2 w-[16px] h-[16px] inline-flex bg-[#5F6368];background-image:url(webwin-logo-xs.png);background-size:cover;}

@@ -10,3 +10,6 @@ function edge() {
 function ec() {
     createWindow({"title":"Eagler","content":"<iframe src='runtimes/runner_ec_multverchooser.html' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/grass.png"})
 }
+function rh() {
+    createWindow({"title":"Google Chrome","content":"<iframe src='runtimes/runner_rh_dll.html' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/chrome.png"})
+}

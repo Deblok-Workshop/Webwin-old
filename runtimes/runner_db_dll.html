@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebwinDLL</title>
+</head>
+<body>
+    <script>
+const dfl = [
+'https://s-deblok.rare1k.dev',
+'https://potato.basketcraft.net',
+'https://ramen.noodles.gq',
+'https://s-deblok.rare1k.space'
+];
+ let chosen = "";
+ let useDefaultList = false;
+ async function checkUrlAlive(link) {
+     try {
+         const response = await fetch(link+"/api/__healthcheck", {
+             mode: 'no-cors'
+         });
+         console.log(response.status);
+         return true
+     } catch (error) {
+         return false
+     }
+ }(async () => {
+     if (window.location.hostname.includes("127.0.0.1") || window.location.hostname.includes("localhost") || window.location.hostname == '' || window.location.hostname == undefined) {
+         console.warn("You are running this file locally. Using default list.");
+         useDefaultList = true
+     } else {
+         try {
+             let dynamicLink = checkUrlAlive("https://r." + window.location.hostname);
+             if (!dynamicLink) {
+                 console.warn("This link does not use a dynamic config. Using default list.");
+                 useDefaultList = true
+             } else {
+                 chosen = "https://r." + window.location.hostname
+             }
+         } catch {
+             console.warn("This link does not use a dynamic config. Using default list.");
+             useDefaultList = true
+         }
+     }
+     for (const link of dfl) {
+         console.log(link);
+         let cua = await checkUrlAlive(link);
+         console.log(cua);
+         if (cua) {
+             chosen = link;
+             window.open(chosen,"_blank","Chrome will open a window no matter what is here.")
+             document.body.innerHTML = `<h1 style="font-family:sans-serif;">Check for a popup, and disable your popup blocker.</h1>
+<style>* {color-scheme:dark;}</style>`;
+             return;
+         }
+     }
+     document.write(`<h1 style="font-family:sans-serif;">WebwinDLL could not find a link.</h1>
+<style>* {color-scheme:dark;}</style>`)
+ })();
+    </script><h1 style="font-family:sans-serif;">WebwinDLL is choosing a link for you. Be patient.</h1><style>* {color-scheme:dark;}</style>
+</body>
+</html>
