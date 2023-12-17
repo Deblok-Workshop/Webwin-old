@@ -21,36 +21,44 @@
           <icon class="icon_menu w-full block h-[32px]"></icon>
         </sidebar>
         <div class="flex-col w-full">
-        <itemcat class="text-xs w-full h-[36px] flex flex-row align-middle ml-0 pl-1 justify-start items-center float-left mr-auto">
+        <itemcat>
           LAUNCHERS
           </itemcat>
-        <item onclick="edge()" class="text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+        <item onclick="edge()">
           <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/edge.png')"></icon>
           Microsoft Edge
         </item>
-        <item onclick="rh()" class=" text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+        <item onclick="rh()" >
           <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/wwdll_rh.png')"></icon>
           Google Chrome (RH)
         </item>
-        <item onclick="db()" class=" text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+        <item onclick="db()" >
           <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/wwdll_db.png')"></icon>
           Google Chrome (Deblok)
         </item>
-        <itemcat class="text-xs w-full h-[36px] flex flex-row align-middle ml-0 pl-1 justify-start  items-center float-left mr-auto">
+        <itemcat>
           ACTIVITIES
         </itemcat>
-        <item onclick="ec()" class="text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+        <item onclick="ec()">
           <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/grass.png')"></icon>
           Eagler
         </item>
-        <item onclick="tw()" class="text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+        <item onclick="tw()">
           <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/tw.png')"></icon>
           TurboWarp Editor
         </item>
-        <item onclick="twc()" class="text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto">
+        <item onclick="twc()">
           <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/tw.png')"></icon>
           TurboWarp Client
         </item>
+        <itemcat>
+          UTILITIES
+        </itemcat>
+        <item onclick="calc()">
+          <icon class="mr-2 ml-0 startmenuico" style="background-image:url('icons/calc.png')"></icon>
+          Calculator
+        </item>
+        <div class="break ">&nbsp;</div>
       </div>
       </start-menu>
     </button>
@@ -68,7 +76,7 @@
       <action-center></action-center>
     </actions>
   </taskbar>
-  <div class="overflow-x-clip notificationContainer absolute bottom-11 right-1 float-right ml-auto h-[80svh] min-h-[80svh] min-w-[120px] flex flex-col-reverse">
+  <div class="notificationContainer">
 
   </div>
   

@@ -53,10 +53,12 @@ taskbar action-center {
     background-position:center;
 } 
 taskbar action-center:active {background-color:rgba(255,255,255,0.2)}
+start-menu.slideIn + taskbar {backdrop-filter:none !important; background:red !important}
+.removeFilters {backdrop-filter:none !important;}
 taskbar actions {@apply ml-auto float-right mr-1 border-r border-r-[#78797A];}
 taskbar action-center {@apply mr-2 block hover:bg-white/10;}
 taskbar clock {line-height:18px;font-size:12px; @apply hover:bg-white/10 text-[#E6E6E6] text-center;}
-taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 z-[999999999] flex-row flex;backdrop-filter:blur(24px);}
+taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-gray-900/70 z-[999999999] flex-row flex;backdrop-filter:blur(24px);}
 .slideIn {animation:0.22s slideIn forwards;}
 .slideOut {animation:0.22s slideOut forwards;}
 .reset {animation: none none none none none none !important; animation-play-state:paused !important;}
@@ -73,9 +75,9 @@ taskbar {@apply fixed bottom-0 w-[100svw]  left-0 h-[40px] bg-black/70 z-[999999
     to {min-height:0px;opacity:0; position:absolute; bottom:0px;left:0;max-height:0px;}
 }
 javascript {display:none !important;}
-start-menu div {max-height:60svh; overflow-y:auto;}
+start-menu div {max-height:76svh; overflow-y:auto;}
 .icon_menu {background-image:url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABIAAAAPCAMAAADeWG8gAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAGUExURf///wAAAFXC034AAAACdFJOU/8A5bcwSgAAAAlwSFlzAAAOwwAADsMBx2+oZAAAABlJREFUKFNjYMQAxAoxoAGiNWKAwWkWIyMAfLAA3x94/RYAAAAASUVORK5CYII=);background-repeat:no-repeat;background-position:center;background-size:20px;} 
-start-menu {cursor:default !important; @apply hidden bg-gray-950/70  min-h-[10svh] w-[320px] px-4 pl-0;backdrop-filter: blur(16px) brightness(0.6) !important;--tw-background-blur: 0 !important;padding-bottom:12px;}
+start-menu {cursor:default !important; @apply hidden bg-gray-900/80  min-h-[10svh] w-[320px] px-4 pl-0;backdrop-filter: blur(24px) brightness(0.6) !important;--tw-background-blur: 0 !important;padding-bottom:12px;}
 taskbar item {@apply hover:bg-white/10 active:bg-white/5 active:duration-75 duration-200 w-[48px] h-[40px] inline-flex justify-center items-center align-middle p-[11px] aspect-square}
 taskbar item img {@apply aspect-square}
 notification icon {@apply mr-2 w-[16px] h-[16px] inline-flex bg-[#5F6368];background-image:url(webwin-logo-xs.png);background-size:cover;}
@@ -92,3 +94,7 @@ notification p {@apply text-[#A7A7A7] text-[16px] leading-5 mb-3;}
 notification footer {@apply text-[#A7A7A7] text-xs;}
 start-menu item {padding-left:3px !important;}
 .startmenuico {background-size:24px;background-repeat:none;background-position:center;width:24px;height:24px;;}
+itemcat {@apply text-xs w-full h-[36px] flex flex-row align-middle ml-0 pl-1 justify-start items-center float-left mr-auto;}
+start-menu item {@apply text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto;}
+.break {@apply h-[60px] w-full block;}
+.notificationContainer {@apply overflow-x-clip absolute bottom-11 right-1 float-right ml-auto h-[80svh] min-h-[80svh] min-w-[120px] flex flex-col-reverse;}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="calcbase">
+        <input type="number" class="eval" contenteditable="true">
+        </input>
+      <div class="btns">
+        <button class="tr mc">MC</button>
+        <button class="tr mr">MR</button>
+        <button class="tr ms">MS</button>
+        <button class="tr mplus">M+</button>
+        <button class="tr mminus">M-</button>
+        <button class="opt bk"><-</button>
+        <button class="opt ce">CE</button>
+        <button class="opt c">C</button>
+          <button class="opt plusunder">±</button>
+          <button class="opt sqrt">√</button>
+          <button class="nums seven">7</button>
+          <button class="nums eight">8</button>
+          <button class="nums nine">9</button>
+          <button class="opt divide">/</button>
+          <button class="opt percent">%</button>
+          <button class="nums four">4</button>
+          <button class="nums five">5</button>
+          <button class="nums six">6</button>
+          <button class="opt times">*</button>
+          <button class="opt odx">1/<i>x</i></button>
+          <button class="nums one">1</button>
+          <button class="nums two">2</button>
+          <button class="nums three">3</button>
+          <button class="opt minus">-</button>
+          <button class="nums zero">0</button>
+          <button class="nums decimal">.</button>
+          <button class="opt plus">+</button>
+      </div>
+      </div>
+      <style>
+        * {font-family:"Segoe UI",sans-serif;}
+      .calcbase {
+        display:block;
+        width:214px;
+        height:316px;
+        border:1px solid black;background:#ECF3FB;
+      }
+      .eval {width:186px;height:46px;border:1px inset #8E9CAD;display:block;background:#E8F0FF;margin-top:10px;margin-left:auto;margin-right:auto;text-align:right;font-family:monospace;font-size:24px;border-radius:2px;margin-bottom:5px;}
+      input::-webkit-outer-spin-button,
+      input::-webkit-inner-spin-button {
+          -webkit-appearance: none;
+          margin: 0; 
+      }
+      
+      input[type=number] {
+          -moz-appearance:textfield; /* Firefox */
+      }
+      .btns {margin-left:11px;margin-right:11px;}
+      button {width:34px;height:27px;border-radius:2px;border:1px solid #8797AA;transition:all 0.4s;color:#1E395B;margin-bottom:5px;}
+      button:hover {border-color:#FFDB00;background: linear-gradient(0deg, #FFDD78 49%, rgba(255,234,210,1) 51%);transition:all 0.4s;}
+      .tr {background:#D4E0ED;}
+      .opt {background:#EAF1F8;}
+      .nums {background:#F3F8FC;}
+      .zero {width:72px;}
+      </style>
+</body>
+</html>

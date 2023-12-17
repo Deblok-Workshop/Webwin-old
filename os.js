@@ -15,6 +15,7 @@ document.addEventListener('DOMContentLoaded', () => {
 })
 function toggleStartMenu() {
     startmenu = document.querySelector('start-menu');
+    taskbar = document.querySelector('taskbar');
     startmenu.classList.add('reset');
     startmenu.classList.remove('hidden'); // just incase if it exists
     startmenu.style.display = 'flex'; 
@@ -22,6 +23,7 @@ function toggleStartMenu() {
     setTimeout(() => {
         startmenu.classList.toggle('slideOut');
         startmenu.classList.toggle('slideIn');
+        taskbar.classList.toggle('removeFilters');
     },200)
 }
 function MessageBox(title = "Message",message) {
