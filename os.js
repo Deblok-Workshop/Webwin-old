@@ -63,5 +63,5 @@ function dismissNotification(notification) {
 }
 function addToTaskbar(onclick, icon) {
     const taskbarItemsWrapper = document.querySelector('.taskbarItemsWrapper');
-    taskbarItemsWrapper.innerHTML += `<item onclick="${onclick}"><img src="${icon}"></img></item>`;
+    taskbarItemsWrapper.innerHTML += `<item onclick="${onclick}"><img src="${icon}" loading="lazy"></img></item>`;
 }

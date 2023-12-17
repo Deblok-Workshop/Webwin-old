@@ -89,7 +89,7 @@ function createWindow(meta) {
         const windowHTML = `
           <window>
             <nav>
-              ${icon ? `<icon><img src="${icon}"></icon>` : '<icon></icon>'}
+              ${icon ? `<icon><img src="${icon}" loading="lazy"></icon>` : '<icon></icon>'}
               <name>${meta.title}</name>
               <actions>
                 ${minVisible ? `<div class="minbtn">⎯</div>` : ''}

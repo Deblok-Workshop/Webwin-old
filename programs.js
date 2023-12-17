@@ -40,6 +40,13 @@ function pa() {
 function sm() {
     createWindow({"title":"SM64-JS","content":"<iframe src='https://s64.pages.dev' style='width:99%;height:99%;min-width:480px;min-height:360px;top:0;left:0;'></iframe>"})
 }
+function wr() {
+    createWindow({"title":"RetroArch","content":"<iframe src='https://wretro.pages.dev' style='width:99%;height:99%;min-width:128px;min-height:128px;top:0;left:0;'></iframe>"})
+}
+function ruf() {
+    createWindow({"title":"Ruffle","content":"<iframe src='https://ruf.pages.dev' style='width:99%;height:99%;min-width:128px;min-height:128px;top:0;left:0;'></iframe>","icon":"icons/ruf.png"})
+}
+
 
 
 
