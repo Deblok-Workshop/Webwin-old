@@ -25,4 +25,17 @@ function twc() {
 function calc() {
     createWindow({"title":"Calculator","content":"<iframe src='components/calc.html' style='width:99%;height:99%;min-width:300px;min-height:439px;top:0;left:0;'></iframe>","icon":"icons/calc.png","disableResize":true})
 }
+function pb() {
+    createWindow({"title":"3D Pinball for Windows - Space Cadet","content":"<iframe src='runtimes/pinball/space-cadet.html' style='width:99%;height:99%;min-width:320px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/pb.png"})
+}
+function np() {
+    createWindow({"title":"Notepad","content":"<iframe src='runtimes/notepad/index.html' style='width:99%;height:99%;min-width:320px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/notes.png"})
+}
+function ms() {
+    createWindow({"title":"Minesweeper","content":"<iframe src='runtimes/minesweeper/index.html' style='width:99%;height:99%;min-width:320px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/ms.png"})
+}
+function pa() {
+    createWindow({"title":"Paint","content":"<iframe src='https://jspaint.app' style='width:99%;height:99%;min-width:320px;min-height:240px;top:0;left:0;'></iframe>","icon":"icons/paint.png"})
+}
+
 
