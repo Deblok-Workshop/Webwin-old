@@ -10,9 +10,9 @@
   <container >
 <a href="javascript:" onclick="window_elements()">Elements</a>
 <a href="javascript:" onclick="closeWindows()">Close All</a>
-<desktop-icon class="px-2 duration-75 border border-transparent text-xs  hover:border-[#585F66]/95 hover:bg-[#202A33]/80 min-h-[50px] max-h-[100px] max-w-[70px] flex flex-col justify-center align-middle items-center">
-  <img style="width:32px;height:32px;" src="icons/chrome.png">
-<span class="max-w-[70px] max-h-[100px] overflow-hidden" style="line-break: anywhere;">Wiresharkdgdfgdfgdfgdfgdfgdf</span>
+<desktop-icon ondblclick="gh()" class="cursor-pointer px-2 duration-75 border border-transparent text-xs  hover:border-[#585F66]/95 hover:bg-[#202A33]/80 min-h-[50px] max-h-[100px] max-w-[70px] flex flex-col justify-center align-middle items-center">
+  <img style="width:32px;height:32px;" src="icons/gh.ico" loading="lazy">
+<span class="max-w-[70px] max-h-[100px] overflow-hidden" style="line-break: anywhere;">GitHub</span>
 </desktop-icon>
     </container>
     
@@ -110,7 +110,9 @@
   <div class="notificationContainer">
 
   </div>
+  <script src="winman.js"></script>
   <link rel="stylesheet" href="app.css">
+  <script src="os.js"></script>
 <script>
   function window_elements() {
     createWindow({"title":"Elements","content":`
@@ -151,7 +153,5 @@
 <script async src="programs.js"></script>
 <link rel="stylesheet" href="webfont.css">
 
-<script src="winman.js"></script>
-<script async src="os.js"></script>
 </body>
 </html>
