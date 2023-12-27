@@ -9,7 +9,7 @@ Webwin is still a work in progress as a lot of things still need to be done, but
 * Pixel-perfect measurements
 * Many built-in activities (includes pinball)
 * WebwinDLLs™ (dynamically choose & load links so you can access it on your filter)
-* Fast & Lightweight: sub-two-second second load time & 300kb without runtimes (activities), 8.7mb with.
+* Fast & Lightweight: sub-two-second load time & 300kb size without runtimes (activities), 8.7mb with.
 * Developer-friendly experience.
 Dead simple to create a window.
 ```javascript
