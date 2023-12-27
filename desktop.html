@@ -4,12 +4,9 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="webfont.css">
-  <link rel="stylesheet" href="app.css">
-  <script src="winman.js"></script>
-  <script src="os.js"></script>
 </head>
 <body class="bg-slate-700 mx-2 my-1">
+  
   <container >
 <a href="javascript:" onclick="window_elements()">Elements</a>
 <a href="javascript:" onclick="closeWindows()">Close All</a>
@@ -18,6 +15,7 @@
 <span class="max-w-[70px] max-h-[100px] overflow-hidden" style="line-break: anywhere;">Wiresharkdgdfgdfgdfgdfgdfgdf</span>
 </desktop-icon>
     </container>
+    
   <taskbar>
     <button class="meta " onclick="toggleStartMenu()">
       <start-menu class="slideOut justify-start flex-row flex pt-3">
@@ -112,7 +110,7 @@
   <div class="notificationContainer">
 
   </div>
-  
+  <link rel="stylesheet" href="app.css">
 <script>
   function window_elements() {
     createWindow({"title":"Elements","content":`
@@ -150,6 +148,10 @@
  createWindow({"title":"Window 1","content":"Hello World!"})
  MessageBox("Message","Hello <b>World</b>!")
 </script>
-<script src="programs.js"></script>
+<script async src="programs.js"></script>
+<link rel="stylesheet" href="webfont.css">
+
+<script src="winman.js"></script>
+<script async src="os.js"></script>
 </body>
 </html>
