@@ -98,3 +98,4 @@ itemcat {@apply text-xs w-full h-[36px] flex flex-row align-middle ml-0 pl-1 jus
 start-menu item {@apply text-sm w-full h-[36px] hover:bg-gray-400/20 duration-75 flex flex-row align-middle ml-0 pl-1 justify-start float-left mr-auto;}
 .break {@apply h-[60px] w-full block;}
 .notificationContainer {@apply overflow-x-clip absolute bottom-11 right-1 float-right ml-auto h-[80svh] min-h-[80svh] min-w-[120px] flex flex-col-reverse;}
+.desktop-icon span {text-shadow:3px 3px 3px black;}
