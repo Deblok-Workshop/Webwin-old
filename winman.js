@@ -85,9 +85,10 @@ function createWindow(meta) {
         const maxVisible = meta.maxVisible ?? true;
         const minVisible = meta.minVisible ?? true;
         const disableResize = meta.disableResize ?? false;
+        const windowStyles = meta.windowStyles ?? "";
         // create the window
         const windowHTML = `
-          <window>
+          <window style="${windowStyles}">
             <nav>
               ${icon ? `<icon><img src="${icon}" loading="lazy"></icon>` : '<icon></icon>'}
               <name>${meta.title}</name>
