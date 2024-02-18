@@ -1,0 +1,20 @@
+{
+  "name": "webwin",
+  "module": "webserver/index.ts",
+  "type": "module",
+  "devDependencies": {
+    "bun-types": "^1.0"
+  },
+  "dependencies": {
+    "@elysiajs/static": "^0.8.1",
+    "elysia": "^0.8.17",
+    "prettier": "^3.2.5",
+    "tailwindcss": "^3.4.1"
+  },
+  "scripts": {
+    "preinstall": "npx only-allow bun",
+    "build": "tailwindcss -i tw.css -o app.css -m -w",
+    "start": "bun webserver/index.ts",
+    "format": "prettier --write ."
+  }
+}

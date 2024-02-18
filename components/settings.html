@@ -1,43 +1,67 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="../app.css">
+    <link rel="stylesheet" href="../app.css" />
     <style>
-        * {font-family: "Segoe UI", sans-serif;color-scheme:dark;}
+      * {
+        font-family: "Segoe UI", sans-serif;
+        color-scheme: dark;
+      }
     </style>
-</head>
-<body>
-    <br>
+  </head>
+  <body>
+    <br />
     <container>
-    <h1 class="text-center text-2xl font-light">Webwin Settings</h1>
-    <br>
-    <div class="flex justify-center">
-        <input type="text" placeholder="Find a setting" maxlength="64" class="flex justify-center px-3 py-2 h-8 text-sm bg-white w-80 text-black border- hover:border-2 hover:border-[#0078D7]">
-    </div>
-    <br>
-    <grid class="mx-8">
-        <button class="mr-4 text-left w-[250px] h-[85px] hover:bg-[#202020] duration-200 border border-transparent hover:border-[#2F2F2F]">
-           <div class="flex flex-row px-3 align-top items-start">
-            <img src="../icons/settings/personalization.png" loading="lazy" class="mr-5">
+      <h1 class="text-center text-2xl font-light">Webwin Settings</h1>
+      <br />
+      <div class="flex justify-center">
+        <input
+          type="text"
+          placeholder="Find a setting"
+          maxlength="64"
+          class="flex justify-center px-3 py-2 h-8 text-sm bg-white w-80 text-black border- hover:border-2 hover:border-[#0078D7]"
+        />
+      </div>
+      <br />
+      <grid class="mx-8">
+        <button
+          class="mr-4 text-left w-[250px] h-[85px] hover:bg-[#202020] duration-200 border border-transparent hover:border-[#2F2F2F]"
+        >
+          <div class="flex flex-row px-3 align-top items-start">
+            <img
+              src="../icons/settings/personalization.png"
+              loading="lazy"
+              class="mr-5"
+            />
             <div class="flex flex-col">
-            <h class="text-[16px]">Personalization</h>
-            <p class="text-[#A4A4A4] text-[12.5px]">Background, lock screen, colors</p>
+              <h class="text-[16px]">Personalization</h>
+              <p class="text-[#A4A4A4] text-[12.5px]">
+                Background, lock screen, colors
+              </p>
             </div>
-           </div>
+          </div>
         </button>
-        <button class="mr-4 text-left w-[250px] h-[85px] hover:bg-[#202020] duration-200 border border-transparent hover:border-[#2F2F2F]">
-            <div class="flex flex-row px-3 align-top items-start">
-             <img src="../icons/settings/privacy.png" loading="lazy" class="mr-5">
-             <div class="flex flex-col">
-             <h class="text-[16px]">Privacy</h>
-             <p class="text-[#A4A4A4] text-[12.5px]">Cloaking, emergency, tracking</p>
-             </div>
+        <button
+          class="mr-4 text-left w-[250px] h-[85px] hover:bg-[#202020] duration-200 border border-transparent hover:border-[#2F2F2F]"
+        >
+          <div class="flex flex-row px-3 align-top items-start">
+            <img
+              src="../icons/settings/privacy.png"
+              loading="lazy"
+              class="mr-5"
+            />
+            <div class="flex flex-col">
+              <h class="text-[16px]">Privacy</h>
+              <p class="text-[#A4A4A4] text-[12.5px]">
+                Cloaking, emergency, tracking
+              </p>
             </div>
-         </button>
-    </grid>
-</container>
-</body>
+          </div>
+        </button>
+      </grid>
+    </container>
+  </body>
 </html>

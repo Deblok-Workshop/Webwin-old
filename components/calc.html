@@ -1,318 +1,435 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     <main class="container">
-        <div id="calculator">
-          <header class="top-part">
-            <div class="type">
-              <div class="column menu">
-                <div class="calculator-menu button-top" role="button">
-                  <img class="icon icons8-Menu" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAATElEQVRYR+3TsQ0AMAgDQdh/aFIj0ZKn+AyQOCc7Az4Jvx8GUOCkQC0vo316EsADLAP06092QAEF8BniAeyAAgrgM8QD2AEFFPgq8ACF3gYho2IK1QAAAABJRU5ErkJggg==">
-                </div>
-                <label class="calculator-chosen">STANDARD</label>
+      <div id="calculator">
+        <header class="top-part">
+          <div class="type">
+            <div class="column menu">
+              <div class="calculator-menu button-top" role="button">
+                <img
+                  class="icon icons8-Menu"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAATElEQVRYR+3TsQ0AMAgDQdh/aFIj0ZKn+AyQOCc7Az4Jvx8GUOCkQC0vo316EsADLAP06092QAEF8BniAeyAAgrgM8QD2AEFFPgq8ACF3gYho2IK1QAAAABJRU5ErkJggg=="
+                />
               </div>
-              <div class="column history">
-                <div class="button-top" role="button">
-                  <img class="icon icons8-Past" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB4klEQVRYR+2W4U3DQAyFXyeAEWACygZsAEwAbFA2gAmACYAJgA1ggsIEMAJMAPqQXSXpxXfXRO2fWqoa5S7287PvnSfasE02HF9bALUM7Eo6k3RipTuy/3dJX5JeJb3Yc1F1SwEQ+EbSeZFX6UHSdQmQFIBfC+JrZHsvCRAYGRLg2zLm3dR+MAJDGOsXkp4j0DkAZExw7M0YgOrI9iTdSjq2TYAAcNIiAKeSnuwr6LxKeOiy1dwys7LxDl9JJiIAUAjtfcFxHAFg3UHga9/K0sojAuC0e6enKMwB4BsypxyPqSbOAegG7e4vAUBPfJojWGj10DoANFm4tAZdJFaqA31NXMIA3/pp4gi7iP37XBcAdGIuCcU8bGYzFoAUQ0X9khOijOYsjuGoAKDpwKjieQzzEnyYZIdN6Oc2lNBKVFVN6OqVFI7KwL7dkyo6hqFwrACgWoiIwe3FtQpyLpIhVi3FBAM1DbgjaYm2CjRezh/zyaXUskgHUCy/jnF0VxGYrStfx804zYEEKmGjZCBhfHPJrR5IuoniiJ6gHN4fDJ+cadcJzjnawdXtcyO081w9kqWYpieYiHzey1WDI0wJlmpe0wN9QGCETAFF1hhs+FhOxrkyhUqYy27U9aG34WAwWwB/XytsITVxIuMAAAAASUVORK5CYII=">
+              <label class="calculator-chosen">STANDARD</label>
+            </div>
+            <div class="column history">
+              <div class="button-top" role="button">
+                <img
+                  class="icon icons8-Past"
+                  src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB4klEQVRYR+2W4U3DQAyFXyeAEWACygZsAEwAbFA2gAmACYAJgA1ggsIEMAJMAPqQXSXpxXfXRO2fWqoa5S7287PvnSfasE02HF9bALUM7Eo6k3RipTuy/3dJX5JeJb3Yc1F1SwEQ+EbSeZFX6UHSdQmQFIBfC+JrZHsvCRAYGRLg2zLm3dR+MAJDGOsXkp4j0DkAZExw7M0YgOrI9iTdSjq2TYAAcNIiAKeSnuwr6LxKeOiy1dwys7LxDl9JJiIAUAjtfcFxHAFg3UHga9/K0sojAuC0e6enKMwB4BsypxyPqSbOAegG7e4vAUBPfJojWGj10DoANFm4tAZdJFaqA31NXMIA3/pp4gi7iP37XBcAdGIuCcU8bGYzFoAUQ0X9khOijOYsjuGoAKDpwKjieQzzEnyYZIdN6Oc2lNBKVFVN6OqVFI7KwL7dkyo6hqFwrACgWoiIwe3FtQpyLpIhVi3FBAM1DbgjaYm2CjRezh/zyaXUskgHUCy/jnF0VxGYrStfx804zYEEKmGjZCBhfHPJrR5IuoniiJ6gHN4fDJ+cadcJzjnawdXtcyO081w9kqWYpieYiHzey1WDI0wJlmpe0wN9QGCETAFF1hhs+FhOxrkyhUqYy27U9aG34WAwWwB/XytsITVxIuMAAAAASUVORK5CYII="
+                />
+              </div>
+            </div>
+          </div>
+          <div class="screen">
+            <div class="history-screen">
+              <input
+                id="history"
+                name="history"
+                type="text"
+                value=""
+                disabled
+              />
+            </div>
+            <div class="main-screen">
+              <input id="main" name="main" value="" type="text" disabled />
+            </div>
+          </div>
+          <div class="bottom">
+            <div class="memory">
+              <div role="button">MC</div>
+              <div role="button">MR</div>
+              <div role="button">M+</div>
+              <div role="button">M-</div>
+              <div role="button">MS</div>
+              <div role="button">M&darr;</div>
+            </div>
+          </div>
+        </header>
+        <section class="bottom-part">
+          <div class="features">
+            <div class="sub-menu">
+              <div class="row">
+                <div
+                  id="percentage"
+                  class="button image sign"
+                  data-value="%"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Percentage"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABK0lEQVRYR+2WYQ3CMBCFvznAAgrAAeAAHOAACYADHCABJIACcAA4wAHkkpYM6K7XZs3+rAnZYNf169u7Nyo6HlXH69MD9ArEFJgDK2AKnICtO2re3bk5D2AMPLViDUAWPwQmzxQIWfDi5iyAY6zLNIArMHK73gDyWQNnp0jo3qLSJFLzNU8DeLnKek3oN3/DJbB3X4bAPbZ7ud4WwAC4AXIUn4haptEWQJLx6mRtACQbzwrgTShyellDJkw2nhXA0oZZxrMCSJ0EkCjgW0vOZccyso2XApCTeEnpGYviJoAm41kemzmItN03GS85PXMU0IyXmp7J/4hixisOEEu8ogCWxCsKYEk8a3p+DG41oTXxirRhzHi/7aql519rWxUwvdtzinqAXoHOFXgD+J9gIZOwvCMAAAAASUVORK5CYII="
+                  />
+                </div>
+                <div
+                  id="sqrt"
+                  class="button image sign"
+                  data-value="sqrt"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Square-Root"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABP0lEQVRYR+3V4S0FQRQF4O9VgApQATrQASpABXSAClABOqCCRwWoABWgAnKTnWSzeV5mdkf2z55fm83sPWfPuXfuzMiYjcxvEjA5UNuBd6z/0dgLuWoK2MV8yVT9u4BbHOIC57njXcuBVXw2pJuIKLJQS8ARbvCA/Szm5lAtAS/YwjEiimzUELCNZ3wjoihCDQFXOME1TovYqbILvrCCHUQURRjqQGq+V0QUxVgm4KdVLcYqxquLe+z1ab5UKFdAnO92+AbemkJriCiKkRNBsrnrQjTcJe4QZ3ohR0AUTkum7UJ6d4CIohdyBXRdSIvnAxFFb+QKaLsQfxzXbfHiWaSyREBy4bEZubj1ihbPUAFBGLnHpRN4QkQxCCUOBFHs+bOGsXjxDHUgvk8upOdBfx8flzowmLBbYBIwOTC6A7+1/zEhMa617wAAAABJRU5ErkJggg=="
+                  />
+                </div>
+                <div
+                  id="sqr"
+                  class="button sign"
+                  data-value="sqr"
+                  role="button"
+                >
+                  <span class="x-sign">
+                    <sub>x</sub>
+                  </span>
+                  <span>
+                    <sup>2</sup>
+                  </span>
+                </div>
+                <div
+                  id="fraction"
+                  class="button sign"
+                  data-value="1/x"
+                  role="button"
+                >
+                  <span>
+                    <sup>1</sup>
+                  </span>
+                  <span>&frasl;</span>
+                  <span class="x-sign">
+                    <sub><em>x</em></sub>
+                  </span>
                 </div>
               </div>
             </div>
-            <div class="screen">
-              <div class="history-screen">
-                <input id="history" name="history" type="text" value="" disabled>
+            <div class="main-menu">
+              <div class="row">
+                <div
+                  id="clear-entry"
+                  class="button sign"
+                  data-value="CE"
+                  role="button"
+                >
+                  CE
+                </div>
+                <div
+                  id="clear"
+                  class="button sign"
+                  data-value="C"
+                  role="button"
+                >
+                  C
+                </div>
+                <div
+                  id="clear-element"
+                  class="button image sign"
+                  data-value="CS"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Clear-Symbol"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC"
+                  />
+                </div>
+                <div
+                  id="divide"
+                  class="button image sign"
+                  data-value="/"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Divide"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAo0lEQVRYR+2VSxGDMBRFTxTUAkioklrAQSVAHSChjmqhdYCDMm8mCz7DIp/yurisQ+6Zk5u8gPMXnPMRgAyUGBiBWyzxE3jkFDoXwMLvm0ADGFIhcgEm4AJcY+ALeAOtJ8AHaM4CMNW95xFYtkF0ixImn7/9m9uBVNOH6wVwZOBbzfF6o13e3wL8SMB+W5WwxICmoaahpmGVx6rkGgpABqoYmAH2Lh4hfK3KfwAAAABJRU5ErkJggg=="
+                  />
+                </div>
               </div>
-              <div class="main-screen">
-                <input id="main" name="main" value="" type="text" disabled>
+              <div class="row">
+                <div class="button number" role="button" data-value="7">7</div>
+                <div class="button number" role="button" data-value="8">8</div>
+                <div class="button number" role="button" data-value="9">9</div>
+                <div
+                  id="multiply"
+                  class="button image sign"
+                  data-value="*"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Multiply"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABBUlEQVRYR+2W6w3CMAyErxuwCYwAG7AJjAATMQKMUDZhBHQSQaFqYp8DqpDSn2nj+3J+NAMWfoaF9dEBugN/4cAewA3AQ+yYFYADgHNtn+UAxS8ARgA7AYLiVwCbF8CpBGEBMBBPvxYgcvE7gG0N3AIguAIhiTO4B8ALIYsrABZESFwFKEFwPRWcmfNpMXpTkO+b1gTfsdpl8YgDCSSH4FpIvBUg2c446px4OxpNQZ5zBlPmxEcZqABz1c6A6rAKOVBrNWVYhRzw9HkIwpMCj/hcd7gK0wJQxEMQFkD6Hat9nqeD94Hw75inarmQHGviLYNIvByVP7dS8DWh6I2oA3QHfu7AEzfHWCF+OOmJAAAAAElFTkSuQmCC"
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="button number" role="button" data-value="4">4</div>
+                <div class="button number" role="button" data-value="5">5</div>
+                <div class="button number" role="button" data-value="6">6</div>
+                <div
+                  id="minus"
+                  class="button image sign"
+                  data-value="-"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Minus-Math-"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAARElEQVRYR+3V0Q0AMAQFQPYfuh1A+ql8nAF4LhIZw5XD80MAAgQIECCwVuA0fcmy8EtgPEATQG279gYIECBAgACBbwIXi38CITaYSB4AAAAASUVORK5CYII="
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div class="button number" role="button" data-value="1">1</div>
+                <div class="button number" role="button" data-value="2">2</div>
+                <div class="button number" role="button" data-value="3">3</div>
+                <div
+                  id="plus"
+                  class="button image sign"
+                  data-value="+"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Plus-Math"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWUlEQVRYR+2WMQoAIAgA9f+PrsWmEMQSEa7Z8rzEUmle2pxfABhvYFkPpQtJb7TEAGAAAxgoM3AO/v1YXoPPm4TtANHKy64AAAxgAANjDERB3bjXXzEA8w1s3k4WIU0YaEoAAAAASUVORK5CYII="
+                  />
+                </div>
+              </div>
+              <div class="row">
+                <div
+                  id="plus-minus"
+                  class="button image sign"
+                  data-value="+-"
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Plus-Minus"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVRYR+2VMQ4AIAgD4f+P1gUdCakx1VB3pL0UcCM/J/c3CfiewIgMwUbgwmgsASLQg8ByiW7tdNIqY0gXkDnvkQEREIGnCaDLaddVFtFxk+wDCagQoN8CugCFUASuEpjXIBIhP3OSdgAAAABJRU5ErkJggg=="
+                  />
+                </div>
+                <div class="button number" role="button" data-value="0">0</div>
+                <div
+                  id="dot"
+                  class="button dot sign"
+                  data-value="."
+                  role="button"
+                >
+                  .
+                </div>
+                <div
+                  id="equal"
+                  class="button image equals sign"
+                  data-value="="
+                  role="button"
+                >
+                  <img
+                    class="icon icons8-Equal-Sign"
+                    src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQ0lEQVRYR+3U0Q0AMAQFQPYfuh1A+ikkPQMgF0/GcOXw/LAAAQIECLwETtOLLvPWLtAEUNs6wrUCUiAFBAgQIPCPwAX8vwQhcNJI5wAAAABJRU5ErkJggg=="
+                    width="32"
+                    height="32"
+                  />
+                </div>
               </div>
             </div>
-            <div class="bottom">
-              <div class="memory">
-                <div role="button">MC</div>
-                <div role="button">MR</div>
-                <div role="button">M+</div>
-                <div role="button">M-</div>
-                <div role="button">MS</div>
-                <div role="button">M&darr;</div>
-              </div>
-            </div>
-          </header>
-          <section class="bottom-part">
-            <div class="features">
-              <div class="sub-menu">
-                <div class="row">
-                  <div id="percentage" class="button image sign" data-value="%" role="button">
-                    <img class="icon icons8-Percentage" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABK0lEQVRYR+2WYQ3CMBCFvznAAgrAAeAAHOAACYADHCABJIACcAA4wAHkkpYM6K7XZs3+rAnZYNf169u7Nyo6HlXH69MD9ArEFJgDK2AKnICtO2re3bk5D2AMPLViDUAWPwQmzxQIWfDi5iyAY6zLNIArMHK73gDyWQNnp0jo3qLSJFLzNU8DeLnKek3oN3/DJbB3X4bAPbZ7ud4WwAC4AXIUn4haptEWQJLx6mRtACQbzwrgTShyellDJkw2nhXA0oZZxrMCSJ0EkCjgW0vOZccyso2XApCTeEnpGYviJoAm41kemzmItN03GS85PXMU0IyXmp7J/4hixisOEEu8ogCWxCsKYEk8a3p+DG41oTXxirRhzHi/7aql519rWxUwvdtzinqAXoHOFXgD+J9gIZOwvCMAAAAASUVORK5CYII=">
-                  </div>
-                  <div id="sqrt" class="button image sign" data-value="sqrt" role="button">
-                    <img class="icon icons8-Square-Root" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABP0lEQVRYR+3V4S0FQRQF4O9VgApQATrQASpABXSAClABOqCCRwWoABWgAnKTnWSzeV5mdkf2z55fm83sPWfPuXfuzMiYjcxvEjA5UNuBd6z/0dgLuWoK2MV8yVT9u4BbHOIC57njXcuBVXw2pJuIKLJQS8ARbvCA/Szm5lAtAS/YwjEiimzUELCNZ3wjoihCDQFXOME1TovYqbILvrCCHUQURRjqQGq+V0QUxVgm4KdVLcYqxquLe+z1ab5UKFdAnO92+AbemkJriCiKkRNBsrnrQjTcJe4QZ3ohR0AUTkum7UJ6d4CIohdyBXRdSIvnAxFFb+QKaLsQfxzXbfHiWaSyREBy4bEZubj1ihbPUAFBGLnHpRN4QkQxCCUOBFHs+bOGsXjxDHUgvk8upOdBfx8flzowmLBbYBIwOTC6A7+1/zEhMa617wAAAABJRU5ErkJggg==">
-                  </div>
-                  <div id="sqr" class="button sign" data-value="sqr" role="button">
-                    <span class="x-sign">
-                      <sub>x</sub>
-                    </span>
-                    <span>
-                      <sup>2</sup>
-                    </span>
-                  </div>
-                  <div id="fraction" class="button sign" data-value="1/x" role="button">
-                    <span>
-                      <sup>1</sup>
-                    </span>
-                    <span>&frasl;</span>
-                    <span class="x-sign">
-                      <sub><em>x</em></sub>
-                    </span>
-                  </div>
-                </div>
-              </div>
-              <div class="main-menu">
-                <div class="row">
-                  <div id="clear-entry" class="button sign" data-value="CE" role="button">CE</div>
-                  <div id="clear" class="button sign" data-value="C" role="button">C</div>
-                  <div id="clear-element" class="button image sign" data-value="CS" role="button">
-                    <img class="icon icons8-Clear-Symbol" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABDklEQVRYR+2W4Q3CIBSErxu4iY6gm+hmbqIj6CZuUHNJMeQFeAelaUzoT8LjPo570Ak7f9PO+hgAw4G/cuAA4AHg1KFzfhtXHegpTv4qgFj8DeAM4NPowrzUyQA9xaldBaCIc451IzUWDJMBFPE7gCOASwQR6l4AboljkgAUcc55LgAUIwS/0CW5rLgAinjYmIXgOFu0FNQiQI14CoJjXpe4ANZWr93s/RCOI1cnHYEKYR2jAwxlCcIF4CKpgKVazQaOtR68BKBCsA0ZuvhmDPB04drahrmUx/0ez9nkIqqBqHkW5COIF1UyoUI0AdhMqGKlefJrmHNiLUQTwFrRZL36R7SJOBcdAMOB3R34AqM1YCEu+sgCAAAAAElFTkSuQmCC">
-                  </div>
-                  <div id="divide" class="button image sign" data-value="/" role="button">
-                    <img class="icon icons8-Divide" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAo0lEQVRYR+2VSxGDMBRFTxTUAkioklrAQSVAHSChjmqhdYCDMm8mCz7DIp/yurisQ+6Zk5u8gPMXnPMRgAyUGBiBWyzxE3jkFDoXwMLvm0ADGFIhcgEm4AJcY+ALeAOtJ8AHaM4CMNW95xFYtkF0ixImn7/9m9uBVNOH6wVwZOBbzfF6o13e3wL8SMB+W5WwxICmoaahpmGVx6rkGgpABqoYmAH2Lh4hfK3KfwAAAABJRU5ErkJggg==">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="button number" role="button" data-value="7">7</div>
-                  <div class="button number" role="button" data-value="8">8</div>
-                  <div class="button number" role="button" data-value="9">9</div>
-                  <div id="multiply" class="button image sign" data-value="*" role="button">
-                    <img class="icon icons8-Multiply" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABBUlEQVRYR+2W6w3CMAyErxuwCYwAG7AJjAATMQKMUDZhBHQSQaFqYp8DqpDSn2nj+3J+NAMWfoaF9dEBugN/4cAewA3AQ+yYFYADgHNtn+UAxS8ARgA7AYLiVwCbF8CpBGEBMBBPvxYgcvE7gG0N3AIguAIhiTO4B8ALIYsrABZESFwFKEFwPRWcmfNpMXpTkO+b1gTfsdpl8YgDCSSH4FpIvBUg2c446px4OxpNQZ5zBlPmxEcZqABz1c6A6rAKOVBrNWVYhRzw9HkIwpMCj/hcd7gK0wJQxEMQFkD6Hat9nqeD94Hw75inarmQHGviLYNIvByVP7dS8DWh6I2oA3QHfu7AEzfHWCF+OOmJAAAAAElFTkSuQmCC">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="button number" role="button" data-value="4">4</div>
-                  <div class="button number" role="button" data-value="5">5</div>
-                  <div class="button number" role="button" data-value="6">6</div>
-                  <div id="minus" class="button image sign" data-value="-" role="button">
-                    <img class="icon icons8-Minus-Math-" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAARElEQVRYR+3V0Q0AMAQFQPYfuh1A+ql8nAF4LhIZw5XD80MAAgQIECCwVuA0fcmy8EtgPEATQG279gYIECBAgACBbwIXi38CITaYSB4AAAAASUVORK5CYII=">
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="button number" role="button" data-value="1">1</div>
-                  <div class="button number" role="button" data-value="2">2</div>
-                  <div class="button number" role="button" data-value="3">3</div>
-                  <div id="plus" class="button image sign" data-value="+" role="button">
-                    <img class="icon icons8-Plus-Math" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAWUlEQVRYR+2WMQoAIAgA9f+PrsWmEMQSEa7Z8rzEUmle2pxfABhvYFkPpQtJb7TEAGAAAxgoM3AO/v1YXoPPm4TtANHKy64AAAxgAANjDERB3bjXXzEA8w1s3k4WIU0YaEoAAAAASUVORK5CYII=">
-                  </div>
-                </div>
-                <div class="row">
-                  <div id="plus-minus" class="button image sign" data-value="+-" role="button">
-                    <img class="icon icons8-Plus-Minus" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAYUlEQVRYR+2VMQ4AIAgD4f+P1gUdCakx1VB3pL0UcCM/J/c3CfiewIgMwUbgwmgsASLQg8ByiW7tdNIqY0gXkDnvkQEREIGnCaDLaddVFtFxk+wDCagQoN8CugCFUASuEpjXIBIhP3OSdgAAAABJRU5ErkJggg==">
-                  </div>
-                  <div class="button number" role="button" data-value="0">0</div>
-                  <div id="dot" class="button dot sign" data-value="." role="button">.</div>
-                  <div id="equal" class="button image equals sign" data-value="=" role="button">
-                    <img class="icon icons8-Equal-Sign" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAAQ0lEQVRYR+3U0Q0AMAQFQPYfuh1A+ikkPQMgF0/GcOXw/LAAAQIECLwETtOLLvPWLtAEUNs6wrUCUiAFBAgQIPCPwAX8vwQhcNJI5wAAAABJRU5ErkJggg==" width="32" height="32">
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-        </div>
-      </main>
-      <style>
-        
-
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    -webkit-touch-callout: none;
-    -webkit-user-select: none;
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;font-family:"Segoe UI",sans-serif;
-}
-body {
-    font-family: 'Segoe UI', sans-serif;
-}
-.padding {
-    padding: 5px 10px 0 10px;
-}
-.screen input {
-    width: 100%;
-    height: 100%;
-    border: 0;
-    background: transparent;
-    text-align: right;
-}
-#history {
-    font-size: 1.1rem;
-    padding: 0 10px;
-    letter-spacing: 1px;
-}
-#main {
-    font-size: 3rem;
-    color: #000;
-    font-weight: 600;
-    padding: 0 10px;
-}
-.history-screen {
-    height: 30%;
-}
-.main-screen {
-    height: 70%;
-}
-.top {
-    display: flex;
-    justify-content: space-between;
-    align-items: stretch;
-    line-height: 2rem;
-}
-.branding {
-    flex-grow: 1;
-    cursor: default;
-    font-size: 0.8rem;
-    padding-left: 15px;
-}
-.window {
-    display: flex;
-    justify-content: space-between;
-    flex-grow: 1;
-}
-.window > div {
-    flex-grow: 1;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    line-height: 2rem;
-}
-#calculator {
-    width: 300px;
-    border: 1px solid #1883d7;
-    box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.2);
-    background: #f2f2f2;
-}
-.row {
-    display: flex;
-    flex-wrap: wrap;
-}
-.button {
-    width: 23%;
-    line-height: 3rem;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.button.close:hover {
-    background: #f00;
-}
-.sub-menu .button {
-    line-height: 2rem;
-}
-.main-menu {
-    background: #e6e6e6;
-}
-.number {
-    font-weight: 800;
-    font-size: 1.2rem;
-}
-.number:active {
-    font-size: 1.1rem;
-}
-.button:hover, .button-top:hover {
-    background: #cfcfcf;
-    cursor: pointer;
-}
-.button:active {
-    background: #b8b8b8;
-}
-.equals:hover {
-    background: #1883d7;
-}
-.equals:active {
-    background: rgb(67, 152, 207);
-    background: rgba(67, 152, 207, 0.79);
-}
-.top .icon {
-    width: 16px;
-    height: 16px;
-}
-.icon {
-    width: 25px;
-    height: 25px;
-}
-.type {
-    display: flex;
-}
-.column {
-    display: flex;
-    align-items: center;
-}
-.history {
-    flex-grow: 6;
-    justify-content: flex-end;
-}
-.button-top {
-    display: flex;
-    padding: 5px 10px;
-    pointer-events: none;
-}
-.menu {
-    flex-grow: 1;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-}
-.image:active img {
-    width: 24px;
-    height: 24px;
-}
-.sign:active {
-    font-size: 0.9rem;
-}
-.dot {
-    font-weight: 900;
-    font-size: 1.5rem;
-}
-.dot:active {
-    font-size: 1.4rem;
-}
-.calculator-menu:hover {
-    background: #cfcfcf;
-    cursor: pointer;
-}
-.calculator-chosen {
-    font-size: 1rem;
-    letter-spacing: 2px;
-    cursor: default;
-    padding: 10px 12px;
-    font-weight: 900;
-}
-.memory {
-    display: flex;
-    font-size: 0.75rem;
-    color: #757575;
-}
-.memory > div:hover {
-    color: #000;
-    background: #cfcfcf;
-    cursor: pointer;
-}
-.memory > div {
-    flex-grow: 1;
-    text-align: center;
-    line-height: 2rem;
-    pointer-events:none;
-}
-#plus-minus {
-    pointer-events: none;
-}
-
-      </style>
-      <script>(function() {
-        'use strict';
+          </div>
+        </section>
+      </div>
+    </main>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        font-family: "Segoe UI", sans-serif;
+      }
+      body {
+        font-family: "Segoe UI", sans-serif;
+      }
+      .padding {
+        padding: 5px 10px 0 10px;
+      }
+      .screen input {
+        width: 100%;
+        height: 100%;
+        border: 0;
+        background: transparent;
+        text-align: right;
+      }
+      #history {
+        font-size: 1.1rem;
+        padding: 0 10px;
+        letter-spacing: 1px;
+      }
+      #main {
+        font-size: 3rem;
+        color: #000;
+        font-weight: 600;
+        padding: 0 10px;
+      }
+      .history-screen {
+        height: 30%;
+      }
+      .main-screen {
+        height: 70%;
+      }
+      .top {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        line-height: 2rem;
+      }
+      .branding {
+        flex-grow: 1;
+        cursor: default;
+        font-size: 0.8rem;
+        padding-left: 15px;
+      }
+      .window {
+        display: flex;
+        justify-content: space-between;
+        flex-grow: 1;
+      }
+      .window > div {
+        flex-grow: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 2rem;
+      }
+      #calculator {
+        width: 300px;
+        border: 1px solid #1883d7;
+        box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.2);
+        background: #f2f2f2;
+      }
+      .row {
+        display: flex;
+        flex-wrap: wrap;
+      }
+      .button {
+        width: 23%;
+        line-height: 3rem;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .button.close:hover {
+        background: #f00;
+      }
+      .sub-menu .button {
+        line-height: 2rem;
+      }
+      .main-menu {
+        background: #e6e6e6;
+      }
+      .number {
+        font-weight: 800;
+        font-size: 1.2rem;
+      }
+      .number:active {
+        font-size: 1.1rem;
+      }
+      .button:hover,
+      .button-top:hover {
+        background: #cfcfcf;
+        cursor: pointer;
+      }
+      .button:active {
+        background: #b8b8b8;
+      }
+      .equals:hover {
+        background: #1883d7;
+      }
+      .equals:active {
+        background: rgb(67, 152, 207);
+        background: rgba(67, 152, 207, 0.79);
+      }
+      .top .icon {
+        width: 16px;
+        height: 16px;
+      }
+      .icon {
+        width: 25px;
+        height: 25px;
+      }
+      .type {
+        display: flex;
+      }
+      .column {
+        display: flex;
+        align-items: center;
+      }
+      .history {
+        flex-grow: 6;
+        justify-content: flex-end;
+      }
+      .button-top {
+        display: flex;
+        padding: 5px 10px;
+        pointer-events: none;
+      }
+      .menu {
+        flex-grow: 1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+      }
+      .image:active img {
+        width: 24px;
+        height: 24px;
+      }
+      .sign:active {
+        font-size: 0.9rem;
+      }
+      .dot {
+        font-weight: 900;
+        font-size: 1.5rem;
+      }
+      .dot:active {
+        font-size: 1.4rem;
+      }
+      .calculator-menu:hover {
+        background: #cfcfcf;
+        cursor: pointer;
+      }
+      .calculator-chosen {
+        font-size: 1rem;
+        letter-spacing: 2px;
+        cursor: default;
+        padding: 10px 12px;
+        font-weight: 900;
+      }
+      .memory {
+        display: flex;
+        font-size: 0.75rem;
+        color: #757575;
+      }
+      .memory > div:hover {
+        color: #000;
+        background: #cfcfcf;
+        cursor: pointer;
+      }
+      .memory > div {
+        flex-grow: 1;
+        text-align: center;
+        line-height: 2rem;
+        pointer-events: none;
+      }
+      #plus-minus {
+        pointer-events: none;
+      }
+    </style>
+    <script>
+      (function () {
+        "use strict";
         // result
         var result;
         // current number
@@ -334,242 +451,305 @@ body {
         // init
         var isInit;
         // main screen
-        var mainScreen = document.querySelector('#main');
+        var mainScreen = document.querySelector("#main");
         // history screen
-        var historyScreen = document.querySelector('#history');
-    
+        var historyScreen = document.querySelector("#history");
+
         // attach click events to buttons
-        Array.prototype.forEach.call(document.querySelectorAll('.button'), function(btn) {
-            btn.addEventListener('click', function(e) {
-                // `e.currentTarget` or `this`
-                var btnClicked = e.currentTarget.getAttribute('data-value');
-                input(btnClicked);
+        Array.prototype.forEach.call(
+          document.querySelectorAll(".button"),
+          function (btn) {
+            btn.addEventListener("click", function (e) {
+              // `e.currentTarget` or `this`
+              var btnClicked = e.currentTarget.getAttribute("data-value");
+              input(btnClicked);
             });
-        });
-    
+          },
+        );
+
         // initialize
         function init() {
-            result = null;
-            currNum = 0;
-            prevBtn = null;
-            mathOp = null;
-            prevMathOp = null;
-            mathOpCount = 0;
-            history = '';
-            mathOpPress = false;
-            isInit = true;
-            updateMainScreen(0);
-            updateHistoryScreen(history);
+          result = null;
+          currNum = 0;
+          prevBtn = null;
+          mathOp = null;
+          prevMathOp = null;
+          mathOpCount = 0;
+          history = "";
+          mathOpPress = false;
+          isInit = true;
+          updateMainScreen(0);
+          updateHistoryScreen(history);
         }
-    
+
         //
         function input(btn) {
-    
-            // copy prev math op
-            if (!isNaN(prevBtn) && btn !== '=' && btn !== 'C' && btn !== 'CE' && btn !== 'CS' && btn !== '.') {
-                prevMathOp = mathOp;
-            }
-    
-            switch(btn) {
-                case '+': mathOpPress = true; mathOp = addition; break;
-                case '-': mathOpPress = true; mathOp = subtraction; break;
-                case '/': mathOpPress = true; mathOp = division; break;
-                case '*': mathOpPress = true; mathOp = multiplication; break;
-                case 'C': init(); break;
-            }
-    
-            handler(btn);
-    
-    
-            var fontSize = parseFloat(mainScreen.style.fontSize);
-            // return to default main screen size
-            if (fontSize < 3 && currNum.length < 11) {
-                mainScreen.style.fontSize = '3rem';
-            }
-    
-            console.log('Result: ' + result);
-            console.log('Prev result: ' + prevResult);
-            console.log('current number: ' + currNum);
-            console.log('btn: ' + btn);
-            console.log('Prev Math Op: ' + prevMathOp);
-            console.log('Math Op Counter: ' + mathOpCount);
-            console.log('Prev btn: '+ prevBtn);
-            console.log('History: ' + history);
-            console.log('Main Screen ' + mainScreen.value);
-            console.log('*'.repeat(15));
+          // copy prev math op
+          if (
+            !isNaN(prevBtn) &&
+            btn !== "=" &&
+            btn !== "C" &&
+            btn !== "CE" &&
+            btn !== "CS" &&
+            btn !== "."
+          ) {
+            prevMathOp = mathOp;
+          }
+
+          switch (btn) {
+            case "+":
+              mathOpPress = true;
+              mathOp = addition;
+              break;
+            case "-":
+              mathOpPress = true;
+              mathOp = subtraction;
+              break;
+            case "/":
+              mathOpPress = true;
+              mathOp = division;
+              break;
+            case "*":
+              mathOpPress = true;
+              mathOp = multiplication;
+              break;
+            case "C":
+              init();
+              break;
+          }
+
+          handler(btn);
+
+          var fontSize = parseFloat(mainScreen.style.fontSize);
+          // return to default main screen size
+          if (fontSize < 3 && currNum.length < 11) {
+            mainScreen.style.fontSize = "3rem";
+          }
+
+          console.log("Result: " + result);
+          console.log("Prev result: " + prevResult);
+          console.log("current number: " + currNum);
+          console.log("btn: " + btn);
+          console.log("Prev Math Op: " + prevMathOp);
+          console.log("Math Op Counter: " + mathOpCount);
+          console.log("Prev btn: " + prevBtn);
+          console.log("History: " + history);
+          console.log("Main Screen " + mainScreen.value);
+          console.log("*".repeat(15));
         }
-    
+
         //
         function handler(btn) {
-            // return if C wasn't pressed when divide by zero was done
-            if (btn !== 'C' && result === 'Result is undefined' || result === 'Cannot divide by zero') {
-                return;
+          // return if C wasn't pressed when divide by zero was done
+          if (
+            (btn !== "C" && result === "Result is undefined") ||
+            result === "Cannot divide by zero"
+          ) {
+            return;
+          }
+
+          // update history
+          if (btn !== "=" && btn !== "C" && btn !== "CE" && btn !== "CS") {
+            history =
+              isNaN(prevBtn) && isNaN(btn)
+                ? history.slice(0, -1) + btn
+                : history + btn;
+          }
+
+          // btn clicked is `Number` or `.`
+          if (!isNaN(btn) || btn === ".") {
+            if (btn === "." && /^\d+$/.test(currNum)) {
+              currNum = currNum + btn;
+            } else if (!isNaN(btn)) {
+              currNum =
+                (!isNaN(prevBtn) &&
+                  prevBtn !== null &&
+                  mainScreen.value !== "0") ||
+                prevBtn === "."
+                  ? currNum + btn
+                  : btn;
             }
-    
-            // update history
-            if (btn !== '=' && btn !== 'C' && btn !== 'CE' && btn !== 'CS') {
-                history = (isNaN(prevBtn) && isNaN(btn)) ? history.slice(0, -1) + btn : history + btn;
-            }
-    
-            // btn clicked is `Number` or `.`
-            if (!isNaN(btn) || btn === '.') {
-                if (btn === '.' && /^\d+$/.test(currNum)) {
-                    currNum = currNum + btn;
-                } else if (!isNaN(btn)) {
-                    currNum = (!isNaN(prevBtn) && prevBtn !== null && mainScreen.value !== '0') || prevBtn === '.' ? currNum + btn : btn;
-                }
-                mathOpPress = false;
-                updateMainScreen(currNum);
+            mathOpPress = false;
+            updateMainScreen(currNum);
             // btn clicked is `Sign`
-            } else {
-    
-                // update history
-                if (btn === '-' || btn === '+' || btn === '*' || btn === '/') {
-                    // for example, when `-` is pressed, add `0 -` to history screen
-                    if ((prevBtn === null || prevBtn === '=') && !isInit) {
-                        history = '0' + btn;
-                        mathOpCount++;
-                    }
-    
-                    if (!historyScreen.value.length && mainScreen.value.length) {
-                        history = mainScreen.value + btn;
-                    }
-                }
-    
-                // if math op was pressed and result is null
-                if (mathOp && result === null) {
-                    result = Number(currNum);
-                }
-    
-                // count percents
-                if (btn === '%') {
-                    history = history.slice(0, -(currNum.length + 1));
-                    currNum = percentage(currNum, result);
-                    history += currNum + ' ';
-                    updateMainScreen(currNum);
-                // count square or square root
-                } else if (btn === 'sqr' || btn === 'sqrt' || btn === '1/x') {
-                    history = history.slice(0, -(currNum.length + btn.length)) + (btn === '1/x' ? '1/(' + currNum + ') ' : btn + '(' + currNum + ') ');
-                    currNum = (btn === 'sqr') ? square(currNum) : (btn === 'sqrt') ? squareRoot(currNum) : fraction(currNum);
-                    updateMainScreen(currNum);
-                    updateHistoryScreen(history);
-                }
-    
-                // count result
-                if (btn === '=') {
-                    // if math op exists
-                    if (mathOp) {
-                        mathOpCount = 0;
-                        // if last button pressed is `mathOperation`
-                        // like `+, - etc.` before `=` was pressed
-                        if (mathOpPress) {
-                            mathOp(prevResult);
-                        // if last button pressed is `digit` before `=` was pressed
-                        } else {
-                            mathOp(Number(currNum));
-                        }
-    
-                        history = '';
-                        prevBtn = btn;
-    
-                        updateMainScreen(result);
-                        updateHistoryScreen(history);
-    
-                        return;
-                    }
-                }
-    
-                // count math ops
-                // if sign was pressed and prev btn isn't sign and except some buttons
-                if (isNaN(btn) && (!isNaN(prevBtn) || prevBtn === '%' || prevBtn === 'sqr' || prevBtn === 'sqrt' || prevBtn === '1/x') &&
-                    btn !== '=' && btn !== 'C' && btn !== 'CE' && btn !== 'CS' && btn !== '.' && btn !== '%' && btn !== 'sqr' & btn !== 'sqrt' && btn !== '1/x') {
-                    mathOpCount++;
-                }
-    
-                // count result in row
-                if (mathOpCount >= 2 && (!isNaN(prevBtn) || prevBtn === 'sqrt' || prevBtn === 'sqr' || prevBtn === '1/x' || prevBtn === '%') && btn !== 'CE' && btn !== 'CS') {
-                    prevMathOp(Number(currNum));
-                    updateMainScreen(result);
-                }
-    
-                if (btn === 'CE' && history.length > 0) {
-                    history = history.slice(0, -(currNum.length));
-                    currNum = '0';
-                    updateMainScreen(0);
-                } else if (btn === 'CS') {
-                    if (result != mainScreen.value) {
-                        currNum = currNum.slice(0, -1);
-                        history = history.slice(0, -1);
-                        if (!currNum.length) {
-                            currNum = '0';
-                        }
-                        updateMainScreen(currNum);
-                    } else {
-                        return;
-                    }
-                }
-    
-                if (result !== null && btn !== 'CE' && btn !== 'CS') {
-                    updateHistoryScreen(history);
-                }
+          } else {
+            // update history
+            if (btn === "-" || btn === "+" || btn === "*" || btn === "/") {
+              // for example, when `-` is pressed, add `0 -` to history screen
+              if ((prevBtn === null || prevBtn === "=") && !isInit) {
+                history = "0" + btn;
+                mathOpCount++;
+              }
+
+              if (!historyScreen.value.length && mainScreen.value.length) {
+                history = mainScreen.value + btn;
+              }
             }
-    
-            prevBtn = btn;
-            prevResult = result;
-            isInit = false;
+
+            // if math op was pressed and result is null
+            if (mathOp && result === null) {
+              result = Number(currNum);
+            }
+
+            // count percents
+            if (btn === "%") {
+              history = history.slice(0, -(currNum.length + 1));
+              currNum = percentage(currNum, result);
+              history += currNum + " ";
+              updateMainScreen(currNum);
+              // count square or square root
+            } else if (btn === "sqr" || btn === "sqrt" || btn === "1/x") {
+              history =
+                history.slice(0, -(currNum.length + btn.length)) +
+                (btn === "1/x"
+                  ? "1/(" + currNum + ") "
+                  : btn + "(" + currNum + ") ");
+              currNum =
+                btn === "sqr"
+                  ? square(currNum)
+                  : btn === "sqrt"
+                    ? squareRoot(currNum)
+                    : fraction(currNum);
+              updateMainScreen(currNum);
+              updateHistoryScreen(history);
+            }
+
+            // count result
+            if (btn === "=") {
+              // if math op exists
+              if (mathOp) {
+                mathOpCount = 0;
+                // if last button pressed is `mathOperation`
+                // like `+, - etc.` before `=` was pressed
+                if (mathOpPress) {
+                  mathOp(prevResult);
+                  // if last button pressed is `digit` before `=` was pressed
+                } else {
+                  mathOp(Number(currNum));
+                }
+
+                history = "";
+                prevBtn = btn;
+
+                updateMainScreen(result);
+                updateHistoryScreen(history);
+
+                return;
+              }
+            }
+
+            // count math ops
+            // if sign was pressed and prev btn isn't sign and except some buttons
+            if (
+              isNaN(btn) &&
+              (!isNaN(prevBtn) ||
+                prevBtn === "%" ||
+                prevBtn === "sqr" ||
+                prevBtn === "sqrt" ||
+                prevBtn === "1/x") &&
+              btn !== "=" &&
+              btn !== "C" &&
+              btn !== "CE" &&
+              btn !== "CS" &&
+              btn !== "." &&
+              btn !== "%" &&
+              (btn !== "sqr") & (btn !== "sqrt") &&
+              btn !== "1/x"
+            ) {
+              mathOpCount++;
+            }
+
+            // count result in row
+            if (
+              mathOpCount >= 2 &&
+              (!isNaN(prevBtn) ||
+                prevBtn === "sqrt" ||
+                prevBtn === "sqr" ||
+                prevBtn === "1/x" ||
+                prevBtn === "%") &&
+              btn !== "CE" &&
+              btn !== "CS"
+            ) {
+              prevMathOp(Number(currNum));
+              updateMainScreen(result);
+            }
+
+            if (btn === "CE" && history.length > 0) {
+              history = history.slice(0, -currNum.length);
+              currNum = "0";
+              updateMainScreen(0);
+            } else if (btn === "CS") {
+              if (result != mainScreen.value) {
+                currNum = currNum.slice(0, -1);
+                history = history.slice(0, -1);
+                if (!currNum.length) {
+                  currNum = "0";
+                }
+                updateMainScreen(currNum);
+              } else {
+                return;
+              }
+            }
+
+            if (result !== null && btn !== "CE" && btn !== "CS") {
+              updateHistoryScreen(history);
+            }
+          }
+
+          prevBtn = btn;
+          prevResult = result;
+          isInit = false;
         }
-    
+
         function updateMainScreen(val) {
-    
-            val = String(val);
-    
-            if (val.length > 10) {
-                mainScreen.style.fontSize = '1.75rem';
-                val = Math.round(val * 10000000000000000) / 10000000000000000;
-            }
-    
-            mainScreen.value = val;
+          val = String(val);
+
+          if (val.length > 10) {
+            mainScreen.style.fontSize = "1.75rem";
+            val = Math.round(val * 10000000000000000) / 10000000000000000;
+          }
+
+          mainScreen.value = val;
         }
-    
+
         function updateHistoryScreen(history) {
-            historyScreen.value = history;
+          historyScreen.value = history;
         }
-    
+
         function addition(val) {
-            result += val;
+          result += val;
         }
-    
+
         function subtraction(val) {
-            result -= val;
+          result -= val;
         }
-    
+
         function division(val) {
-            result /= val;
+          result /= val;
         }
-    
+
         function multiplication(val) {
-            result *= val;
+          result *= val;
         }
-    
+
         function square(val) {
-            return val * val;
+          return val * val;
         }
-    
+
         function squareRoot(val) {
-            return Math.sqrt(val);
+          return Math.sqrt(val);
         }
-    
+
         function percentage(val, res) {
-            return res * val / 100;
+          return (res * val) / 100;
         }
-    
+
         function fraction(val) {
-            return 1 / val;
+          return 1 / val;
         }
-    
+
         init();
-    
-    })();
+      })();
     </script>
-</body>
+  </body>
 </html>

@@ -1,23 +1,50 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Runtime Chooser</title>
     <style>
-        * {color-scheme:dark;font-family:sans-serif;background-image:url(data:image/gif;base64,R0lGODlhIAAgAPEAABoaGh0dHSAgICQkJCH/C05FVFNDQVBFMi4wAwEAAAAh/wtJbWFnZU1hZ2ljaw5nYW1tYT0wLjQ1NDU0NQAh+QQEFAD/ACwAAAAAIAAgAAAC4ZSCmTYN0Iyaci7RHBzVBslkonhE2cN9iBGOI2JqqXI8B2JfA7AyWKQSPCY8yi7I+t1CIJqy4/mwIofqggq1TEW8WwLgbbm6v0ZU6zpRklIKaqV4O5talPULKXOqFRJIErOzgcUCQ4X0MQb250WB06Uyx3gW58EnxbXRk5Sh5yKGMpPkmbYXRLnUqEBIuRCwCLe6xzkga/Za9NkxWtuj9opJggjbxCdWnJnTs7l1WJWpitoZDSYVHfUUafljaKe98lAdjBHSvdjopdwymqXVXAjHjtoM1Prlx7bdfj89im1QAAA7);background-size:48px;}
+      * {
+        color-scheme: dark;
+        font-family: sans-serif;
+        background-image: url(data:image/gif;base64,R0lGODlhIAAgAPEAABoaGh0dHSAgICQkJCH/C05FVFNDQVBFMi4wAwEAAAAh/wtJbWFnZU1hZ2ljaw5nYW1tYT0wLjQ1NDU0NQAh+QQEFAD/ACwAAAAAIAAgAAAC4ZSCmTYN0Iyaci7RHBzVBslkonhE2cN9iBGOI2JqqXI8B2JfA7AyWKQSPCY8yi7I+t1CIJqy4/mwIofqggq1TEW8WwLgbbm6v0ZU6zpRklIKaqV4O5talPULKXOqFRJIErOzgcUCQ4X0MQb250WB06Uyx3gW58EnxbXRk5Sh5yKGMpPkmbYXRLnUqEBIuRCwCLe6xzkga/Za9NkxWtuj9opJggjbxCdWnJnTs7l1WJWpitoZDSYVHfUUafljaKe98lAdjBHSvdjopdwymqXVXAjHjtoM1Prlx7bdfj89im1QAAA7);
+        background-size: 48px;
+      }
     </style>
-</head>
-<body>
-    <h2>There are multiple versions for this application. Please choose one:</h2>
-    <select style="background:rgba(0,0,0,0.33);font-size:20px;padding:0 12px;">
-        <option value="runner_ec188.html">1.8.8 (Latest)</option>
-        <option value="runner_ec152.html">1.5.2</option>
-        <option value="javascript:" disabled aria-disabled="true">b1.3 </option>
+  </head>
+  <body>
+    <h2>
+      There are multiple versions for this application. Please choose one:
+    </h2>
+    <select
+      style="background: rgba(0, 0, 0, 0.33); font-size: 20px; padding: 0 12px"
+    >
+      <option value="runner_ec188.html">1.8.8 (Latest)</option>
+      <option value="runner_ec152.html">1.5.2</option>
+      <option value="javascript:" disabled aria-disabled="true">b1.3</option>
     </select>
-    <br><br>
-    <button style="padding:8px 36px;background:#1f3f1f;border:0px solid none;font-size:18px;" onclick="_()">Select</button>
-    <style>button:hover {background:#3f6f3f !important;}</style>
-    <script>function _(){document.location=document.querySelector('select').value}</script>
-</body>
+    <br /><br />
+    <button
+      style="
+        padding: 8px 36px;
+        background: #1f3f1f;
+        border: 0px solid none;
+        font-size: 18px;
+      "
+      onclick="_()"
+    >
+      Select
+    </button>
+    <style>
+      button:hover {
+        background: #3f6f3f !important;
+      }
+    </style>
+    <script>
+      function _() {
+        document.location = document.querySelector("select").value;
+      }
+    </script>
+  </body>
 </html>

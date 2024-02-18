@@ -1,4 +1,4 @@
 {
-    "css.lint.unknownAtRules": "ignore",
-    "fiveServer.host": "0.0.0.0"
-  }
+  "css.lint.unknownAtRules": "ignore",
+  "fiveServer.host": "0.0.0.0"
+}

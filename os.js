@@ -1,33 +1,44 @@
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener("DOMContentLoaded", () => {
+  if (document.querySelector("clock") != null) {
+    const timeElement = document.querySelector(".time");
+    const dateElement = document.querySelector(".date");
 
-    if (document.querySelector('clock') != null) {
-        const timeElement = document.querySelector('.time');
-        const dateElement = document.querySelector('.date');
-        
-        function updateDateTime() {
-          const now = new Date();
-          timeElement.innerText = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: true });
-          dateElement.innerText = now.toLocaleDateString([], { year: 'numeric', month: '2-digit', day: '2-digit' });
-        }
-        updateDateTime();
-        setInterval(updateDateTime, 1000);
+    function updateDateTime() {
+      const now = new Date();
+      timeElement.innerText = now.toLocaleTimeString([], {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      });
+      dateElement.innerText = now.toLocaleDateString([], {
+        year: "numeric",
+        month: "2-digit",
+        day: "2-digit",
+      });
     }
-})
+    updateDateTime();
+    setInterval(updateDateTime, 1000);
+  }
+});
 function toggleStartMenu() {
-    startmenu = document.querySelector('start-menu');
-    taskbar = document.querySelector('taskbar');
-    startmenu.classList.add('reset');
-    startmenu.classList.remove('hidden'); // just incase if it exists
-    startmenu.style.display = 'flex'; 
-    setTimeout(() => {startmenu.classList.remove('reset');},100)
-    setTimeout(() => {
-        startmenu.classList.toggle('slideOut');
-        startmenu.classList.toggle('slideIn');
-        taskbar.classList.toggle('removeFilters');
-    },200)
+  startmenu = document.querySelector("start-menu");
+  taskbar = document.querySelector("taskbar");
+  startmenu.classList.add("reset");
+  startmenu.classList.remove("hidden"); // just incase if it exists
+  startmenu.style.display = "flex";
+  setTimeout(() => {
+    startmenu.classList.remove("reset");
+  }, 100);
+  setTimeout(() => {
+    startmenu.classList.toggle("slideOut");
+    startmenu.classList.toggle("slideIn");
+    taskbar.classList.toggle("removeFilters");
+  }, 200);
 }
-function MessageBox(title = "Message",message) {
-    createWindow({"title":title,"content":`
+function MessageBox(title = "Message", message) {
+  createWindow({
+    title: title,
+    content: `
     <div style="background:#EEE;height:fit-content;position:relative;top:-7px;">
     <p style="color:black;font-size:14px;margin-left:4px;margin-top:4px;">${message}</p><br>
     <br>
@@ -36,11 +47,15 @@ function MessageBox(title = "Message",message) {
     </div>
     </div>
     
-    `,"maxVisible":false,"minVisible":false,"disableResize":true})
+    `,
+    maxVisible: false,
+    minVisible: false,
+    disableResize: true,
+  });
 }
 function sendNotification(title, description) {
-    const n = document.createElement("notification");
-    n.innerHTML = `
+  const n = document.createElement("notification");
+  n.innerHTML = `
         <span class="notifrow">
             <icon></icon>
             <author >Webwin System</author>
@@ -52,16 +67,18 @@ function sendNotification(title, description) {
         <!-- please dont abuse this -->
         <audio autoplay controls src="audio/notify.mp3" class="hidden"></audio>
     `;
-    document.querySelector('.notificationContainer').appendChild(n);
-    setTimeout(() => {
-        dismissNotification(n);
-    }, 6000);
+  document.querySelector(".notificationContainer").appendChild(n);
+  setTimeout(() => {
+    dismissNotification(n);
+  }, 6000);
 }
 function dismissNotification(notification) {
-    notification.style.opacity = '0';
-    setTimeout(() => {notification.remove()},500)
+  notification.style.opacity = "0";
+  setTimeout(() => {
+    notification.remove();
+  }, 500);
 }
 function addToTaskbar(onclick, icon) {
-    const taskbarItemsWrapper = document.querySelector('.taskbarItemsWrapper');
-    taskbarItemsWrapper.innerHTML += `<item onclick="${onclick}"><img src="${icon}" loading="lazy"></img></item>`;
+  const taskbarItemsWrapper = document.querySelector(".taskbarItemsWrapper");
+  taskbarItemsWrapper.innerHTML += `<item onclick="${onclick}"><img src="${icon}" loading="lazy"></img></item>`;
 }
