@@ -124,7 +124,7 @@ window {
 }
 search,
 .search-bar {
-  @apply w-[344px] border hover:border-2 hover:border-[#777]  bg-[#333] hover:bg-[#3f3f3f] text-[#DCDCDC] border-[#5C5C5C] flex text-center text-[15px] align-middle items-center overflow-clip pl-[38px] font-[400];
+  @apply w-[344px] ring-1 hover:ring-2 hover:ring-[#777]  bg-[#333] hover:bg-[#3f3f3f] text-[#DCDCDC] ring-[#5C5C5C] flex text-center text-[15px] align-middle items-center overflow-clip pl-[38px] font-[400];
   background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACcAAAAmCAMAAABwIXKiAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAA/UExURUxMTKmpqeTk5Pn5+WlpafDw8KGhoV1dXT09PWdnZ/j4+Nzc3Kenp0RERGZmZu7u7qioqGVlZe3t7djY2AAAAFQELxsAAAAVdFJOU///////////////////////////ACvZfeoAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACKSURBVDhP7ZE5EoUgEAUBZXFDUe5/Vi18gTDy/2Qa2AlN0UWxiMjj6+55USekapQsFmjXamOdNbrF/IR0Qndp7HS2RDppIEZCEqRTFmIVJEG63kFcA0mQbmDuNzLPNzHv62fW+/nZT8vQ//uPI4MV5F2oZXkX1gAjXLsfWdZt9ay8R5Wvu+eZLsYd4y1v5g7fUAYAAAAASUVORK5CYII=);
   background-repeat: no-repeat !important;
 }

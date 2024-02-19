@@ -6,14 +6,14 @@ document.addEventListener("DOMContentLoaded", () => {
     function updateDateTime() {
       const now = new Date();
       timeElement.innerText = now.toLocaleTimeString([], {
-        hour: "2-digit",
-        minute: "2-digit",
+        hour: "numeric",
+        minute: "numeric",
         hour12: true,
       });
       dateElement.innerText = now.toLocaleDateString([], {
         year: "numeric",
-        month: "2-digit",
-        day: "2-digit",
+        month: "numeric",
+        day: "numeric",
       });
     }
     updateDateTime();
