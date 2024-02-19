@@ -111,8 +111,8 @@ editor.setOptions({
 function submit() {
     var editor = ace.edit("imp_htmldat");
 var html = editor.container.querySelector("textarea").value;
-if (html.toString().replace(/\s+/g, '') == "") {alert("You need to enter something!");}
-if (document.querySelector("#window-title").value.toString().replace(/\s+/g, '') == "") {alert("A window title is required.");}
+if (html.toString().replace(/\s+/g, '') == "") {alert("You need to enter something!");return 1;}
+if (document.querySelector("#window-title").value.toString().replace(/\s+/g, '') == "") {alert("A window title is required.");return 1;}
 
 const e77f = '';
 const e33f = '';

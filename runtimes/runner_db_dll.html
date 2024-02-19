@@ -862,7 +862,7 @@
       async function checkUrlAlive(link) {
         try {
           const response = await fetch(link + "/api/__healthcheck", {
-            mode: "no-cors",
+            mode: "no-cors", redirect:"error"
           });
           console.log(response.status);
           return true;

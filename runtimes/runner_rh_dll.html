@@ -28,7 +28,7 @@
       let useDefaultList = false;
       async function checkUrlAlive(link) {
         try {
-          const response = await fetch(link, { mode: "no-cors" });
+          const response = await fetch(link, { mode: "no-cors", redirect:"error" });
           console.log(response.status);
           return true;
         } catch (error) {
