@@ -23,9 +23,10 @@ document.addEventListener("DOMContentLoaded", () => {
 function toggleStartMenu() {
   startmenu = document.querySelector("start-menu");
   taskbar = document.querySelector("taskbar");
-  startmenu.classList.add("reset");
+  // startmenu.classList.add("reset");
+  if (document.querySelector("start-menu").classList.contains('hidden')) {
   startmenu.classList.remove("hidden"); // just incase if it exists
-  startmenu.style.display = "flex";
+  }
   setTimeout(() => {
     startmenu.classList.remove("reset");
   }, 100);
