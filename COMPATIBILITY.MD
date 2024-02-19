@@ -1,10 +1,10 @@
 # Webwin Compatibility:
-🟥 - NOT Usable, major graphical issues, stuff doesn't load
-🟧 - Partially Usable, some graphical issues, maybe some stuff might not load
-🟨 - Moderately Usable, minor graphical issues. 
-🟩 - Perfect! Everything works as intended
+🟥 - NOT Usable, major graphical issues, stuff doesn't load.<br>
+🟧 - Partially Usable, some graphical issues, maybe some stuff might not load.<br>
+🟨 - Moderately Usable, minor graphical issues. <br>
+🟩 - Perfect! Everything works as intended.<br>
+<br>
 
-[TOC]
 
 ### Firefox:
  * Firefox <70:    🟥 (Creating windows do not work)
