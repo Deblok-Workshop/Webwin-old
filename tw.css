@@ -176,6 +176,7 @@ taskbar {
 }
 @keyframes slideIn {
   0% {
+    display: none;
     min-height: 0px;
     opacity: 0;
     position: absolute;
@@ -184,6 +185,7 @@ taskbar {
     max-height: 0px;
   }
   0.999% {
+    display: block;
     min-height: 0svh;
     opacity: 0;
     position: absolute;
@@ -229,6 +231,7 @@ taskbar {
     position: absolute;
     bottom: 18px;
     left: 0;
+    display:block;
   }
   to {
     min-height: 0px;
@@ -237,6 +240,7 @@ taskbar {
     bottom: 0px;
     left: 0;
     max-height: 0px;
+    display: none;
   }
 }
 javascript {
