@@ -25,6 +25,15 @@ Welcome to <b>JSTerm</b>!
     <code contenteditable="true" class="input">
     </code>
     <script>
+        
+    console.log = function(...message) {
+        let out = message.join(" ")
+        let outEle = document.createElement("pre")
+        outEle.classList.add("out")
+        outEle.innerText = out
+        jsOut.appendChild(outEle)
+    };
+
         document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter' && !event.shiftKey ) {
         (()=>{
