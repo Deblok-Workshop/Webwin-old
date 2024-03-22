@@ -34,6 +34,29 @@ Welcome to <b>JSTerm</b>!
         outEle.innerText = out
         jsOut.appendChild(outEle)
     };
+    console.warn = function(...message) {
+        let jsOut = document.querySelector(".js-out")
+        let out = message.join(" ")
+        let outEle = document.createElement("pre")
+        outEle.classList.add("out")
+        outEle.innerText = out
+        outEle.style.color = "#00FF00";
+        outEle.style.fontWeight = "600"
+        jsOut.appendChild(outEle)
+        
+    };
+    console.error = function(...message) {
+        let jsOut = document.querySelector(".js-out")
+        let out = message.join(" ")
+        let outEle = document.createElement("pre")
+        outEle.classList.add("out")
+        outEle.innerText = out + `\n${console.trace()}`
+        outEle.style.color = "#F08080";
+        outEle.style.fontWeight = "600"
+        jsOut.appendChild(outEle)
+        
+    };
+
 
         document.addEventListener('keydown', function(event) {
     if (event.key === 'Enter' && !event.shiftKey ) {
