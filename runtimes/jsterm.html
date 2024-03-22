@@ -32,6 +32,7 @@ Welcome to <b>JSTerm</b>!
         let outEle = document.createElement("pre")
         outEle.classList.add("out")
         outEle.innerText = out
+        outEle.style.color = "#999";
         jsOut.appendChild(outEle)
     };
     console.warn = function(...message) {
@@ -50,7 +51,8 @@ Welcome to <b>JSTerm</b>!
         let out = message.join(" ")
         let outEle = document.createElement("pre")
         outEle.classList.add("out")
-        outEle.innerText = out + `\n${console.trace()}`
+        let b = console.trace()
+        outEle.innerText = out
         outEle.style.color = "#F08080";
         outEle.style.fontWeight = "600"
         jsOut.appendChild(outEle)
@@ -77,6 +79,7 @@ Welcome to <b>JSTerm</b>!
         let outEle = document.createElement("pre")
         outEle.classList.add("out")
         outEle.innerText = out
+        outEle.style.color = "#999";
         jsOut.appendChild(outEle)
         } catch (c) {
         console.error(c)
