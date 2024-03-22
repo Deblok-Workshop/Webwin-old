@@ -144,11 +144,11 @@ function createWindow(meta) {
             windowElement.addEventListener("mousedown", (event) => {
               const rect = windowElement.getBoundingClientRect();
               const isNearRight =
-                event.clientX > rect.right - 8 &&
-                event.clientX < rect.right + 8;
+                event.clientX > rect.right - 12 &&
+                event.clientX < rect.right + 12;
               const isNearBottom =
-                event.clientY > rect.bottom - 8 &&
-                event.clientY < rect.bottom + 8;
+                event.clientY > rect.bottom - 12 &&
+                event.clientY < rect.bottom + 12;
 
               if (isNearRight || isNearBottom) {
                 event.preventDefault(); // Disable text selection during resizing
