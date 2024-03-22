@@ -6,11 +6,42 @@
     <title>JSTerm</title>
     <style>
         * {font-family:monospace;}
-        body,html {background:#000;color:#fff;}
+        body,html {background:#000;color:#fff;margin:0;font-size:16px;}
+        .input {
+            background:#111;padding:4px;padding-left:8px;padding-right:8px;margin:0;position:fixed;width:100%;bottom:0px;
+        }
+        .input::before {content:"$ ";color:#666;}
+        .js-out {margin:8px;}
+        .js-out pre::before {content:"> ";color:#666;}
     </style>
 </head>
 <body style="background:#000;">
-    <pre class="js-out"></pre>
-    <code style="background:#222;padding:4px;padding-left:8px;padding-right:8px;" contenteditable="true" class="input"></code>
+    <pre class="js-out">gsdfgsfg</pre>
+    <code contenteditable="true" class="input">
+    </code>
+    <script>
+        document.addEventListener('keydown', function(event) {
+    if (event.key === 'Enter' && !event.shiftKey ) {
+        (()=>{
+            let jsOut = document.querySelector(".js-out")
+        let inpForm = document.querySelector(".input")
+        if (inpForm.innerText.replaceAll(" ","").replaceAll("\n","") != "") {
+    
+        let inpEle = document.createElement("pre")
+        
+        inpEle.innerText = inpForm.innerText
+        inpForm.innerText= "" 
+        jsOut.appendChild(inpEle)
+
+        window.scrollTo(0, document.body.scrollHeight);
+        } else {
+            inpForm.innerText = inpForm.innerText.replaceAll(" ","").replaceAll("\n","")
+        }
+        })();
+        
+
+    }
+});
+    </script>
 </body>
 </html>
