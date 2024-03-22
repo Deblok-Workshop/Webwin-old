@@ -31,6 +31,11 @@
         jsOut.appendChild(outEle)
         
     };
+    console.clear= function() {
+        let jsOut = document.querySelector(".js-out")
+        jsOut.innerHTML = ""
+        console.log("Console was cleared.")
+    };
 
 
         document.addEventListener('keydown', function(event) {
