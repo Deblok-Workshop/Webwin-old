@@ -13,6 +13,7 @@
         .input::before {content:"$ ";color:#666;}
         .js-out {margin:8px;}
         .js-out pre::before {content:"> ";color:#666;}
+        .js-out pre.out::before {content:"  "}
     </style>
 </head>
 <body style="background:#000;">
@@ -38,6 +39,22 @@ Welcome to <b>JSTerm</b>!
         jsOut.appendChild(inpEle)
 
         window.scrollTo(0, document.body.scrollHeight);
+        try {
+        let out = eval(inpEle.innerText);
+        let outEle = document.createElement("pre")
+        outEle.classList.add("out")
+        outEle.innerText = out
+        jsOut.appendChild(outEle)
+        } catch (c) {
+        console.error(c)
+        let out = c
+        let outEle = document.createElement("pre")
+        outEle.classList.add("out")
+        outEle.innerText = out
+        outEle.style.color = "#F08080";
+        outEle.style.fontWeight = "600"
+        jsOut.appendChild(outEle)
+        }
         } else {
             inpForm.innerText = inpForm.innerText.replaceAll(" ","").replaceAll("\n","")
         }
