@@ -106,3 +106,11 @@ function ruf() {
     icon: "icons/ruf.png",
   });
 }
+function jsr() {
+  createWindow({
+    title: "JavaScript Terminal",
+    content:
+      "<iframe src='runtimes/jsrepl.html' style='width:99%;height:99%;min-width:128px;min-height:128px;top:0;left:0;'></iframe>",
+    icon: "icons/konsole.png",
+  });
+}
