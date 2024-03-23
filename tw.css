@@ -359,4 +359,4 @@ metro-slider {@apply flex flex-row items-center rounded-full w-[44px] border-[2p
     }
 metro-slider::after {content:"Off"}
 metro-slider.active::after {content:"On"}
-metro-slider::after {margin-left:48px;position:relative;bottom:4px;display:inline-block;}
+metro-slider::after {margin-left:48px;position:relative;bottom:2px;display:inline-block;}

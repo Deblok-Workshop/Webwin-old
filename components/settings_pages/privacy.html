@@ -42,21 +42,37 @@
       </sidebar>
       <container class="m-2 ml-4">
         <br>
-      <section id="tabcloak">
-      <h1 class="text-3xl font-light">Tab Cloaking</h1>
+      <section id="tabcloak" class="flex flex-col">
+      <h1 class="text-3xl font-light mb-2">Tab Cloaking</h1>
       <br>
-      <span class="inline-flex items-center text-gray-300">Enable tab cloaking: 
+      <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Enable tab cloaking: 
         <metro-slider class="mx-2" onclick="this.classList.toggle('active')">
           <span class="status"></span>
         </metro-slider>
-      </span>
+      </div>
       
-      <h2 class="text-xl font-light mt-2">Tab Cloaking Options</h2>
-      <span class="inline-flex items-center text-gray-300">Cloak while unfocused? 
+      <h2 class="text-xl font-light mt-4 mb-2">Tab Cloaking Options</h2>
+      <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Cloak while unfocused? 
         <metro-slider class="mx-2" onclick="this.classList.toggle('active')"> 
         <span class="status"></span>
         </metro-slider>
-      </span>
+      </div>
+      <div class=" my-2 inline-flex flex-col font-medium w-[300px] text-gray-100 text-[16px]">Tab Title 
+        <input
+          type="text"
+          placeholder="Webwin"
+          maxlength="64"
+          class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
+        />
+      </div>
+      <div class=" my-2 inline-flex flex-col font-medium w-[300px] text-gray-100 text-[16px]">Tab Favicon URL 
+        <input
+          type="text"
+          placeholder="https://google.com"
+          maxlength="512"
+          class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
+        />
+      </div>
     </section>
       </container>
     <script>
