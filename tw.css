@@ -344,3 +344,7 @@ start-menu item {
 .settingsItem div.c {
   transform:scale(1) ;transition: all 200ms;
 }
+
+.settingsBtn {@apply active:bg-[#4A4A4A] active:duration-75 text-sm align-middle items-center flex flex-row py-3 hover:bg-[#303030] hover:duration-150 duration-200 px-2 w-full}
+.settingsBtn.active {@apply  border-l-4 border-[#0078D7]}
+.settingsBtn.active img {@apply mx-1}
