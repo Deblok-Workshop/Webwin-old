@@ -336,3 +336,11 @@ start-menu item {
 .desktop-icon span {
   text-shadow: 3px 3px 3px black;
 }
+
+
+.settingsItem:active div {
+  transform:scale(0.95);transition: all 200ms;
+}
+.settingsItem div {
+  transform:scale(1);transition: all 200ms;
+}
