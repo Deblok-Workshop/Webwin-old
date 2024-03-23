@@ -347,3 +347,13 @@ start-menu item {
 
 .settingsBtn {@apply active:bg-[#4A4A4A] active:duration-75 text-sm align-middle items-center flex flex-row py-3 hover:bg-[#303030] hover:duration-150 duration-200 px-2 w-full}
 .settingsBtn.active {transition:background-position 0;background-image:url("icons/settings/border_piece.png"); background-position-y: center; background-repeat: no-repeat; }
+
+
+metro-slider {@apply flex flex-row rounded-full w-[44px] border-[2px] h-5 border-[#EEE] duration-300;
+  background-image:url('icons/metro-slider_dot.png'); background-size:10px; background-position-y:center; background-position-x: 10%; display:inline-block; background-repeat: no-repeat;
+  transition: background-position 200ms;
+  }
+  metro-slider.active {@apply flex flex-row rounded-full w-[44px] border-[2px] h-5  bg-[#0078D7] border-[#0078D7];
+    transition: background-position 200ms;
+    background-image:url('icons/metro-slider_dot.png'); background-size:10px; background-position-y:center; background-position-x: 90%; display:inline-block; background-repeat: no-repeat;
+    }
