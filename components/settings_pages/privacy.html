@@ -46,10 +46,17 @@
       <h1 class="text-3xl font-light">Tab Cloaking</h1>
       <br>
       <span class="inline-flex items-center ">Enable tab cloaking: 
-        <metro-slider class="mx-2" onclick="this.classList.toggle('active')"> </metro-slider>
+        <metro-slider class="mx-2" onclick="this.classList.toggle('active')">
+          <span class="status"></span>
+        </metro-slider>
       </span>
       
       <h2 class="text-xl font-light mt-2">Tab Cloaking Options</h2>
+      <span class="inline-flex items-center ">Cloak while unfocused? 
+        <metro-slider class="mx-2" onclick="this.classList.toggle('active')"> 
+        <span class="status"></span>
+        </metro-slider>
+      </span>
     </section>
       </container>
     <script>
