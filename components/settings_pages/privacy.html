@@ -17,9 +17,18 @@
   <body class="overflow-auto">
         
       <sidebar class="flex flex-col bg-[#1f1f1f] w-[275px] h-screen">
-        <a href="../settings.html" class="py-3 hover:bg-[#303030] hover:duration-150 duration-200 px-2 w-full">
-          Home
+        <a href="../settings.html" class="mb-1 text-sm align-middle items-center flex flex-row py-3 hover:bg-[#303030] hover:duration-150 duration-200 px-2 w-full">
+          <img src="../../icons/settings/home.png" class="mx-2 p-1"> <span>Home</span>
         </a>
+        
+        <input
+          type="text"
+          placeholder="Find a setting"
+          maxlength="64"
+          class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] mx-auto text-black hover:ring-2 hover:ring-[#0078D7]"
+        />
+        <br>
+        <b class="ml-4 mt-4 text-sm font-semibold">Privacy</b>
       </sidebar>
     
   </body>
