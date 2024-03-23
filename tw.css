@@ -338,9 +338,9 @@ start-menu item {
 }
 
 
-.settingsItem:active div {
-  transform:scale(0.95);transition: all 200ms;
+.settingsItem:active div.c {
+  transform:scale(0.97);transition: all 200ms;
 }
-.settingsItem div {
-  transform:scale(1);transition: all 200ms;
+.settingsItem div.c {
+  transform:scale(1) ;transition: all 200ms;
 }
