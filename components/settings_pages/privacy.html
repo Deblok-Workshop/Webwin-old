@@ -30,16 +30,35 @@
         <br>
         <b class="ml-4 mt-4 text-sm font-semibold">Privacy</b>
         <span class="ml-4 mt-4 mb-4 text-sm opacity-75">Privacy settings</span>
-        <a href="#tabcloak" class="settingsBtn">
+        <a href="#tabcloak" id="tabcloak" class="settingsBtn">
           <img src="../../icons/settings/lock.png" class="mx-2 mr-3 p-1"> <span>Tab cloaking</span>
         </a>
-        <a href="#emerg" class="settingsBtn">
+        <a href="#emerg" id="emerg" class="settingsBtn">
           <img src="../../icons/settings/lock.png" class="mx-2 mr-3 p-1"> <span>Emergency Key</span>
         </a>
-        <a href="#tracking" class="settingsBtn">
+        <a href="#tracking" id="tracking" class="settingsBtn">
           <img src="../../icons/settings/lock.png" class="mx-2 mr-3 p-1"> <span>Tracking</span>
         </a>
       </sidebar>
-    
+    <script>
+     setInterval(()=>{
+      var settingsBtns = document.querySelectorAll('.settingsBtn');
+
+settingsBtns.forEach(function(btn) {
+    var btnId = btn.id;
+    var hash = window.location.hash.substring(1); // remove the '#' from the hash
+
+    if (btnId === hash) {
+        btn.classList.add('active');
+    } else {
+
+      btn.classList.remove('active');
+       
+    }
+});
+     },100)
+   
+
+    </script>
   </body>
 </html>
