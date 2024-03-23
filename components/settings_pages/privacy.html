@@ -42,7 +42,7 @@
       </sidebar>
       <container class="m-2 ml-4">
         <br>
-      <section id="tabcloak" class="flex flex-col">
+      <section id="tabcloak" class="flex flex-col hidden">
       <h1 class="text-3xl font-light mb-2">Tab Cloaking</h1>
       <br>
       <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Enable tab cloaking: 
@@ -74,24 +74,47 @@
         />
       </div>
     </section>
+    <section id="emerg" class="flex flex-col hidden">
+      <h1 class="text-3xl font-light mb-2">Emergency Key</h1>
+    </section>
+    <section id="tracking" class="flex flex-col hidden">
+      <h1 class="text-3xl font-light mb-2">Tracking</h1>
+    </section>
       </container>
     <script>
-     setInterval(()=>{
-      var settingsBtns = document.querySelectorAll('.settingsBtn');
-
-settingsBtns.forEach(function(btn) {
-    var btnId = btn.id;
-    var hash = window.location.hash.substring(1); // remove the '#' from the hash
-    if (hash == "") {return}
-    if (btnId === hash) {
-        btn.classList.add('active');
-    } else {
-
-      btn.classList.remove('active');
-       
+      function sections(e) {
+        if (window.location.hash.substr(1) == "") {document.location.hash = "#tabcloak"}
+    
+    function hideAllSections() {
+        var sections = document.querySelectorAll('section');
+        sections.forEach(function(section) {
+            section.classList.add('hidden');
+        });
+        var btns = document.querySelectorAll('.settingsBtn');
+        btns.forEach(function(btn) {
+            btn.classList.remove('active');
+        });
     }
-});
-     },100)
+    function showSection(sectionId) {
+        var section = document.querySelector(`section#${sectionId}`);
+        if (section) {
+            section.classList.remove('hidden');
+            var btn = document.querySelector(`a#${sectionId}`);
+            btn.classList.add('active');
+        }
+    }
+
+    hideAllSections();
+    var hash = window.location.hash.substring(1); // remove the '#' from the hash
+    if (hash) {
+        showSection(hash);
+    }
+
+   
+}
+      
+     
+      setInterval(()=>{sections()},200)
    
 
     </script>
