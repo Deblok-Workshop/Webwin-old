@@ -1,142 +1,33 @@
 <!DOCTYPE html>
-<html lang="en" style="overflow:auto !important; overflow-y:auto !important">
-<head style="overflow:auto !important; overflow-y:auto !important">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Webwin App Generator</title>
-    <link rel="stylesheet" href="../app.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.css" rel="stylesheet" />
-    
-    
-<script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/2.2.1/flowbite.min.js"></script>
-<script src="https://www.unpkg.com/ace-builds@latest/src-noconflict/ace.js"></script>
-<script src="https://www.unpkg.com/ace-builds@latest/src-noconflict/ext-language_tools.js"></script>
-    
 </head>
-<body class="bg-slate-950 dark" style="overflow:auto !important; overflow-y:auto !important">
-    
-<style>
-    html,body {
-    margin:6px;
-}
-#imp_htmldat {border-radius:6px;font-family:monospace !important;}
-#imp_htmldat * {font-family:monospace !important;}
-</style>
-
-<header class="fixed top-0 backdrop-blur-md bg-slate-700/60 block w-full left-0 rounded-b-md py-3 px-2">
- <h1 class="font-bold text-2xl">Webwin App Generator</h1>
-  </header>
-<div style="margin-bottom:30px;">hi</div>
-<p><b>1.</b> Get started by selecting the options you want: (* is required)
-    <!-- <div class="px-4 pb-5 py-1 rounded-md bg-slate-900 w-fit h-fit block"> -->
-
-        <div class="inline-block max-w-sm">
-            <label for="window-title" class=" mb-2 text-sm font-medium text-slate-900 dark:text-white">Window Title*:</label>
-            
-            <input type="text" id="window-title" required style="width:240px; background:rgb(51 65 85) !important;" maxlength="36" class=" p-2 text-slate-900 border  rounded-lg  sm:text-xs focus:ring-blue-500 focus:border-blue-500  border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        </div>
-        <br>
-        <div class="inline-block max-w-sm">
-            <label for="window-class" class=" mb-2 text-sm font-medium text-slate-900 dark:text-white">Window content class:</label>
-            
-            <input type="text" id="window-class" style="width:240px; background:rgb(51 65 85) !important;font-family:monospace;" maxlength="128" class=" p-2 text-slate-900 border  rounded-lg  sm:text-xs focus:ring-blue-500 focus:border-blue-500  border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        </div>
-        <br>
-        <div class="inline-block max-w-sm">
-            <label for="window-ico" class=" mb-2 text-sm font-medium text-slate-900 dark:text-white">Icon URL:</label>
-            
-            <input type="text" id="window-ico" style="width:240px; background:rgb(51 65 85) !important;font-family:monospace;" maxlength="32767" class=" p-2 text-slate-900 border  rounded-lg  sm:text-xs focus:ring-blue-500 focus:border-blue-500  border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-        </div>
-        <br><br>
-        <h3 class="mb-4 font-semibold text-white text-xl m-0" style="margin:0;">Window options:</h3>
-        <ul class="w-fit text-sm font-medium text-slate-900 border  rounded-lg bg-black/20 border-slate-600 dark:text-white px-2" style="border-color: rgb(71 85 105) !important;background:rgba(0,0,0,0.2) !important;">
-
-            <li class="w-full border-b  rounded-t-lg !border-slate-600 !border-b-slate-600" style="border-color: rgb(71 85 105) !important;">
-                <div class="flex items-center ps-3">
-                    <input id="disable-resize" type="checkbox" value="" class="w-4 h-4  rounded focus:ring-blue-600 ring-offset-slate-700 focus:ring-offset-slate-700 focus:ring-2 bg-slate-600 border-slate-500">
-                    <label for="disable-resize" class="w-full py-3 ms-2 text-sm font-medium text-slate-900 dark:text-slate-300">Disable Resize</label>
-                </div>
-            </li>
-            <li class="w-full border-b  rounded-t-lg !border-slate-600 !border-b-slate-600" style="border-color: rgb(71 85 105) !important;">
-                <div class="flex items-center ps-3">
-                    <input id="disable-max" type="checkbox" value="" class="w-4 h-4  rounded focus:ring-blue-600 ring-offset-slate-700 focus:ring-offset-slate-700 focus:ring-2 bg-slate-600 border-slate-500">
-                    <label for="disable-max" class="w-full py-3 ms-2 text-sm font-medium text-slate-900 dark:text-slate-300">Disable maximize</label>
-                </div>
-            </li>
-            <li class="w-full border-b  rounded-t-lg !border-slate-600 !border-b-slate-600" style="border-color: rgb(71 85 105) !important;">
-                <div class="flex items-center ps-3">
-                    <input id="disable-min" type="checkbox" value="" class="w-4 h-4  rounded focus:ring-blue-600 ring-offset-slate-700 focus:ring-offset-slate-700 focus:ring-2 bg-slate-600 border-slate-500">
-                    <label for="disable-min" class="w-full py-3 ms-2 text-sm font-medium text-slate-900 dark:text-slate-300">Disable minimize</label>
-                </div>
-            </li>
-            <li class="w-full rounded-t-lg border-b !border-slate-600 !border-b-slate-600" style="border-color: rgb(71 85 105) !important;">
-                <div class="flex items-center ps-3">
-                    <input id="min-size" type="checkbox" value="" class="w-4 h-4  rounded focus:ring-blue-600 ring-offset-slate-700 focus:ring-offset-slate-700 focus:ring-2 bg-slate-600 border-slate-500">
-                    <label for="min-size" class="w-full py-3 ms-2 text-sm font-medium text-slate-900 dark:text-slate-300 mr-2">Minimum Size: </label>
-                    <input type="text" id="min-size-txt" style="width:160px; background:rgb(51 65 85) !important;font-family:monospace;" maxlength="16" placeholder="320px,180px" class=" p-2 text-slate-900 border  rounded-lg  sm:text-xs focus:ring-blue-500 focus:border-blue-500  border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                </div>
-            </li>
-            <li class="w-full rounded-t-lg !border-slate-600 !border-b-slate-600" style="border-color: rgb(71 85 105) !important;">
-                <div class="flex items-center ps-3">
-                    <input id="max-size" type="checkbox" value="" class="w-4 h-4  rounded focus:ring-blue-600 ring-offset-slate-700 focus:ring-offset-slate-700 focus:ring-2 bg-slate-600 border-slate-500">
-                    <label for="max-size" class="w-full py-3 ms-2 text-sm font-medium text-slate-900 dark:text-slate-300 mr-2">Maximum Size: </label>
-                    <input type="text" id="max-size-txt" style="width:160px; background:rgb(51 65 85) !important;font-family:monospace;" maxlength="16" placeholder="640px,480px" class=" p-2 text-slate-900 border  rounded-lg  sm:text-xs focus:ring-blue-500 focus:border-blue-500  border-slate-600 dark:placeholder-slate-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
-                </div>
-            </li>
-        </ul>
-<!--</div>-->
-        
-
-</p>
-<div>
-    
-</div>
-<p><b>2.</b> Then copy-paste your HTML data to be embedded*.<br><sub>Don't worry, theres code highlighting.</sub></p>
-<div id='imp_htmldat' style="width:40vw;height:48vh;min-width:360px;"></div>
-<br>
-<button type="button" onclick="submit()" class="text-white bg-blue-600 hover:bg-blue-800 focus:bg-blue-900 focus:ring-4 focus:ring-blue-950 font-medium rounded-lg text-sm px-5 py-2.5 me-2 mb-2  focus:outline-none">Create App</button>
-<script>
-    ace.require("ace/ext/language_tools");
-var editor = ace.edit("imp_htmldat");
-editor.session.setMode("ace/mode/html");
-editor.setTheme("ace/theme/github_dark");
-editor.setOptions({
-    enableBasicAutocompletion: true,
-    enableSnippets: true,
-    enableLiveAutocompletion: true
-});
-
-</script>
-    <script>
-function submit() {
-    var editor = ace.edit("imp_htmldat");
-var html = editor.container.querySelector("textarea").value;
-if (html.toString().replace(/\s+/g, '') == "") {alert("You need to enter something!");return 1;}
-if (document.querySelector("#window-title").value.toString().replace(/\s+/g, '') == "") {alert("A window title is required.");return 1;}
-
-const e77f = '';
-const e33f = '';
-function constructapp(meta, file) {
-    return e77f + JSON.stringify(meta) + e77f + e33f + btoa(file) + e33f;
-}
-var minSize = document.querySelector("#min-size-txt").value.split(",")
-var maxSize = document.querySelector("#max-size-txt").value.split(",")
-var stylesString = "";
-if (document.querySelector('#max-size').checked) {
-    stylesString += `max-width:${maxSize[0]};max-height:${maxSize[1]};`
-}
-if (document.querySelector('#min-size').checked) {
-    stylesString += `min-width:${minSize[0]};min-height:${minSize[1]};`
-}
-meta = {"title":`${document.querySelector("#window-title").value}`,"contentClass":`${document.querySelector("#window-class").value}`,"disableResize":document.querySelector("#disable-resize").checked,"maxVisible":!document.querySelector("#disable-max").checked,"minVisible":!document.querySelector("#disable-min").checked,"windowStyles":stylesString,"icon":document.querySelector("#window-ico").value}
-wwpc = constructapp(meta,html)
-var blob = new Blob([wwpc], {type: "application/octet-stream;charset=utf-8"});
-var a  = document.createElement("a");
-a.href = URL.createObjectURL(blob);
-a.download = "app.wwpc";
-a.click(); a.remove();
-}
-    </script>
-   
+<body>
+    <h1>Webwin App Generator</h1>
+    <form>
+        <ol>
+            <li>
+    Title:
+    <input type="text" id="title" maxlength="64" required>
+</li>
+<li>
+    Icon URL:
+    <input type="text" id="iconurl" maxlength="120" required>
+</li>
+<li>
+    Window Options:
+    <div class="window-options" style="padding:-10px;border:2px inset #666; width:fit-content;background-color:#ddd;">
+        <pre>
+   Resize..: <input type="checkbox" checked id="resize">  
+   Minimize: <input type="checkbox" checked id="min">   
+   Maximize: <input type="checkbox" checked id="max">   
+</pre>
+    </div>
+</li>
+</ol>
+</form>
 </body>
 </html>
