@@ -1,3 +1,17 @@
+function edge() {
+  const isWindows = navigator.userAgent.includes("Windows");
+  if (isWindows) {
+    MessageBox(
+      "Microsoft Edge",
+      "A prompt has been shown on screen to open Microsoft Edge.&nbsp;",
+    );
+    setTimeout(() => {
+      document.location = "microsoft-edge:";
+    }, 1000);
+  } else {
+    sendNotification("Error", "You don't seem to be running Windows.");
+  }
+
 function discord() {
   createWindow({
     title: "Discord",
