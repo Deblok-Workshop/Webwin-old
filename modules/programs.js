@@ -11,7 +11,7 @@ function edge() {
   } else {
     sendNotification("Error", "You don't seem to be running Windows.");
   }
-
+}
 function discord() {
   createWindow({
     title: "Discord",
@@ -30,7 +30,7 @@ function vscode() {
 }
 function chrome() {
   createWindow({
-    title: "Chrome",
+    title: "Google Chrome",
     content:
       "<iframe src='https://gfw2j2vgafd6.share.zrok.io/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
     icon: "icons/chrome.png",
