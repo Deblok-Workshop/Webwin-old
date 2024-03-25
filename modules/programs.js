@@ -1,16 +1,19 @@
-function edge() {
-  const isWindows = navigator.userAgent.includes("Windows");
-  if (isWindows) {
-    MessageBox(
-      "Microsoft Edge",
-      "A prompt has been shown on screen to open Microsoft Edge.&nbsp;",
-    );
-    setTimeout(() => {
-      document.location = "microsoft-edge:";
-    }, 1000);
-  } else {
-    sendNotification("Error", "You don't seem to be running Windows.");
-  }
+function discord() {
+  createWindow({
+    title: "Discord",
+    content:
+      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/web/_aHR0cHM6Ly9kaXNjb3JkLmNvbQ==_/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+    icon: "https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png",
+  });
+}
+
+function chrome() {
+  createWindow({
+    title: "Chrome",
+    content:
+      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/web/_aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==_/?gws_rd=ssl' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/640px-Google_Chrome_icon_%28February_2022%29.svg.png",
+  });
 }
 function ec() {
   createWindow({
