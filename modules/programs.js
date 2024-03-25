@@ -2,16 +2,16 @@ function discord() {
   createWindow({
     title: "Discord",
     content:
-      "<iframe src='icons/discord.png' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png",
+      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/web/_aHR0cHM6Ly9kaXNjb3JkLmNvbQ==_/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+    icon: "icons/discord.png",
   });
 }
 function vscode() {
   createWindow({
-    title: "VS CODE",
+    title: "VS Code",
     content:
       "<iframe src='https://vscode.dev/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "icons/vscode.png",
+    icon: "https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png",
   });
 }
 function chrome() {
