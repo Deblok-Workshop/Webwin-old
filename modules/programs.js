@@ -2,17 +2,24 @@ function discord() {
   createWindow({
     title: "Discord",
     content:
-      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/web/_aHR0cHM6Ly9kaXNjb3JkLmNvbQ==_/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+      "<iframe src='icons/discord.png' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
     icon: "https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png",
   });
 }
-
+function vscode() {
+  createWindow({
+    title: "VS CODE",
+    content:
+      "<iframe src='https://vscode.dev/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+    icon: "icons/vscode.png",
+  });
+}
 function chrome() {
   createWindow({
     title: "Chrome",
     content:
       "<iframe src='https://gfw2j2vgafd6.share.zrok.io/web/_aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==_/?gws_rd=ssl' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e1/Google_Chrome_icon_%28February_2022%29.svg/640px-Google_Chrome_icon_%28February_2022%29.svg.png",
+    icon: "icons/chrome.png",
   });
 }
 function ec() {
