@@ -12,6 +12,7 @@
         
       }
       html,body {background-color:#0F0F0F;  }
+      a {display:flex;}
     </style>
   </head>
   <body>
@@ -29,10 +30,10 @@
       </div>
       <br />
       <div class="mx-8 !min-h-[300px] !h-full">
-        <button
+        <button onclick="document.location = 'settings_pages/personalization.html'"
           class="settingsItem mr-4 text-left w-[250px] h-[85px] hover:bg-[#202020] duration-200 border border-transparent hover:border-[#2F2F2F]"
         >
-        <div class="c">
+        <div class="c" >
           <div class="flex flex-row px-3 align-top items-start">
             <img
               src="../icons/settings/personalization.png"
@@ -47,8 +48,8 @@
             </div>
           </div>
         </div>
-        </button>
-        <button
+      </button>
+        <button onclick="document.location = 'settings_pages/privacy.html'"
           class="settingsItem mr-4 text-left w-[250px] h-[85px] hover:bg-[#202020] duration-200 border border-transparent hover:border-[#2F2F2F]"
         >
         <div class="c">
@@ -66,7 +67,7 @@
             </div>
           </div>
         </div>
-        </button>
+      </button>
       </div>
     </container>
 
