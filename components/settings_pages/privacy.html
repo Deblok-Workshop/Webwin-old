@@ -79,16 +79,7 @@
     </section>
     <section id="developer" class="flex flex-col hidden">
       <h1 class="text-3xl font-light mb-2">Developer Settings</h1>
-      <window class="relative block p-2 bg-gray-400 text-gray-900 w-fit">
-        <p>Load WWAPP from URL:</p>
-          <input id="wwapp">
-        <p>Add to Desktop: <checkbox class="inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
-          
-        <p>Add to Start Menu: <checkbox class="checked inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
-        
-        <p>Add to Taskbar: <checkbox class="inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
-        
-      </window>
+      <button onclick="openDevtools()">Open</button>
     </section>
       </container>
     <script>
@@ -126,7 +117,27 @@
      
       setInterval(()=>{sections()},200)
    
-
+function openDevtools() {
+  createWindow({"title":"Developer Tools","content":`
+  <div class="p-2">
+    <h1 class="text-xl font-light mb-2">Developer Tools</h1>
+  <hr class="max-w-[50%]">
+  <br>
+  <h2 class="text-lg font-light mb-2">WWAPP</h2>
+  
+  <p class="text-sm">Load WWAPP from URL:</p>
+          <input id="wwapp">
+        <p class="text-sm">Add to Desktop: <checkbox class="inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
+          
+        <p class="text-sm">Add to Start Menu: <checkbox class="checked inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
+        
+        <p class="text-sm">Add to Taskbar: <checkbox class="inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
+        </div>
+        `,disableResize:true,maxVisible:false,minVisible:false})
+}
     </script>
+    <script src="../../modules/os.js">
+    </script>
+    <script src="../../modules/winman.js"></script>
   </body>
 </html>
