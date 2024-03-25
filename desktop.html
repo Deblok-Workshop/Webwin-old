@@ -11,14 +11,15 @@
 </head>
 <body class="bg-slate-800 mx-2 my-1 text-white">
   <script src="modules/browserreq.js"></script>
-  <container class="desktop">
-<a href="javascript:" onclick="window_elements()">Elements</a>
+  <a href="javascript:" onclick="window_elements()">Elements</a>
 <a href="javascript:" onclick="closeWindows()">Close All</a>
+  <div class="desktop grid grid-flow-col auto-cols-[70px] grid-rows-9  !w-full min-w-full">
+
 <desktop-icon ondblclick="gh()" class="cursor-pointer px-2 duration-75 border border-transparent text-xs  hover:border-[#585F66]/95 hover:bg-[#202A33]/80 min-h-[50px] max-h-[100px] max-w-[70px] flex flex-col justify-center align-middle items-center">
   <img style="width:32px;height:32px;filter:invert(1)" src="icons/gh.ico" loading="lazy">
 <span class="max-w-[70px] max-h-[100px] overflow-hidden" style="line-break: anywhere;">GitHub</span>
 </desktop-icon>
-    </container>
+</div>
     
   <taskbar class="!w-full min-w-full ">
     <button class="meta " onclick="toggleStartMenu()">
