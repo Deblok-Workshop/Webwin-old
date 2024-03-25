@@ -29,10 +29,16 @@
 </li>
 <li>
     <p>Code to run:</p>
-    <textarea id="code"></textarea>
+    <textarea id="code" required minlength="4"></textarea>
 </li>
 </ol>
-<input type="submit" style="font-size:16px; border-style:outset;">
+<input type="submit" value="Generate App" style="font-size:16px; border-style:outset;">
 </form>
+<script>
+    let form = document.querySelector('form')
+    form.addEventListener("submit",()=>{
+        event.preventDefault();
+    })
+</script>
 </body>
 </html>
