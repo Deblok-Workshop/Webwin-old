@@ -28,16 +28,39 @@
     </div>
 </li>
 <li>
-    <p>Code to run:</p>
-    <textarea id="code" required minlength="4"></textarea>
+    <p>HTML body:</p>
+    <textarea id="code" required minlength="10"></textarea>
 </li>
 </ol>
 <input type="submit" value="Generate App" style="font-size:16px; border-style:outset;">
 </form>
 <script>
+    function uuidv4() { // polyfill for insecure contexts
+    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
+    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
+    return v.toString(16);
+    }); 
+    }
+    Crypto.randomUUID = uuidv4
+
     let form = document.querySelector('form')
     form.addEventListener("submit",()=>{
         event.preventDefault();
+        let title = document.querySelector("#title").value  
+        let iconurl = document.querySelector("#iconurl").value
+        let windowOpts = [!document.querySelector("#resize").checked,!document.querySelector("#min").checked,!document.querySelector("#max").checked ]
+        let code = document.querySelector("#code").value
+        let res = `{"wwapp":{"version":1,"id":"?${Crypto.randomUUID()}","title":"${encodeURIComponent(title)}","iconurl":"${encodeURIComponent(iconurl)}","windowOpts":${JSON.stringify(windowOpts)}},"execCode":"${btoa(code)}"}`
+        res = `data:application/json;base64,${btoa(res)}`
+        console.log(res)
+        
+        let blob = new Blob([res], { type: "application/json" });
+        let url = URL.createObjectURL(blob);
+        let link = document.createElement("a");
+        link.href = url;
+        link.download = `${title.replaceAll(" ","-")}.wwapp`;
+        link.click()
+        alert("Your file has been downloaded.")
     })
 </script>
 </body>
