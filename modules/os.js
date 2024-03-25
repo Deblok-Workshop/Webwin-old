@@ -84,7 +84,7 @@ function addToTaskbar(onclick, icon) {
   taskbarItemsWrapper.innerHTML += `<item onclick="${onclick}"><img src="${icon}" loading="lazy"></img></item>`;
 }
 function addToStartMenu(onclick, icon,name) {
- const startMenu = document.querySelector("start-menu")
+ const startMenu = document.querySelector("start-menu div .items")
  startMenu.innerHTML += `<item onclick="${onclick}">
  <icon class="mr-2 ml-0 startmenuico" style="background-image:url('${icon}')"></icon>
  ${name}
