@@ -33,7 +33,7 @@ function ec() {
 function gh() {
   a = document.createElement("a");
   a.target = "_blank";
-  a.href = "https://github.com/uhidontkno/Webwin";
+  a.href = "https://deblok.link/webwin";
   a.click();
   a.remove();
 }
