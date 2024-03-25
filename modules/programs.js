@@ -11,14 +11,14 @@ function vscode() {
     title: "VS Code",
     content:
       "<iframe src='https://vscode.dev/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "https://cdn.logojoy.com/wp-content/uploads/20210422095037/discord-mascot.png",
+    icon: "icons/vscode.png",
   });
 }
 function chrome() {
   createWindow({
     title: "Chrome",
     content:
-      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/web/_aHR0cHM6Ly93d3cuZ29vZ2xlLmNvbQ==_/?gws_rd=ssl' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
     icon: "icons/chrome.png",
   });
 }
