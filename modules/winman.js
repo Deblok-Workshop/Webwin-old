@@ -135,7 +135,7 @@ function createWindow(meta) {
         windows.push(classname);
 
         setTimeout(() => {
-          document.querySelector("container").appendChild(windowElement);
+          document.querySelector(".desktop").appendChild(windowElement);
           dragElement(windowElement);
           indexing(windowElement);
           if (!disableResize) {
