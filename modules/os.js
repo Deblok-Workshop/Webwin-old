@@ -125,3 +125,22 @@ function installWWApp(uri,config) {
   return 0;
   
 }
+function uninstallWWApp(identifier) {
+  function idxPop(idx) {
+    let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"installed":[]}
+    let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"uri":[]}
+    wwappdat.uri.pop(idx)
+    wwappconf.installed.pop(idx)
+  }
+  if (typeof indentifier == "number") {
+    idxPop(identifier)
+  } else if (typeof identifier == "string") {
+    let idx = wwappconf.installed.findIndex(item => item[3] === searchString)
+    if (idx != -1) {
+      idxPop(idx)
+    } // do nothing if it does not exist
+  } else {
+    throw new Error("Unknown identifier")
+  }
+  return 0
+}
