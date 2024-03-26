@@ -177,7 +177,7 @@ function launchWWApp(identifier) {
   // closewindow(t.className)
   let meta = JSON.parse(atob(wwappdat.uri[idx].replace("data:application/json;base64,","")))
   
-  createWindow({"content":atob(meta.execCode),"icon":meta.wwapp.iconurl,"title":meta.wwapp.title,disableResize:meta.wwapp.windowOpts[0],minVisible:meta.wwapp.windowOpts[1],maxVisible:meta.wwapp.windowOpts[2]})
+  createWindow({"content":atob(meta.execCode),"icon":meta.wwapp.iconurl,"title":meta.wwapp.title,disableResize:!meta.wwapp.windowOpts[0],minVisible:!meta.wwapp.windowOpts[1],maxVisible:!meta.wwapp.windowOpts[2]})
   // meta.execCode
   
 }
