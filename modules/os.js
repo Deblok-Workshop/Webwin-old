@@ -113,14 +113,14 @@ function installWWApp(uri,config) {
     throw new Error("Not a wwapp url.")
     return -1;
   }
-  let wwappdat = JSON.parse(localStorage["wwapp_data"])
+  let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"installed":[]}
   wwappdat["uri"].push(uri)
-  let wwappconf = JSON.parse(localStorage["wwapp_config"])
+  let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"uri":[]}
   let meta = JSON.parse(atob(uri.replace("data:application/json;base64,","")))
   config.push(meta.wwapp.title)
   wwappconf["installed"].push(config)
-  localStorage["wwapp_data"] = wwappdat
-  localStorage["wwapp_config"] = wwappconf
+  localStorage["wwapp_data"] = JSON.stringify(wwappdat)
+  localStorage["wwapp_config"] = JSON.stringify(wwappconf)
   console.log(`wwapp ${meta.wwapp.title} installed successfully!`)
   return 0;
   
