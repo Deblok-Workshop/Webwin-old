@@ -12,7 +12,6 @@
     "tailwindcss": "^3.4.1"
   },
   "scripts": {
-    "preinstall": "npx only-allow bun",
     "buildonce": "tailwindcss -i tw.css -o app.css -m",
     "build": "tailwindcss -i tw.css -o app.css -m -w",
     "start": "bun webserver/index.ts",
