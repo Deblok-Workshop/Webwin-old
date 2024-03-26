@@ -155,13 +155,13 @@ function addWWApp(identifier) {
   }
   let meta = JSON.parse(atob(wwappdat.uri[idx].replace("data:application/json;base64,","")))
   if (wwappconf.installed[idx][0] == 1) {
-    addToStartMenu(`launchWWApp(${idx})`,meta.wwapp.iconurl,meta.wwapp.title)
+    addToStartMenu(`launchWWApp(${idx})`,decodeURIComponent(meta.wwapp.iconurl),decodeURIComponent(meta.wwapp.title))
   }
   if (wwappconf.installed[idx][1] == 1) {
-    addToTaskbar(`launchWWApp(${idx})`,meta.wwapp.iconurl)
+    addToTaskbar(`launchWWApp(${idx})`,decodeURIComponent(meta.wwapp.iconurl))
   }
   if (wwappconf.installed[idx][2] == 1) {
-    addToDesktop(`launchWWApp(${idx})`,meta.wwapp.iconurl,meta.wwapp.title)
+    addToDesktop(`launchWWApp(${idx})`,decodeURIComponent(meta.wwapp.iconurl),decodeURIComponent(meta.wwapp.title))
   }
 }
 
@@ -185,7 +185,7 @@ function launchWWApp(identifier) {
   // closewindow(t.className)
   let meta = JSON.parse(atob(wwappdat.uri[idx].replace("data:application/json;base64,","")))
   
-  createWindow({"content":atob(meta.execCode),"icon":meta.wwapp.iconurl,"title":meta.wwapp.title,disableResize:!meta.wwapp.windowOpts[0],minVisible:!meta.wwapp.windowOpts[1],maxVisible:!meta.wwapp.windowOpts[2]})
+  createWindow({"content":atob(meta.execCode),"icon":decodeURIComponent(meta.wwapp.iconurl),"title":decodeURIComponent(meta.wwapp.title),disableResize:!meta.wwapp.windowOpts[0],minVisible:!meta.wwapp.windowOpts[1],maxVisible:!meta.wwapp.windowOpts[2]})
   // meta.execCode
   
 }
