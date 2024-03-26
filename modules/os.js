@@ -102,21 +102,24 @@ function addToDesktop(onclick, icon,name) {
  }
  
 if (!localStorage["wwapp_config"]) {
-  localStorage.wwapp_config = JSON.stringify({"version":1,"installed":[]})
+  localStorage["wwapp_config"] = JSON.stringify({"version":1,"installed":[]})
 }
 if (!localStorage["wwapp_data"]) {
-  localStorage.wwapp_data = JSON.stringify({"version":1,"uri":[]})
+  localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
 }
 function installWWApp(uri,config) {
-  try {let res = fetch(uri)
-    if (!res.ok) {throw new Error("response not ok")}
-  } catch (e) {
-    
-    var lang = "The WWAPP url is unreachable. Please use a local URI (eg. data:application/json;base64,...) or use a CORS proxy."
-    console.error(lang)
-    console.error(e)
-    alert(lang)
-   
+  if (!uri.startsWith("data:application/json;base64")) {
+    alert("Not a wwapp url.")
+    throw new Error("Not a wwapp url.")
     return -1;
   }
+  let wwappdat = JSON.parse(localStorage["wwapp_data"])
+  wwappdat["uri"].push(uri)
+  let wwappconf = JSON.parse(localStorage["wwapp_config"])
+  let meta = JSON.parse(atob(uri.replace("data:application/json;base64,","")))
+  config.push(meta.wwapp.title)
+  wwappconf["installed"].push(config)
+  console.log(`wwapp ${meta.wwapp.title} installed successfully!`)
+  return 0;
+  
 }
