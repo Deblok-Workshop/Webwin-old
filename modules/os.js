@@ -132,9 +132,9 @@ function uninstallWWApp(identifier) {
     wwappdat.uri.pop(idx)
     wwappconf.installed.pop(idx)
   }
-  if ((typeof indentifier).toString() == "number") {
+  if ((typeof identifier).toString() == "number") {
     idxPop(identifier)
-  } else if ((typeof indentifier).toString() == "string") {
+  } else if ((typeof identifier).toString() == "string") {
     let idx = wwappconf.installed.findIndex(item => item[3] === searchString)
     if (idx != -1) {
       idxPop(idx)
@@ -146,14 +146,17 @@ function uninstallWWApp(identifier) {
   return 0
 }
 function addWWApp(identifier) {
+  console.log((typeof identifier).toString() )
   let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
   let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
   let idx = 0
-  if ((typeof indentifier).toString() == "number") {idx = identifier} else {
-    let found = wwappconf.installed.findIndex(item => item[3] === searchString)
+  if ((typeof identifier).toString() == "number") {idx = identifier} else 
+  if ((typeof identifier).toString() == "string")
+  {
+    let found = wwappconf.installed.findIndex(item => item[3] === identifier)
     if (found == -1) {throw new Error("This app does not exist.")}
     idx = found
-  }
+  } else {throw new Error("Invalid identifier.")}
   let meta = JSON.parse(atob(wwappdat.uri[idx].replace("data:application/json;base64,","")))
   if (wwappconf.installed[idx][0] == 1) {
     addToStartMenu(`launchWWApp(${idx})`,decodeURIComponent(meta.wwapp.iconurl),decodeURIComponent(meta.wwapp.title))
@@ -170,6 +173,7 @@ function addAllWWApp() {
   let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
   let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
   for (let i = 0; i < wwappconf.installed.length; i++) {
+    console.log(i)
     addWWApp(i)
   }
 }
@@ -178,7 +182,7 @@ function launchWWApp(identifier) {
   let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
   let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
   let idx = 0
-  if ((typeof indentifier).toString() == "number") {idx = identifier} else {
+  if ((typeof identifier).toString() == "number") {idx = identifier} else {
     let found = wwappconf.installed.findIndex(item => item[3] === searchString)
     if (found == -1) {throw new Error("This app does not exist.")}
     idx = found
