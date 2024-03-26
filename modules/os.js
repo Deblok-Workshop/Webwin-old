@@ -131,6 +131,8 @@ function uninstallWWApp(identifier) {
     let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
     wwappdat.uri.pop(idx)
     wwappconf.installed.pop(idx)
+    localStorage["wwapp_data"] = JSON.stringify(wwappdat)
+    localStorage["wwapp_config"] = JSON.stringify(wwappconf)
   }
   if ((typeof identifier).toString() == "number") {
     idxPop(identifier)
