@@ -127,8 +127,8 @@ function installWWApp(uri,config) {
 }
 function uninstallWWApp(identifier) {
   function idxPop(idx) {
-    let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"installed":[]}
-    let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"uri":[]}
+    let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
+    let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
     wwappdat.uri.pop(idx)
     wwappconf.installed.pop(idx)
   }
@@ -143,4 +143,41 @@ function uninstallWWApp(identifier) {
     throw new Error("Unknown identifier")
   }
   return 0
+}
+function addWWApp(identifier) {
+  let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
+  let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
+  let idx = 0
+  if (typeof identifier == "number") {idx = identifier} else {
+    let found = wwappconf.installed.findIndex(item => item[3] === searchString)
+    if (found == -1) {throw new Error("This app does not exist.")}
+    idx = found
+  }
+  let meta = JSON.parse(atob(wwappdat.uri[idx].replace("data:application/json;base64,","")))
+  if (wwappconf.installed[idx][0] == 1) {
+    addToStartMenu(`launchWWApp(${idx})`,meta.wwapp.iconurl,meta.wwapp.title)
+  }
+  if (wwappconf.installed[idx][1] == 1) {
+    addToTaskbar(`launchWWApp(${idx})`,meta.wwapp.iconurl)
+  }
+  if (wwappconf.installed[idx][2] == 1) {
+    addToDesktop(`launchWWApp(${idx})`,meta.wwapp.iconurl,meta.wwapp.title)
+  }
+}
+
+function launchWWApp(identifier) {
+  let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
+  let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
+  let idx = 0
+  if (typeof identifier == "number") {idx = identifier} else {
+    let found = wwappconf.installed.findIndex(item => item[3] === searchString)
+    if (found == -1) {throw new Error("This app does not exist.")}
+    idx = found
+  }
+  // closewindow(t.className)
+  let meta = JSON.parse(atob(wwappdat.uri[idx].replace("data:application/json;base64,","")))
+  
+  createWindow({"content":atob(meta.execCode),"icon":meta.wwapp.iconurl,"title":meta.wwapp.title,disableResize:meta.wwapp.windowOpts[0],minVisible:meta.wwapp.windowOpts[1],maxVisible:meta.wwapp.windowOpts[2]})
+  // meta.execCode
+  
 }
