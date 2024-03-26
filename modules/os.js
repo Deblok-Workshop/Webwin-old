@@ -101,3 +101,9 @@ function addToDesktop(onclick, icon,name) {
  
  }
  
+if (!localStorage["wwapp_config"]) {
+  localStorage["wwapp_config"] = {"version":1,"installed":[]}
+}
+if (!localStorage["wwapp_data"]) {
+  localStorage["wwapp_data"] = {"version":1,"uri":[]}
+}
