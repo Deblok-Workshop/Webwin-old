@@ -119,6 +119,8 @@ function installWWApp(uri,config) {
   let meta = JSON.parse(atob(uri.replace("data:application/json;base64,","")))
   config.push(meta.wwapp.title)
   wwappconf["installed"].push(config)
+  localStorage["wwapp_data"] = wwappdat
+  localStorage["wwapp_config"] = wwappconf
   console.log(`wwapp ${meta.wwapp.title} installed successfully!`)
   return 0;
   
