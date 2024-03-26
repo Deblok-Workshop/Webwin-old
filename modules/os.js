@@ -132,14 +132,15 @@ function uninstallWWApp(identifier) {
     wwappdat.uri.pop(idx)
     wwappconf.installed.pop(idx)
   }
-  if (typeof indentifier == "number") {
+  if ((typeof indentifier).toString() == "number") {
     idxPop(identifier)
-  } else if (typeof identifier == "string") {
+  } else if ((typeof indentifier).toString() == "string") {
     let idx = wwappconf.installed.findIndex(item => item[3] === searchString)
     if (idx != -1) {
       idxPop(idx)
     } // do nothing if it does not exist
   } else {
+    console.log(typeof identifier)
     throw new Error("Unknown identifier")
   }
   return 0
@@ -148,7 +149,7 @@ function addWWApp(identifier) {
   let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
   let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
   let idx = 0
-  if (typeof identifier == "number") {idx = identifier} else {
+  if ((typeof indentifier).toString() == "number") {idx = identifier} else {
     let found = wwappconf.installed.findIndex(item => item[3] === searchString)
     if (found == -1) {throw new Error("This app does not exist.")}
     idx = found
@@ -177,7 +178,7 @@ function launchWWApp(identifier) {
   let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
   let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
   let idx = 0
-  if (typeof identifier == "number") {idx = identifier} else {
+  if ((typeof indentifier).toString() == "number") {idx = identifier} else {
     let found = wwappconf.installed.findIndex(item => item[3] === searchString)
     if (found == -1) {throw new Error("This app does not exist.")}
     idx = found
