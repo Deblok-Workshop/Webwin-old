@@ -13,6 +13,7 @@
   },
   "scripts": {
     "preinstall": "npx only-allow bun",
+    "buildonce": "tailwindcss -i tw.css -o app.css -m",
     "build": "tailwindcss -i tw.css -o app.css -m -w",
     "start": "bun webserver/index.ts",
     "format": "prettier --write ."
