@@ -165,6 +165,14 @@ function addWWApp(identifier) {
   }
 }
 
+function addAllWWApp() {
+  let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
+  let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 
+  for (let i = 0; i < wwappconf.installed.length; i++) {
+    addWWApp(i)
+  }
+}
+
 function launchWWApp(identifier) {
   let wwappdat = JSON.parse(localStorage["wwapp_data"]) || {"version":1,"uri":[]}
   let wwappconf = JSON.parse(localStorage["wwapp_config"]) || {"version":1,"installed":[]} 

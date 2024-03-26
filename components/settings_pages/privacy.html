@@ -127,15 +127,22 @@ function openDevtools() {
   
   <p class="text-sm">Load WWAPP from URL:</p>
           <input id="wwapp">
-        <p class="text-sm">Add to Desktop: <checkbox class="inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
+        <p class="text-sm">Add to Desktop: <checkbox class="inline-block addToDesktop" onclick="this.classList.toggle('checked');"></checkbox></p>
           
-        <p class="text-sm">Add to Start Menu: <checkbox class="checked inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
+        <p class="text-sm">Add to Start Menu: <checkbox class="checked inline-block addToStart" onclick="this.classList.toggle('checked');"></checkbox></p>
         
-        <p class="text-sm">Add to Taskbar: <checkbox class="inline-block" onclick="this.classList.toggle('checked');"></checkbox></p>
-        <button>Load (might need a refresh)</button>
+        <p class="text-sm">Add to Taskbar: <checkbox class="inline-block addToTaskbar" onclick="this.classList.toggle('checked');"></checkbox></p>
+        <button onclick="loadwwapp()">Load</button>
         </div>
         `,disableResize:true,maxVisible:false,minVisible:false})
 }
+    function loadwwapp() {
+      let url = document.querySelector("#wwapp").value 
+      let addToDesktop = document.querySelector(".addToDesktop").classList.contains("checked")
+      let addToStart = document.querySelector(".addToStart").classList.contains("checked")
+      let addToTaskbar = document.querySelector(".addToTaskbar").classList.contains("checked")
+      installWWApp(url,[addToDesktop,addToStart,addToTaskbar])
+    }
     </script>
     <script src="../../modules/os.js">
     </script>
