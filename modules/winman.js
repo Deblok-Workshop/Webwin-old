@@ -213,9 +213,9 @@ function createWindow(meta) {
               scr.call(windowElement); // Setting "this" to the spawned window
             });
           }, 100);
-          setTimeout(() => {
-            windowoffset = 32;
-          }, 5000);
+          if ((windows.length % 6) == 0) {
+            windowoffset = 40;
+          }
         }, windowoffset * 5);
 
         return classname;
