@@ -28,11 +28,26 @@
     </div>
 </li>
 <li>
+    WWAPP Options:
+    <div class="window-options" style="padding:-10px;border:2px inset #666; width:fit-content;background-color:#ddd;">
+        <pre>
+   Add to Start Menu?: <input type="checkbox" checked id="start"> 
+   Add to Taskbar?...: <input type="checkbox"  id="taskbar">    
+   Add to Desktop?...: <input type="checkbox" id="desktop">   
+</pre>
+    </div>
+</li>
+<li>
     <p>HTML body:</p>
     <textarea id="code" required minlength="10"></textarea>
 </li>
 </ol>
 <input type="submit" value="Generate App" style="font-size:16px; border-style:outset;">
+<br><br>
+<li>
+    <p>Output:</p>
+    <textarea id="output" disabled></textarea>
+</li>
 </form>
 <script>
     function uuidv4() { // polyfill for insecure contexts
@@ -44,6 +59,7 @@
     Crypto.randomUUID = uuidv4
 
     let form = document.querySelector('form')
+    document.querySelector("#output").value = "// Waiting...";
     form.addEventListener("submit",()=>{
         event.preventDefault();
         let title = document.querySelector("#title").value  
@@ -52,16 +68,12 @@
         let code = document.querySelector("#code").value
         let res = `{"wwapp":{"version":1,"id":"?${Crypto.randomUUID()}","title":"${encodeURIComponent(title)}","iconurl":"${encodeURIComponent(iconurl)}","windowOpts":${JSON.stringify(windowOpts)}},"execCode":"${btoa(code)}"}`
         res = `data:application/json;base64,${btoa(res)}`
-        console.log(res)
-        
-        let blob = new Blob([res], { type: "application/json" });
-        let url = URL.createObjectURL(blob);
-        let link = document.createElement("a");
-        link.href = url;
-        link.download = `${title.replaceAll(" ","-")}.wwapp`;
-        link.click()
-        alert("Your file has been downloaded.")
-    })
+        let out = `
+// ${title}
+installWWApp("${res}",[${Number(document.querySelector("#start").checked)},${Number(document.querySelector("#taskbar").checked)},${Number(document.querySelector("#desktop").checked)}])
+    `;
+        document.querySelector("#output").value = out;
+});
 </script>
 </body>
 </html>
