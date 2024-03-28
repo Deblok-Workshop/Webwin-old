@@ -16,7 +16,7 @@ function discord() {
   createWindow({
     title: "Discord",
     content:
-      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/web/_aHR0cHM6Ly9kaXNjb3JkLmNvbQ==_/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+      "<iframe src='https://discord.com' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
     icon: "icons/discord.png",
   });
 }
@@ -32,7 +32,7 @@ function chrome() {
   createWindow({
     title: "Google Chrome",
     content:
-      "<iframe src='https://gfw2j2vgafd6.share.zrok.io/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+      "<iframe src='https://google.com/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
     icon: "icons/chrome.png",
   });
 }
