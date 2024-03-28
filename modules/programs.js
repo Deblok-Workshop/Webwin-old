@@ -1,41 +1,14 @@
-function edge() {
-  const isWindows = navigator.userAgent.includes("Windows");
-  if (isWindows) {
-    MessageBox(
-      "Microsoft Edge",
-      "A prompt has been shown on screen to open Microsoft Edge.&nbsp;",
-    );
-    setTimeout(() => {
-      document.location = "microsoft-edge:";
-    }, 1000);
-  } else {
-    sendNotification("Error", "You don't seem to be running Windows.");
-  }
-}
-function discord() {
-  createWindow({
-    title: "Discord",
-    content:
-      "<iframe src='https://discord.com' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "icons/discord.png",
-  });
-}
+
+
 function vscode() {
   createWindow({
     title: "VS Code",
     content:
-      "<iframe src='https://vscode.dev/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
+      "<iframe src='https://no1nzwc2knwv.share.zrok.io/web/_aHR0cHM6Ly92c2NvZGUuZGV2_/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
     icon: "icons/vscode.png",
   });
 }
-function chrome() {
-  createWindow({
-    title: "Google Chrome",
-    content:
-      "<iframe src='https://freeram.kinnamandist2.com/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "icons/chrome.png",
-  });
-}
+
 function ec() {
   createWindow({
     title: "Eagler",
