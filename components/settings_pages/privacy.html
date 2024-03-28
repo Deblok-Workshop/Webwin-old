@@ -142,6 +142,7 @@ function openDevtools() {
     {
       localStorage["wwapp_config"] = JSON.stringify({"version":1,"installed":[]})
       localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
+      MessageBox("Success","Uninstalled all WWAPPs!")
     }
     function loadwwapp() {
       let url = document.querySelector("#wwapp").value 
@@ -149,6 +150,7 @@ function openDevtools() {
       let addToStart = document.querySelector(".addToStart").classList.contains("checked")
       let addToTaskbar = document.querySelector(".addToTaskbar").classList.contains("checked")
       installWWApp(url,[addToStart,addToTaskbar,addToDesktop])
+      MessageBox("Success","Loaded WWAPP.")
     }
     </script>
     <script src="../../modules/os.js">
