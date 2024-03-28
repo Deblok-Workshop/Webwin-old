@@ -10,14 +10,7 @@ function gh() {
   a.remove();
 }
 
-function twc() {
-  createWindow({
-    title: "TurboWarp",
-    content:
-      "<iframe src='runtimes/runner_twc.html' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "icons/tw.png",
-  });
-}
+
 function calc() {
   createWindow({
     title: "Calculator",
@@ -27,14 +20,7 @@ function calc() {
     disableResize: true,
   });
 }
-function pb() {
-  createWindow({
-    title: "3D Pinball for Windows - Space Cadet",
-    content:
-      "<iframe src='runtimes/pinball/space-cadet.html' style='width:99%;height:99%;min-width:480px;min-height:360px;top:0;left:0;'></iframe>",
-    icon: "icons/pb.png",
-  });
-}
+
 function np() {
   createWindow({
     title: "Notepad",
