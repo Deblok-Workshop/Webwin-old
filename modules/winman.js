@@ -15,7 +15,11 @@ const randomString = (length) =>
 
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function closewindow(win) {
+  if (typeof win == "string") {
+    win = document.querySelector(`.${win}`)
+  } else {
   windows.splice(windows.indexOf(win.classList[0]), 1);
+  }
   win.classList.add("closing");
   setTimeout(() => {
     win.remove();
