@@ -212,7 +212,7 @@ function createWindow(meta) {
               const scr = new Function(scrCtx);
               scr.call(windowElement); // Setting "this" to the spawned window
             });
-          }, 300);
+          }, 100);
           setTimeout(() => {
             windowoffset = 32;
           }, 5000);
