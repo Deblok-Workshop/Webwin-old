@@ -1,22 +1,7 @@
 
 
-function vscode() {
-  createWindow({
-    title: "VS Code",
-    content:
-      "<iframe src='https://no1nzwc2knwv.share.zrok.io/web/_aHR0cHM6Ly92c2NvZGUuZGV2_/' id='e' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "icons/vscode.png",
-  });
-}
 
-function ec() {
-  createWindow({
-    title: "Eagler",
-    content:
-      "<iframe src='runtimes/runner_ec_multverchooser.html' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "icons/grass.png",
-  });
-}
+
 function gh() {
   a = document.createElement("a");
   a.target = "_blank";
@@ -24,14 +9,7 @@ function gh() {
   a.click();
   a.remove();
 }
-function tw() {
-  createWindow({
-    title: "TurboWarp",
-    content:
-      "<iframe src='runtimes/runner_tw.html' style='width:99%;height:99%;min-width:480px;min-height:240px;top:0;left:0;'></iframe>",
-    icon: "icons/tw.png",
-  });
-}
+
 function twc() {
   createWindow({
     title: "TurboWarp",
