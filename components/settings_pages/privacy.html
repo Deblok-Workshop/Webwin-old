@@ -133,9 +133,16 @@ function openDevtools() {
         
         <p class="text-sm">Add to Taskbar: <checkbox class="inline-block addToTaskbar" onclick="this.classList.toggle('checked');"></checkbox></p>
         <button onclick="loadwwapp()">Load</button>
-        </div>
+        
+      <br>
+      <button onclick="resetwwapps()" style="background:#ff4d4d">Uninstall ALL WWAPPs</button>
         `,disableResize:true,maxVisible:false,minVisible:false})
 }
+    function resetwwapps() 
+    {
+      localStorage["wwapp_config"] = JSON.stringify({"version":1,"installed":[]})
+      localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
+    }
     function loadwwapp() {
       let url = document.querySelector("#wwapp").value 
       let addToDesktop = document.querySelector(".addToDesktop").classList.contains("checked")
