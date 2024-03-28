@@ -101,12 +101,7 @@ function addToDesktop(onclick, icon,name) {
  
  }
  
-if (!localStorage["wwapp_config"]) {
-  localStorage["wwapp_config"] = JSON.stringify({"version":1,"installed":[]})
-}
-if (!localStorage["wwapp_data"]) {
-  localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
-}
+
 function installWWApp(uri,config) {
   if (!uri.startsWith("data:application/json;base64")) {
     alert("Not a wwapp url.")
