@@ -175,19 +175,19 @@ function openDevtools() {
     }
     function toggleCloak() {
       wwglob_config.tabSettings.enabled = document.querySelector(".cloakToggle").classList.contains("active")
-      localStorage["wwglob_config"] = wwglob_config
+      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
     }
     function toggleCloakUnfocus() {
       wwglob_config.tabSettings.onUnfocus = document.querySelector(".cloakUnfocus").classList.contains("active")
-      localStorage["wwglob_config"] = wwglob_config
+      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
     }
     function updateTabTitle() {
       wwglob_config.tabSettings.title = document.querySelector("#tabtitle").value
-      localStorage["wwglob_config"] = wwglob_config
+      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
     }
     function updateTabIcon() {
       wwglob_config.tabSettings.icon = document.querySelector("#tabico").value
-      localStorage["wwglob_config"] = wwglob_config
+      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
     }
     
     </script>
