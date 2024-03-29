@@ -62,14 +62,16 @@
           type="text"
           placeholder="Webwin"
           maxlength="64"
+          id="tabtitle"
           class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
         />
       </div>
       <div class=" my-2 inline-flex flex-col font-medium w-[300px] text-gray-100 text-[16px]">Tab Favicon URL 
         <input
           type="text"
-          placeholder="https://google.com"
+          placeholder="https://google.com/favicon.ico"
           maxlength="512"
+          id="tabico"
           class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
         />
       </div>
@@ -152,6 +154,15 @@ function openDevtools() {
       let addToTaskbar = document.querySelector(".addToTaskbar").classList.contains("checked")
       installWWApp(url,[addToStart,addToTaskbar,addToDesktop])
       MessageBox("Success","Loaded WWAPP.")
+    }
+    try {
+    wwglob_config = JSON.parse(localStorage["wwglob_config"]) || JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
+    document.querySelector("#tabtitle").value = wwglob_config.tabSettings.title
+    document.querySelector("#tabico").value = wwglob_config.tabSettings.icon
+    } catch {
+      localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
+      document.querySelector("#tabtitle").value = "Webwin"
+      document.querySelector("#tabico").value = "webwin-logo-xs.png"
     }
     </script>
     <script src="../../modules/os.js">
