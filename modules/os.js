@@ -94,9 +94,9 @@ function addToStartMenu(onclick, icon,name) {
 function addToDesktop(onclick, icon,name) {
   const desktop = document.querySelector(".desktop")
   desktop.innerHTML+= `
-  <desktop-icon ondblclick="${onclick}" class="cursor-pointer px-2 duration-75 border border-transparent text-xs  hover:border-[#585F66]/95 hover:bg-[#202A33]/80 min-h-[50px] max-h-[100px] max-w-[70px] flex flex-col justify-center align-middle items-center">
+  <desktop-icon ondblclick="${onclick}">
   <img style="width:32px;height:32px;" src="${icon}" loading="lazy">
-<span class="max-w-[70px] max-h-[100px] overflow-hidden" style="line-break: anywhere;">${name}</span>
+<span class="text-xs max-h-[100px] overflow-hidden" style="line-break: anywhere;">${name}</span>
 </desktop-icon>`
  
  }
