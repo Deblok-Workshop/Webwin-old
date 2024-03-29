@@ -46,14 +46,14 @@
       <h1 class="text-3xl font-light mb-2">Tab Cloaking</h1>
       <br>
       <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Enable tab cloaking: 
-        <metro-slider class="mx-2" onclick="this.classList.toggle('active')">
+        <metro-slider class="mx-2 cloakToggle" onclick="this.classList.toggle('active');toggleCloak();">
           <span class="status"></span>
         </metro-slider>
       </div>
       
       <h2 class="text-xl font-light mt-4 mb-2">Tab Cloaking Options</h2>
       <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Cloak while unfocused? 
-        <metro-slider class="mx-2" onclick="this.classList.toggle('active')"> 
+        <metro-slider class="mx-2 cloakUnfocus" onclick="this.classList.toggle('active');toggleCloakUnfocus()"> 
         <span class="status"></span>
         </metro-slider>
       </div>
@@ -63,6 +63,7 @@
           placeholder="Webwin"
           maxlength="64"
           id="tabtitle"
+          onblur="updateTabTitle()"
           class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
         />
       </div>
@@ -72,6 +73,7 @@
           placeholder="https://google.com/favicon.ico"
           maxlength="512"
           id="tabico"
+          onblur="updateTabIcon()"
           class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
         />
       </div>
@@ -156,14 +158,38 @@ function openDevtools() {
       MessageBox("Success","Loaded WWAPP.")
     }
     try {
-    wwglob_config = JSON.parse(localStorage["wwglob_config"]) || JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
+    wwglob_config = JSON.parse(localStorage["wwglob_config"]) || JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"enabled":false,"onUnfocus":false,"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
     document.querySelector("#tabtitle").value = wwglob_config.tabSettings.title
     document.querySelector("#tabico").value = wwglob_config.tabSettings.icon
     } catch {
-      localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
+      localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"enabled":false,"onUnfocus":false,"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
+      wwglob_config = localStorage["wwglob_config"]
       document.querySelector("#tabtitle").value = "Webwin"
       document.querySelector("#tabico").value = "webwin-logo-xs.png"
     }
+    if (wwglob_config.tabSettings.enabled) {
+      document.querySelector(".cloakToggle").classList.add("active")
+    }
+    if (wwglob_config.tabSettings.onUnfocus) {
+      document.querySelector(".cloakUnfocus").classList.add("active")
+    }
+    function toggleCloak() {
+      wwglob_config.tabSettings.enabled = document.querySelector(".cloakToggle").classList.contains("active")
+      localStorage["wwglob_config"] = wwglob_config
+    }
+    function toggleCloakUnfocus() {
+      wwglob_config.tabSettings.onUnfocus = document.querySelector(".cloakUnfocus").classList.contains("active")
+      localStorage["wwglob_config"] = wwglob_config
+    }
+    function updateTabTitle() {
+      wwglob_config.tabSettings.title = document.querySelector("#tabtitle").value
+      localStorage["wwglob_config"] = wwglob_config
+    }
+    function updateTabIcon() {
+      wwglob_config.tabSettings.icon = document.querySelector("#tabico").value
+      localStorage["wwglob_config"] = wwglob_config
+    }
+    
     </script>
     <script src="../../modules/os.js">
     </script>

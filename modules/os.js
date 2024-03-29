@@ -221,7 +221,7 @@ function setWallpaper(url) {
 }
 
 if (!localStorage["wwglob_config"]) {
-  localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""})
+  localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"enabled":false,"onUnfocus":false,"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
 }
 let wwglob_config = JSON.parse(localStorage["wwglob_config"]);
 setWallpaper(wwglob_config.wallpaper)
