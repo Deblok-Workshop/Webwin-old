@@ -4,9 +4,9 @@ if (!localStorage["wwapp_config"]) {
 if (!localStorage["wwapp_data"]) {
     localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
   }
-if (!localStorage["wwglob_config"]) {
-    localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg"})
-}
+  if (!localStorage["wwglob_config"]) {
+    localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""})
+  }
 if (localStorage["wwapp_config"] == JSON.stringify({"version":1,"installed":[]}) || localStorage["wwapp_data"] == JSON.stringify({"version":1,"uri":[]})) {
     localStorage["wwapp_config"] = JSON.stringify({"version":1,"installed":[]})
     localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
