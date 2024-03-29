@@ -44,6 +44,7 @@
         <br>
       <section id="tabcloak" class="flex flex-col hidden">
       <h1 class="text-3xl font-light mb-2">Tab Cloaking</h1>
+      <p>You may need to refresh to apply changes.</p>
       <br>
       <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Enable tab cloaking: 
         <metro-slider class="mx-2 cloakToggle" onclick="this.classList.toggle('active');toggleCloak();">
@@ -53,7 +54,7 @@
       
       <h2 class="text-xl font-light mt-4 mb-2">Tab Cloaking Options</h2>
       <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Cloak while unfocused? 
-        <metro-slider class="mx-2 cloakUnfocus" onclick="this.classList.toggle('active');toggleCloakUnfocus()"> 
+        <metro-slider class="mx-2 cloakUnfocus opacity-50" onclick_ifitwasenabled="this.classList.toggle('active');toggleCloakUnfocus()"> 
         <span class="status"></span>
         </metro-slider>
       </div>

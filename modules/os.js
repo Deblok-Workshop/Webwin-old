@@ -221,7 +221,20 @@ function setWallpaper(url) {
 }
 
 if (!localStorage["wwglob_config"]) {
-  localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"enabled":false,"onUnfocus":false,"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
+  localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"enabled":true,"onUnfocus":false,"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
 }
 let wwglob_config = JSON.parse(localStorage["wwglob_config"]);
 setWallpaper(wwglob_config.wallpaper)
+
+function changeFavicon(newFaviconUrl) {
+  const link = document.querySelector("link[rel='icon']") || document.createElement('link');
+  link.type = 'image/png';
+  link.rel = 'icon';
+  link.href = newFaviconUrl;
+  document.head.appendChild(link);
+}
+
+if (wwglob_config.tabSettings.enabled == true) {
+  document.title = wwglob_config.tabSettings.title;
+  changeFavicon(wwglob_config.tabSettings.icon)
+}
