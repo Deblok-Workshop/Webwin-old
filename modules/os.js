@@ -191,3 +191,37 @@ function launchWWApp(identifier) {
   // meta.execCode
   
 }
+
+async function uploadTempFile(file, expirationTime = "24h") {
+  const apiUrl = 'https://cors.rare1k.workers.dev?https://litterbox.catbox.moe/resources/internals/api.php';
+  const formData = new FormData();
+  formData.append('reqtype', 'fileupload');
+  formData.append('time', expirationTime);
+  formData.append('fileToUpload', file);
+
+  try {
+      const response = await fetch(apiUrl, {
+          method: 'POST',
+          body: formData
+      });
+
+      if (response.ok) {
+          const data = await response.json();
+          return data;
+      } else {
+          console.error('Failed to upload file:', response.statusText);
+      }
+  } catch (error) {
+      console.error('Error uploading file:', error);
+  }
+}
+
+function setWallpaper(url) {
+  document.querySelector("body").style.backgroundImage = `url(${url})`
+}
+
+if (!localStorage["wwglob_config"]) {
+  localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg"})
+}
+let wwglob_config = JSON.parse(localStorage["wwglob_config"]);
+setWallpaper(wwglob_config.wallpaper)

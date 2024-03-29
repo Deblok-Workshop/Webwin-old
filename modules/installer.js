@@ -4,12 +4,15 @@ if (!localStorage["wwapp_config"]) {
 if (!localStorage["wwapp_data"]) {
     localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
   }
+if (!localStorage["wwglob_config"]) {
+    localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg"})
+}
 if (localStorage["wwapp_config"] == JSON.stringify({"version":1,"installed":[]}) || localStorage["wwapp_data"] == JSON.stringify({"version":1,"uri":[]})) {
     localStorage["wwapp_config"] = JSON.stringify({"version":1,"installed":[]})
     localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
     let installer = createWindow({
         "title":"...","content":`
-       <div style="background:#111;width:100%;height:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;"><p style="margin-bottom:32px;font-size:24px;">Installing default apps...</p> <img src="modules/loader.gif" style="width:48px;height:48px;"></div>
+       <div style="background:#0078D7;width:100%;height:100%;display:flex;justify-content:center;align-items:center;flex-direction:column;"><p style="margin-bottom:32px;font-size:24px;">Installing default apps...</p> <img src="modules/loader.gif" style="width:48px;height:48px;"></div>
        <javascript>this.style.width = "100vw";this.style.height = "108vh"; this.style.zIndex = "9999999999";this.style.top = "-32px";this.style.left = "0px";this.style.position = "absolute"</javascript>
        `
        })
@@ -60,13 +63,15 @@ installWWApp("data:application/json;base64,eyJ3d2FwcCI6eyJ2ZXJzaW9uIjoxLCJpZCI6I
 // Paint
 installWWApp("data:application/json;base64,eyJ3d2FwcCI6eyJ2ZXJzaW9uIjoxLCJpZCI6Ij9mZmY5OTk5My0zYWYxLTQyNTEtODU2Zi05MmJlYmJkMjlhNzQiLCJ0aXRsZSI6IlBhaW50IiwiaWNvbnVybCI6Imljb25zJTJGcGFpbnQucG5nIiwid2luZG93T3B0cyI6W2ZhbHNlLGZhbHNlLGZhbHNlXX0sImV4ZWNDb2RlIjoiUEdsbWNtRnRaU0J6Y21NOUoyaDBkSEJ6T2k4dmFuTndZV2x1ZEM1aGNIQW5JSE4wZVd4bFBTZDNhV1IwYURvNU9TVTdhR1ZwWjJoME9qazVKVHR0YVc0dGQybGtkR2c2TXpJd2NIZzdiV2x1TFdobGFXZG9kRG8wTURCd2VEdDBiM0E2TUR0c1pXWjBPakE3Sno0OEwybG1jbUZ0WlQ0PSJ9",[1,0,0])
 
-
 // Super Mario 64
 installWWApp("data:application/json;base64,eyJ3d2FwcCI6eyJ2ZXJzaW9uIjoxLCJpZCI6Ij80NzI5MTMzNC1lNWFkLTQ1NGQtODg5Zi0yZGIzZmU5ZDUxM2EiLCJ0aXRsZSI6IlN1cGVyJTIwTWFyaW8lMjA2NCIsImljb251cmwiOiJpY29ucyUyRnNtNjQucG5nIiwid2luZG93T3B0cyI6W2ZhbHNlLGZhbHNlLGZhbHNlXX0sImV4ZWNDb2RlIjoiUEdsbWNtRnRaU0J6Y21NOUoyaDBkSEJ6T2k4dmN6WTBMbkJoWjJWekxtUmxkaWNnYzNSNWJHVTlKM2RwWkhSb09qazVKVHRvWldsbmFIUTZPVGtsTzIxcGJpMTNhV1IwYURvME9EQndlRHR0YVc0dGFHVnBaMmgwT2pNMk1IQjRPM1J2Y0Rvd08yeGxablE2TURzblBqd3ZhV1p5WVcxbFBnPT0ifQ==",[1,0,0])
 
 // RetroArch
 installWWApp("data:application/json;base64,eyJ3d2FwcCI6eyJ2ZXJzaW9uIjoxLCJpZCI6Ij9lNTIyYTQ3NS1hMzgwLTRiZDQtYjZiMS03ZTE0MWY5N2YwMWEiLCJ0aXRsZSI6IlJldHJvQXJjaCIsImljb251cmwiOiJpY29ucyUyRndyLnBuZyIsIndpbmRvd09wdHMiOltmYWxzZSxmYWxzZSxmYWxzZV19LCJleGVjQ29kZSI6IlBHbG1jbUZ0WlNCemNtTTlKMmgwZEhCek9pOHZkM0psZEhKdkxuQmhaMlZ6TG1SbGRpY2djM1I1YkdVOUozZHBaSFJvT2prNUpUdG9aV2xuYUhRNk9Ua2xPMjFwYmkxM2FXUjBhRG94TWpod2VEdHRhVzR0YUdWcFoyaDBPakV5T0hCNE8zUnZjRG93TzJ4bFpuUTZNRHNuUGp3dmFXWnlZVzFsUGc9PSJ9",[1,0,0])
-    
+
+// set wallpaper
+let wwglob_config = JSON.parse(localStorage["wwglob_config"]);
+setWallpaper(wwglob_config.wallpaper)
 
     setTimeout(()=>{document.querySelector(`.${installer}`).classList.add("closing");setTimeout(()=>{document.querySelector(`.${installer}`).remove()},360)},500)
     setTimeout(()=>{addAllWWApp()},700)
