@@ -42,6 +42,10 @@ function togmax(win) {
     win.style.top = "0px";
   }
 }
+function togmin(win) {
+ win.style.height = "32px"
+ win.style.minHeight = "32px"
+}
 function indexing(win) {
   win.querySelector("nav").addEventListener("mousedown", () => {
     win.style.zIndex = "100";
@@ -112,7 +116,7 @@ function createWindow(meta) {
               ${icon ? `<icon><img src="${icon}" loading="lazy"></icon>` : "<icon></icon>"}
               <name>${meta.title}</name>
               <actions>
-                ${minVisible ? `<div class="minbtn">⎯</div>` : ""}
+                ${minVisible ? `<div class="minbtn" onclick="togmax(this.parentElement.parentElement.parentElement)">⎯</div>` : ""}
                 ${maxVisible ? `<div class="maxbtn" onclick="togmax(this.parentElement.parentElement.parentElement)"><span class="maxico"></span></div>` : ""}
                 <div class="closebtn" onclick="closewindow(this.parentElement.parentElement.parentElement); ">✕</div>
               </actions>
