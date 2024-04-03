@@ -6,7 +6,9 @@
 const globInnerHeight = window.innerHeight;
 const globInnerWidth = window.innerWidth;
 let max = false;
+let min = false;
 let poscache = ["0px", "0px"];
+let sizecache = ["0px", "0px"]
 let windowoffset = 16;
 let windows = [];
 let topidx = 1;
@@ -43,8 +45,16 @@ function togmax(win) {
   }
 }
 function togmin(win) {
+  if (!min) {
+ sizecache[0] = win.style.width
+ sizecache[1] = win.style.height
  win.style.height = "32px"
- win.style.minHeight = "32px"
+ win.style.minHeight = "32px"; min = true;
+  } else {
+    min = false;
+    win.style.width = sizecache[0]
+    win.style.height = sizecache[1]
+  }
 }
 function indexing(win) {
   win.querySelector("nav").addEventListener("mousedown", () => {
