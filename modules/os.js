@@ -239,7 +239,7 @@ function launchWWApp(identifier) {
     content: atob(meta.execCode),
     icon: decodeURIComponent(meta.wwapp.iconurl),
     title: decodeURIComponent(meta.wwapp.title),
-    disableResize: !meta.wwapp.windowOpts[0],
+    disableResize: meta.wwapp.windowOpts[0],
     minVisible: !meta.wwapp.windowOpts[1],
     maxVisible: !meta.wwapp.windowOpts[2],
   });
