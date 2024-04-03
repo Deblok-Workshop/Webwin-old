@@ -116,7 +116,7 @@ function createWindow(meta) {
               ${icon ? `<icon><img src="${icon}" loading="lazy"></icon>` : "<icon></icon>"}
               <name>${meta.title}</name>
               <actions>
-                ${minVisible ? `<div class="minbtn" onclick="togmax(this.parentElement.parentElement.parentElement)">⎯</div>` : ""}
+                ${minVisible ? `<div class="minbtn" onclick="togmin(this.parentElement.parentElement.parentElement)">⎯</div>` : ""}
                 ${maxVisible ? `<div class="maxbtn" onclick="togmax(this.parentElement.parentElement.parentElement)"><span class="maxico"></span></div>` : ""}
                 <div class="closebtn" onclick="closewindow(this.parentElement.parentElement.parentElement); ">✕</div>
               </actions>
