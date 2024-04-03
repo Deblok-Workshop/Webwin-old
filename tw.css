@@ -1,13 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-html,body {margin:0 !important;padding:0;width:100%;height:100%;background-size:cover;background-position: center; background-repeat:no-repeat}
+html,
+body {
+  margin: 0 !important;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 html,
 body {
   @apply overflow-y-clip;
 }
 
-.desktop {@apply p-1}
+.desktop {
+  @apply p-1;
+}
 
 container {
   @apply h-[100svh] w-full overflow-y-clip;
@@ -222,14 +233,16 @@ taskbar {
     opacity: 1;
     position: absolute;
     bottom: 40px;
-    left: 0;display:flex;
+    left: 0;
+    display: flex;
   }
   66% {
     min-height: 9svh;
     opacity: 0;
     position: absolute;
     bottom: 18px;
-    left: 0;display:flex;
+    left: 0;
+    display: flex;
   }
   99% {
     min-height: 9svh;
@@ -237,7 +250,7 @@ taskbar {
     position: absolute;
     bottom: 18px;
     left: 0;
-    display:flex;
+    display: flex;
   }
   to {
     min-height: 0px;
@@ -338,32 +351,62 @@ start-menu item {
   @apply overflow-x-clip absolute bottom-11 right-1 float-right ml-auto h-[80svh] min-h-[80svh] min-w-[120px] flex flex-col-reverse;
 }
 desktop-icon {
-  text-shadow:1px 1px 3px black;
+  text-shadow: 1px 1px 3px black;
   @apply cursor-pointer px-2 duration-75 border border-transparent text-xs  hover:border-[#585F66]/65 hover:bg-[#202A33]/40 min-h-[40px] max-h-[90px] max-w-[80px] !h-fit py-1 flex flex-col justify-center align-middle items-center;
 }
 
-clock {@apply px-2}
+clock {
+  @apply px-2;
+}
 
 .settingsItem:active div.c {
-  transform:scale(0.97);transition: all 200ms;
+  transform: scale(0.97);
+  transition: all 200ms;
 }
 .settingsItem div.c {
-  transform:scale(1) ;transition: all 200ms;
+  transform: scale(1);
+  transition: all 200ms;
 }
 
-.settingsBtn {@apply active:bg-[#4A4A4A] active:duration-75 text-sm align-middle items-center flex flex-row py-3 hover:bg-[#303030] hover:duration-150 duration-200 px-2 w-full}
-.settingsBtn.active {transition:background-position 0;background-image:url("icons/settings/border_piece.png"); background-position-y: center; background-repeat: no-repeat; }
+.settingsBtn {
+  @apply active:bg-[#4A4A4A] active:duration-75 text-sm align-middle items-center flex flex-row py-3 hover:bg-[#303030] hover:duration-150 duration-200 px-2 w-full;
+}
+.settingsBtn.active {
+  transition: background-position 0;
+  background-image: url("icons/settings/border_piece.png");
+  background-position-y: center;
+  background-repeat: no-repeat;
+}
 
-
-metro-slider {@apply flex flex-row items-center rounded-full w-[44px] border-[2px] h-5 border-[#EEE] duration-300;
-  background-image:url('icons/metro-slider_dot.png'); background-size:10px; background-position-y:center; background-position-x: 10%; display:inline-block; background-repeat: no-repeat;
+metro-slider {
+  @apply flex flex-row items-center rounded-full w-[44px] border-[2px] h-5 border-[#EEE] duration-300;
+  background-image: url("icons/metro-slider_dot.png");
+  background-size: 10px;
+  background-position-y: center;
+  background-position-x: 10%;
+  display: inline-block;
+  background-repeat: no-repeat;
   transition: background-position 200ms;
-  }
-  metro-slider.active {@apply flex flex-row items-center rounded-full w-[44px] border-[2px] h-5  bg-[#0078D7] border-[#0078D7];
-    transition: background-position 200ms;
-    background-image:url('icons/metro-slider_dot.png'); background-size:10px; background-position-y:center; background-position-x: 90%; display:inline-block; background-repeat: no-repeat;
-    }
-metro-slider::after {content:"Off"}
-metro-slider.active::after {content:"On"}
-metro-slider::after {margin-left:48px;position:relative;bottom:2px;display:inline-block;}
-
+}
+metro-slider.active {
+  @apply flex flex-row items-center rounded-full w-[44px] border-[2px] h-5  bg-[#0078D7] border-[#0078D7];
+  transition: background-position 200ms;
+  background-image: url("icons/metro-slider_dot.png");
+  background-size: 10px;
+  background-position-y: center;
+  background-position-x: 90%;
+  display: inline-block;
+  background-repeat: no-repeat;
+}
+metro-slider::after {
+  content: "Off";
+}
+metro-slider.active::after {
+  content: "On";
+}
+metro-slider::after {
+  margin-left: 48px;
+  position: relative;
+  bottom: 2px;
+  display: inline-block;
+}

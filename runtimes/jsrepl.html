@@ -1,30 +1,57 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JSTerm</title>
     <style>
-        * {font-family:monospace;}
-        body,html {background:#000;color:#fff;margin:0;font-size:12px;}
-        .input {
-            background:#111;padding:4px;padding-left:8px;padding-right:8px;margin:0;position:fixed;width:100%;bottom:0px;
-        }
-        .input::before {content:"$ ";color:#666;font-size:14px;}
-        .js-out {margin:8px;}
-        .js-out pre::before {content:"> ";color:#666;margin:1px;}
-        .js-out pre.out::before {content:"  "}
+      * {
+        font-family: monospace;
+      }
+      body,
+      html {
+        background: #000;
+        color: #fff;
+        margin: 0;
+        font-size: 12px;
+      }
+      .input {
+        background: #111;
+        padding: 4px;
+        padding-left: 8px;
+        padding-right: 8px;
+        margin: 0;
+        position: fixed;
+        width: 100%;
+        bottom: 0px;
+      }
+      .input::before {
+        content: "$ ";
+        color: #666;
+        font-size: 14px;
+      }
+      .js-out {
+        margin: 8px;
+      }
+      .js-out pre::before {
+        content: "> ";
+        color: #666;
+        margin: 1px;
+      }
+      .js-out pre.out::before {
+        content: "  ";
+      }
     </style>
-</head>
-<body style="background:#000;">
+  </head>
+  <body style="background: #000">
     <script src="jsrepl.js"></script>
     <pre class="js-out">
 Welcome to <b>JSRepl</b>!
 - Shift+Enter for a new line
 - Enter to eval (variables are not kept)
-</pre>
-    <code contenteditable="true" class="input">
-    </code>
-<!-- made by rare1k for webwin, GPLv3 license. -->
-</body>
+</pre
+    >
+    <code contenteditable="true" class="input"> </code>
+    <!-- made by rare1k for webwin, GPLv3 license. -->
+  </body>
 </html>

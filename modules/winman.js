@@ -16,9 +16,9 @@ const randomString = (length) =>
 const wait = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 function closewindow(win) {
   if (typeof win == "string") {
-    win = document.querySelector(`.${win}`)
+    win = document.querySelector(`.${win}`);
   } else {
-  windows.splice(windows.indexOf(win.classList[0]), 1);
+    windows.splice(windows.indexOf(win.classList[0]), 1);
   }
   win.classList.add("closing");
   setTimeout(() => {
@@ -213,7 +213,7 @@ function createWindow(meta) {
               scr.call(windowElement); // Setting "this" to the spawned window
             });
           }, 100);
-          if ((windows.length % 6) == 0) {
+          if (windows.length % 6 == 0) {
             windowoffset = 40;
           }
         }, windowoffset * 5);

@@ -1,79 +1,114 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Webwin App Generator</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Webwin App Generator</h1>
     <form>
-        <ol>
-            <li>
-    Title:
-    <input type="text" id="title" maxlength="64" minlength="2" required>
-</li>
-<li>
-    Icon URL:
-    <input type="text" id="iconurl" maxlength="120" minlength="8" required>
-</li>
-<li>
-    Window Options:
-    <div class="window-options" style="padding:-10px;border:2px inset #666; width:fit-content;background-color:#ddd;">
-        <pre>
+      <ol>
+        <li>
+          Title:
+          <input type="text" id="title" maxlength="64" minlength="2" required />
+        </li>
+        <li>
+          Icon URL:
+          <input
+            type="text"
+            id="iconurl"
+            maxlength="120"
+            minlength="8"
+            required
+          />
+        </li>
+        <li>
+          Window Options:
+          <div
+            class="window-options"
+            style="
+              padding: -10px;
+              border: 2px inset #666;
+              width: fit-content;
+              background-color: #ddd;
+            "
+          >
+            <pre>
    Resize..: <input type="checkbox" checked id="resize">  
    Minimize: <input type="checkbox" checked id="min">   
    Maximize: <input type="checkbox" checked id="max">   
 </pre>
-    </div>
-</li>
-<li>
-    WWAPP Options:
-    <div class="window-options" style="padding:-10px;border:2px inset #666; width:fit-content;background-color:#ddd;">
-        <pre>
+          </div>
+        </li>
+        <li>
+          WWAPP Options:
+          <div
+            class="window-options"
+            style="
+              padding: -10px;
+              border: 2px inset #666;
+              width: fit-content;
+              background-color: #ddd;
+            "
+          >
+            <pre>
    Add to Start Menu?: <input type="checkbox" checked id="start"> 
    Add to Taskbar?...: <input type="checkbox"  id="taskbar">    
    Add to Desktop?...: <input type="checkbox" id="desktop">   
 </pre>
-    </div>
-</li>
-<li>
-    <p>HTML body:</p>
-    <textarea id="code" required minlength="10"></textarea>
-</li>
-</ol>
-<input type="submit" value="Generate App" style="font-size:16px; border-style:outset;">
-<br><br>
-<li>
-    <p>Output:</p>
-    <textarea id="output" disabled></textarea>
-</li>
-</form>
-<script>
-    function uuidv4() { // polyfill for insecure contexts
-    return 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, function(c) {
-    var r = Math.random() * 16 | 0, v = c == 'x' ? r : (r & 0x3 | 0x8);
-    return v.toString(16);
-    }); 
-    }
-    Crypto.randomUUID = uuidv4
+          </div>
+        </li>
+        <li>
+          <p>HTML body:</p>
+          <textarea id="code" required minlength="10"></textarea>
+        </li>
+      </ol>
+      <input
+        type="submit"
+        value="Generate App"
+        style="font-size: 16px; border-style: outset"
+      />
+      <br /><br />
+      <li>
+        <p>Output:</p>
+        <textarea id="output" disabled></textarea>
+      </li>
+    </form>
+    <script>
+      function uuidv4() {
+        // polyfill for insecure contexts
+        return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(
+          /[xy]/g,
+          function (c) {
+            var r = (Math.random() * 16) | 0,
+              v = c == "x" ? r : (r & 0x3) | 0x8;
+            return v.toString(16);
+          },
+        );
+      }
+      Crypto.randomUUID = uuidv4;
 
-    let form = document.querySelector('form')
-    document.querySelector("#output").value = "// Waiting...";
-    form.addEventListener("submit",()=>{
+      let form = document.querySelector("form");
+      document.querySelector("#output").value = "// Waiting...";
+      form.addEventListener("submit", () => {
         event.preventDefault();
-        let title = document.querySelector("#title").value  
-        let iconurl = document.querySelector("#iconurl").value
-        let windowOpts = [!document.querySelector("#resize").checked,!document.querySelector("#min").checked,!document.querySelector("#max").checked ]
-        let code = document.querySelector("#code").value
-        let res = `{"wwapp":{"version":1,"id":"?${Crypto.randomUUID()}","title":"${encodeURIComponent(title)}","iconurl":"${encodeURIComponent(iconurl)}","windowOpts":${JSON.stringify(windowOpts)}},"execCode":"${btoa(code)}"}`
-        res = `data:application/json;base64,${btoa(res)}`
+        let title = document.querySelector("#title").value;
+        let iconurl = document.querySelector("#iconurl").value;
+        let windowOpts = [
+          !document.querySelector("#resize").checked,
+          !document.querySelector("#min").checked,
+          !document.querySelector("#max").checked,
+        ];
+        let code = document.querySelector("#code").value;
+        let res = `{"wwapp":{"version":1,"id":"?${Crypto.randomUUID()}","title":"${encodeURIComponent(title)}","iconurl":"${encodeURIComponent(iconurl)}","windowOpts":${JSON.stringify(windowOpts)}},"execCode":"${btoa(code)}"}`;
+        res = `data:application/json;base64,${btoa(res)}`;
         let out = `
 // ${title}
 installWWApp("${res}",[${Number(document.querySelector("#start").checked)},${Number(document.querySelector("#taskbar").checked)},${Number(document.querySelector("#desktop").checked)}])
     `;
         document.querySelector("#output").value = out;
-});
-</script>
-</body>
+      });
+    </script>
+  </body>
 </html>

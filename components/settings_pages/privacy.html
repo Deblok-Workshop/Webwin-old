@@ -9,122 +9,155 @@
       * {
         font-family: "Segoe UI", sans-serif;
         color-scheme: dark;
-        
       }
-      html,body {background-color:#000;  width:100%;height:100%;margin:0;}
+      html,
+      body {
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
     </style>
   </head>
   <body class="w-full h-full flex flex-row items-center m-0 desktop">
-        
-      <sidebar class="flex flex-col bg-[#1f1f1f] min-w-[300px] h-screen flex-1">
-        <a href="../settings.html" class="settingsBtn">
-          <img src="../../icons/settings/home.png" class="mx-2 p-1"> <span>Home</span>
-        </a>
-        
-        <input
-          type="text"
-          placeholder="Find a setting"
-          maxlength="64"
-          class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] mx-auto text-black hover:ring-2 hover:ring-[#0078D7]"
-        />
-        <br>
-        <b class="ml-4 mt-4 text-sm font-semibold">Privacy</b>
-        <span class="ml-4 mt-4 mb-4 text-sm opacity-75">Privacy settings</span>
-        <a href="#tabcloak" id="tabcloak" class="settingsBtn">
-          <img src="../../icons/settings/lock.png" class="mx-2 mr-3 p-1"> <span>Tab cloaking</span>
-        </a>
-        <a href="#emerg" id="emerg" class="settingsBtn">
-          <img src="../../icons/settings/lock.png" class="mx-2 mr-3 p-1"> <span>Emergency Key</span>
-        </a>
-        <a href="#developer" id="developer" class="settingsBtn">
-          <img src="" class="mx-2 mr-3 p-1"> <span>Developer Settings</span>
-        </a>
-      </sidebar>
-      <container class="m-2 ml-4">
-        <br>
+    <sidebar class="flex flex-col bg-[#1f1f1f] min-w-[300px] h-screen flex-1">
+      <a href="../settings.html" class="settingsBtn">
+        <img src="../../icons/settings/home.png" class="mx-2 p-1" />
+        <span>Home</span>
+      </a>
+
+      <input
+        type="text"
+        placeholder="Find a setting"
+        maxlength="64"
+        class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] mx-auto text-black hover:ring-2 hover:ring-[#0078D7]"
+      />
+      <br />
+      <b class="ml-4 mt-4 text-sm font-semibold">Privacy</b>
+      <span class="ml-4 mt-4 mb-4 text-sm opacity-75">Privacy settings</span>
+      <a href="#tabcloak" id="tabcloak" class="settingsBtn">
+        <img src="../../icons/settings/lock.png" class="mx-2 mr-3 p-1" />
+        <span>Tab cloaking</span>
+      </a>
+      <a href="#emerg" id="emerg" class="settingsBtn">
+        <img src="../../icons/settings/lock.png" class="mx-2 mr-3 p-1" />
+        <span>Emergency Key</span>
+      </a>
+      <a href="#developer" id="developer" class="settingsBtn">
+        <img src="" class="mx-2 mr-3 p-1" /> <span>Developer Settings</span>
+      </a>
+    </sidebar>
+    <container class="m-2 ml-4">
+      <br />
       <section id="tabcloak" class="flex flex-col hidden">
-      <h1 class="text-3xl font-light mb-2">Tab Cloaking</h1>
-      <p>You may need to refresh to apply changes.</p>
-      <br>
-      <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Enable tab cloaking: 
-        <metro-slider class="mx-2 cloakToggle" onclick="this.classList.toggle('active');toggleCloak();">
-          <span class="status"></span>
-        </metro-slider>
-      </div>
-      
-      <h2 class="text-xl font-light mt-4 mb-2">Tab Cloaking Options</h2>
-      <div class="inline-flex font-medium items-center text-gray-100 text-[13px]">Cloak while unfocused? 
-        <metro-slider class="mx-2 cloakUnfocus opacity-50" onclick_ifitwasenabled="this.classList.toggle('active');toggleCloakUnfocus()"> 
-        <span class="status"></span>
-        </metro-slider>
-      </div>
-      <div class=" my-2 inline-flex flex-col font-medium w-[300px] text-gray-100 text-[16px]">Tab Title 
-        <input
-          type="text"
-          placeholder="Webwin"
-          maxlength="64"
-          id="tabtitle"
-          onblur="updateTabTitle()"
-          class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
-        />
-      </div>
-      <div class=" my-2 inline-flex flex-col font-medium w-[300px] text-gray-100 text-[16px]">Tab Favicon URL 
-        <input
-          type="text"
-          placeholder="https://google.com/favicon.ico"
-          maxlength="512"
-          id="tabico"
-          onblur="updateTabIcon()"
-          class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
-        />
-      </div>
-    </section>
-    <section id="emerg" class="flex flex-col hidden">
-      <h1 class="text-3xl font-light mb-2">Emergency Key</h1>
-      <p>soon...</p>
-    </section>
-    <section id="developer" class="flex flex-col hidden">
-      <h1 class="text-3xl font-light mb-2">Developer Settings</h1>
-      <button onclick="openDevtools()" class=" w-fit text-[13px] px-[18px] py-[2px] bg-[#E1E1E1] text-black  border border-[#ADADAD] hover:border-[#0078D7] hover:bg-[#E5F1FB] active:border-[#005499] active:bg-[#CCE4F7]">Open</button>
-    </section>
-      </container>
+        <h1 class="text-3xl font-light mb-2">Tab Cloaking</h1>
+        <p>You may need to refresh to apply changes.</p>
+        <br />
+        <div
+          class="inline-flex font-medium items-center text-gray-100 text-[13px]"
+        >
+          Enable tab cloaking:
+          <metro-slider
+            class="mx-2 cloakToggle"
+            onclick="this.classList.toggle('active');toggleCloak();"
+          >
+            <span class="status"></span>
+          </metro-slider>
+        </div>
+
+        <h2 class="text-xl font-light mt-4 mb-2">Tab Cloaking Options</h2>
+        <div
+          class="inline-flex font-medium items-center text-gray-100 text-[13px]"
+        >
+          Cloak while unfocused?
+          <metro-slider
+            class="mx-2 cloakUnfocus opacity-50"
+            onclick_ifitwasenabled="this.classList.toggle('active');toggleCloakUnfocus()"
+          >
+            <span class="status"></span>
+          </metro-slider>
+        </div>
+        <div
+          class="my-2 inline-flex flex-col font-medium w-[300px] text-gray-100 text-[16px]"
+        >
+          Tab Title
+          <input
+            type="text"
+            placeholder="Webwin"
+            maxlength="64"
+            id="tabtitle"
+            onblur="updateTabTitle()"
+            class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
+          />
+        </div>
+        <div
+          class="my-2 inline-flex flex-col font-medium w-[300px] text-gray-100 text-[16px]"
+        >
+          Tab Favicon URL
+          <input
+            type="text"
+            placeholder="https://google.com/favicon.ico"
+            maxlength="512"
+            id="tabico"
+            onblur="updateTabIcon()"
+            class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] text-black hover:ring-2 hover:ring-[#0078D7]"
+          />
+        </div>
+      </section>
+      <section id="emerg" class="flex flex-col hidden">
+        <h1 class="text-3xl font-light mb-2">Emergency Key</h1>
+        <p>soon...</p>
+      </section>
+      <section id="developer" class="flex flex-col hidden">
+        <h1 class="text-3xl font-light mb-2">Developer Settings</h1>
+        <button
+          onclick="openDevtools()"
+          class="w-fit text-[13px] px-[18px] py-[2px] bg-[#E1E1E1] text-black border border-[#ADADAD] hover:border-[#0078D7] hover:bg-[#E5F1FB] active:border-[#005499] active:bg-[#CCE4F7]"
+        >
+          Open
+        </button>
+      </section>
+    </container>
     <script>
       function sections(e) {
-        if (window.location.hash.substr(1) == "") {document.location.hash = "#tabcloak"}
-    
-    function hideAllSections() {
-        var sections = document.querySelectorAll('section');
-        sections.forEach(function(section) {
-            section.classList.add('hidden');
-        });
-        var btns = document.querySelectorAll('.settingsBtn');
-        btns.forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-    }
-    function showSection(sectionId) {
-        var section = document.querySelector(`section#${sectionId}`);
-        if (section) {
-            section.classList.remove('hidden');
-            var btn = document.querySelector(`a#${sectionId}`);
-            btn.classList.add('active');
+        if (window.location.hash.substr(1) == "") {
+          document.location.hash = "#tabcloak";
         }
-    }
 
-    hideAllSections();
-    var hash = window.location.hash.substring(1); // remove the '#' from the hash
-    if (hash) {
-        showSection(hash);
-    }
+        function hideAllSections() {
+          var sections = document.querySelectorAll("section");
+          sections.forEach(function (section) {
+            section.classList.add("hidden");
+          });
+          var btns = document.querySelectorAll(".settingsBtn");
+          btns.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+        }
+        function showSection(sectionId) {
+          var section = document.querySelector(`section#${sectionId}`);
+          if (section) {
+            section.classList.remove("hidden");
+            var btn = document.querySelector(`a#${sectionId}`);
+            btn.classList.add("active");
+          }
+        }
 
-   
-}
-      
-     
-      setInterval(()=>{sections()},200)
-   
-function openDevtools() {
-  createWindow({"title":"Developer Tools","content":`
+        hideAllSections();
+        var hash = window.location.hash.substring(1); // remove the '#' from the hash
+        if (hash) {
+          showSection(hash);
+        }
+      }
+
+      setInterval(() => {
+        sections();
+      }, 200);
+
+      function openDevtools() {
+        createWindow({
+          title: "Developer Tools",
+          content: `
   <div class="p-2">
     <h1 class="text-xl font-light mb-2">Developer Tools</h1>
   <hr class="max-w-[50%]">
@@ -142,58 +175,98 @@ function openDevtools() {
         
       <br>
       <button onclick="resetwwapps()" style="background:#ff4d4d">Uninstall ALL WWAPPs</button>
-        `,disableResize:true,maxVisible:false,minVisible:false})
-}
-    function resetwwapps() 
-    {
-      localStorage["wwapp_config"] = JSON.stringify({"version":1,"installed":[]})
-      localStorage["wwapp_data"] = JSON.stringify({"version":1,"uri":[]})
-      MessageBox("Success","Uninstalled all WWAPPs!")
-    }
-    function loadwwapp() {
-      let url = document.querySelector("#wwapp").value 
-      let addToDesktop = document.querySelector(".addToDesktop").classList.contains("checked")
-      let addToStart = document.querySelector(".addToStart").classList.contains("checked")
-      let addToTaskbar = document.querySelector(".addToTaskbar").classList.contains("checked")
-      installWWApp(url,[addToStart,addToTaskbar,addToDesktop])
-      MessageBox("Success","Loaded WWAPP.")
-    }
-    try {
-    wwglob_config = JSON.parse(localStorage["wwglob_config"]) || JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"enabled":false,"onUnfocus":false,"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
-    document.querySelector("#tabtitle").value = wwglob_config.tabSettings.title
-    document.querySelector("#tabico").value = wwglob_config.tabSettings.icon
-    } catch {
-      localStorage["wwglob_config"] = JSON.stringify({"version":1,"wallpaper":"img/img0_1903.jpg","tabSettings":{"enabled":false,"onUnfocus":false,"title":"Webwin","icon":"webwin-logo-xs.png"},"panicKey":""});
-      wwglob_config = localStorage["wwglob_config"]
-      document.querySelector("#tabtitle").value = "Webwin"
-      document.querySelector("#tabico").value = "webwin-logo-xs.png"
-    }
-    if (wwglob_config.tabSettings.enabled) {
-      document.querySelector(".cloakToggle").classList.add("active")
-    }
-    if (wwglob_config.tabSettings.onUnfocus) {
-      document.querySelector(".cloakUnfocus").classList.add("active")
-    }
-    function toggleCloak() {
-      wwglob_config.tabSettings.enabled = document.querySelector(".cloakToggle").classList.contains("active")
-      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
-    }
-    function toggleCloakUnfocus() {
-      wwglob_config.tabSettings.onUnfocus = document.querySelector(".cloakUnfocus").classList.contains("active")
-      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
-    }
-    function updateTabTitle() {
-      wwglob_config.tabSettings.title = document.querySelector("#tabtitle").value
-      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
-    }
-    function updateTabIcon() {
-      wwglob_config.tabSettings.icon = document.querySelector("#tabico").value
-      localStorage["wwglob_config"] = JSON.stringify(wwglob_config)
-    }
-    
+        `,
+          disableResize: true,
+          maxVisible: false,
+          minVisible: false,
+        });
+      }
+      function resetwwapps() {
+        localStorage["wwapp_config"] = JSON.stringify({
+          version: 1,
+          installed: [],
+        });
+        localStorage["wwapp_data"] = JSON.stringify({ version: 1, uri: [] });
+        MessageBox("Success", "Uninstalled all WWAPPs!");
+      }
+      function loadwwapp() {
+        let url = document.querySelector("#wwapp").value;
+        let addToDesktop = document
+          .querySelector(".addToDesktop")
+          .classList.contains("checked");
+        let addToStart = document
+          .querySelector(".addToStart")
+          .classList.contains("checked");
+        let addToTaskbar = document
+          .querySelector(".addToTaskbar")
+          .classList.contains("checked");
+        installWWApp(url, [addToStart, addToTaskbar, addToDesktop]);
+        MessageBox("Success", "Loaded WWAPP.");
+      }
+      try {
+        wwglob_config =
+          JSON.parse(localStorage["wwglob_config"]) ||
+          JSON.stringify({
+            version: 1,
+            wallpaper: "img/img0_1903.jpg",
+            tabSettings: {
+              enabled: false,
+              onUnfocus: false,
+              title: "Webwin",
+              icon: "webwin-logo-xs.png",
+            },
+            panicKey: "",
+          });
+        document.querySelector("#tabtitle").value =
+          wwglob_config.tabSettings.title;
+        document.querySelector("#tabico").value =
+          wwglob_config.tabSettings.icon;
+      } catch {
+        localStorage["wwglob_config"] = JSON.stringify({
+          version: 1,
+          wallpaper: "img/img0_1903.jpg",
+          tabSettings: {
+            enabled: false,
+            onUnfocus: false,
+            title: "Webwin",
+            icon: "webwin-logo-xs.png",
+          },
+          panicKey: "",
+        });
+        wwglob_config = localStorage["wwglob_config"];
+        document.querySelector("#tabtitle").value = "Webwin";
+        document.querySelector("#tabico").value = "webwin-logo-xs.png";
+      }
+      if (wwglob_config.tabSettings.enabled) {
+        document.querySelector(".cloakToggle").classList.add("active");
+      }
+      if (wwglob_config.tabSettings.onUnfocus) {
+        document.querySelector(".cloakUnfocus").classList.add("active");
+      }
+      function toggleCloak() {
+        wwglob_config.tabSettings.enabled = document
+          .querySelector(".cloakToggle")
+          .classList.contains("active");
+        localStorage["wwglob_config"] = JSON.stringify(wwglob_config);
+      }
+      function toggleCloakUnfocus() {
+        wwglob_config.tabSettings.onUnfocus = document
+          .querySelector(".cloakUnfocus")
+          .classList.contains("active");
+        localStorage["wwglob_config"] = JSON.stringify(wwglob_config);
+      }
+      function updateTabTitle() {
+        wwglob_config.tabSettings.title =
+          document.querySelector("#tabtitle").value;
+        localStorage["wwglob_config"] = JSON.stringify(wwglob_config);
+      }
+      function updateTabIcon() {
+        wwglob_config.tabSettings.icon =
+          document.querySelector("#tabico").value;
+        localStorage["wwglob_config"] = JSON.stringify(wwglob_config);
+      }
     </script>
-    <script src="../../modules/os.js">
-    </script>
+    <script src="../../modules/os.js"></script>
     <script src="../../modules/winman.js"></script>
   </body>
 </html>

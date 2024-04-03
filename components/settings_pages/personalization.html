@@ -9,78 +9,83 @@
       * {
         font-family: "Segoe UI", sans-serif;
         color-scheme: dark;
-        
       }
-      html,body {background-color:#000;  width:100%;height:100%;margin:0;}
+      html,
+      body {
+        background-color: #000;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
     </style>
   </head>
   <body class="w-full h-full flex flex-row items-center m-0 desktop">
-        
-      <sidebar class="flex flex-col bg-[#1f1f1f] min-w-[300px] h-screen flex-1">
-        <a href="../settings.html" class="settingsBtn">
-          <img src="../../icons/settings/home.png" class="mx-2 p-1"> <span>Home</span>
-        </a>
-        
-        <input
-          type="text"
-          placeholder="Find a setting"
-          maxlength="64"
-          class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] mx-auto text-black hover:ring-2 hover:ring-[#0078D7]"
-        />
-        <br>
-        <b class="ml-4 mt-4 text-sm font-semibold">Personalization</b>
-        <span class="ml-4 mt-4 mb-4 text-sm opacity-75">Personalization settings</span>
-        <a href="#wallpaper" id="wallpaper" class="settingsBtn">
-          <img  class="mx-2 mr-3 p-1"> <span>Wallpaper</span>
-        </a>
-        
-      </sidebar>
-      <container class="m-2 ml-4">
-        <br>
+    <sidebar class="flex flex-col bg-[#1f1f1f] min-w-[300px] h-screen flex-1">
+      <a href="../settings.html" class="settingsBtn">
+        <img src="../../icons/settings/home.png" class="mx-2 p-1" />
+        <span>Home</span>
+      </a>
+
+      <input
+        type="text"
+        placeholder="Find a setting"
+        maxlength="64"
+        class="flex justify-center px-3 py-1.5 h-8 text-sm bg-white w-[90%] mx-auto text-black hover:ring-2 hover:ring-[#0078D7]"
+      />
+      <br />
+      <b class="ml-4 mt-4 text-sm font-semibold">Personalization</b>
+      <span class="ml-4 mt-4 mb-4 text-sm opacity-75"
+        >Personalization settings</span
+      >
+      <a href="#wallpaper" id="wallpaper" class="settingsBtn">
+        <img class="mx-2 mr-3 p-1" /> <span>Wallpaper</span>
+      </a>
+    </sidebar>
+    <container class="m-2 ml-4">
+      <br />
       <section id="wallpaper" class="flex flex-col hidden">
-      <h1 class="text-3xl font-light mb-2">Wallpaper</h1>
-      <br>
-      <p>soon...</p>
-    </section>
-      </container>
+        <h1 class="text-3xl font-light mb-2">Wallpaper</h1>
+        <br />
+        <p>soon...</p>
+      </section>
+    </container>
     <script>
       function sections(e) {
-        if (window.location.hash.substr(1) == "") {document.location.hash = "#tabcloak"}
-    
-    function hideAllSections() {
-        var sections = document.querySelectorAll('section');
-        sections.forEach(function(section) {
-            section.classList.add('hidden');
-        });
-        var btns = document.querySelectorAll('.settingsBtn');
-        btns.forEach(function(btn) {
-            btn.classList.remove('active');
-        });
-    }
-    function showSection(sectionId) {
-        var section = document.querySelector(`section#${sectionId}`);
-        if (section) {
-            section.classList.remove('hidden');
-            var btn = document.querySelector(`a#${sectionId}`);
-            btn.classList.add('active');
+        if (window.location.hash.substr(1) == "") {
+          document.location.hash = "#tabcloak";
         }
-    }
 
-    hideAllSections();
-    var hash = window.location.hash.substring(1); // remove the '#' from the hash
-    if (hash) {
-        showSection(hash);
-    }
+        function hideAllSections() {
+          var sections = document.querySelectorAll("section");
+          sections.forEach(function (section) {
+            section.classList.add("hidden");
+          });
+          var btns = document.querySelectorAll(".settingsBtn");
+          btns.forEach(function (btn) {
+            btn.classList.remove("active");
+          });
+        }
+        function showSection(sectionId) {
+          var section = document.querySelector(`section#${sectionId}`);
+          if (section) {
+            section.classList.remove("hidden");
+            var btn = document.querySelector(`a#${sectionId}`);
+            btn.classList.add("active");
+          }
+        }
 
-   
-}
-      
-     
-      setInterval(()=>{sections()},200)
-   
+        hideAllSections();
+        var hash = window.location.hash.substring(1); // remove the '#' from the hash
+        if (hash) {
+          showSection(hash);
+        }
+      }
+
+      setInterval(() => {
+        sections();
+      }, 200);
     </script>
-    <script src="../../modules/os.js">
-    </script>
+    <script src="../../modules/os.js"></script>
     <script src="../../modules/winman.js"></script>
   </body>
 </html>
