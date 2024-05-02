@@ -13,7 +13,7 @@
       }
       html,
       body {
-        background-color: #000;
+        background-color: #000 !important;
         width: 100%;
         height: 100%;
         margin: 0;
@@ -47,10 +47,29 @@
       <section id="wallpaper" class="flex flex-col hidden">
         <h1 class="text-3xl font-light mb-2">Background</h1>
         <br />
-        <p>soon...</p>
+        <br>
+        <img class="previewImg w-[290px] h-[180px]" src="/img/img0_1903.jpg">
+        <br>
+        <span>Choose your picture</span>
+        <div class="bgImgContainer flex flex-row">
+        <div onclick="bgclick(this)" class="bgImgSelect w-[70px] h-[70px] ring-2  ring-transparent hover:ring-gray-500/60 duration-300" style="background-image:url(/img/img0.jpg);background-size:cover;background-position: center;"></div>
+        <div onclick="bgclick(this)" class="bgImgSelect w-[70px] h-[70px] ring-2 ml-1 ring-transparent hover:ring-gray-500/60 duration-300" style="background-image:url(/img/img0_1903.jpg);background-size:cover;background-position: center;"></div>
+        <div onclick="bgclick(this)" class="bgImgSelect w-[70px] h-[70px] ring-2 ml-1 ring-transparent hover:ring-gray-500/60 duration-300" style="background-image:url(/img/img1.jpg);background-size:cover;background-position: center;"></div>
+        <div onclick="bgclick(this)" class="bgImgSelect w-[70px] h-[70px] ring-2 ml-1 ring-transparent hover:ring-gray-500/60 duration-300" style="background-image:url(/img/img2.jpg);background-size:cover;background-position: center;"></div>
+        <div  onclick="bgclick(this)" class="bgImgSelect w-[70px] h-[70px] ring-2 ml-1 ring-transparent hover:ring-gray-500/60 duration-300" style="background-image:url(/img/img100.jpg);background-size:cover;background-position: center;"></div>
+      </div>
+      <button disabled class="w-fit text-[13px] px-[18px] py-[2px] bg-[#E1E1E1] text-black border border-[#ADADAD] hover:border-[#0078D7] hover:bg-[#E5F1FB] active:border-[#005499] active:bg-[#CCE4F7] disabled:text-gray-900 disabled:bg-gray-500">Browse</button>
       </section>
     </container>
     <script>
+      function bgclick(ele) {
+        let globconf = JSON.parse(localStorage["wwglob_config"])
+            globconf.wallpaper = ele.style.backgroundImage.replace("url(","").replace(")","").replaceAll('\\"',"")
+            localStorage["wwglob_config"] = JSON.stringify(globconf)
+            document.querySelector(".previewImg").src = ele.style.backgroundImage.replace("url(","").replace(")","").replaceAll('"',"")
+            console.log(ele.style.backgroundImage.replace("url(","").replace(")","").replaceAll('\\"',""))
+      }
+       document.querySelector(".previewImg").src = JSON.parse(localStorage["wwglob_config"]).wallpaper.replace("url(","").replace(")","").replaceAll('"',"")
       function sections(e) {
         if (window.location.hash.substr(1) == "") {
           document.location.hash = "#tabcloak";
@@ -86,7 +105,5 @@
         sections();
       }, 200);
     </script>
-    <script src="../../modules/os.js"></script>
-    <script src="../../modules/winman.js"></script>
   </body>
 </html>
