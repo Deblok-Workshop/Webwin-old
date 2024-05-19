@@ -1,4 +1,6 @@
-# Webwin
+# Webwin (old)
+
+## we're remaking this shit in svelte because the code is so old :skull:
 
 **Probably the most detailed Windows 10 port to the web browser**. It's designed to be fast and spot-on to stock Windows 10. (mostly based on Windows 10 Enterprise LTSC 21H2)
 <br />
